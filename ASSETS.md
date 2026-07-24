@@ -1,9 +1,12 @@
 # Figma asset manifest
 
-Assets referenced by the site but not yet committed — the build environment's
-network policy currently blocks `www.figma.com`, so exports could not be
-downloaded. Each entry maps the local path the code expects to the Figma node
-it should be exported from.
+All assets listed below are committed under `public/`. Each entry maps the
+local path the code expects to the Figma node it was exported from, so exports
+can be repeated if the design changes.
+
+Note: two node IDs in the "Who We Are" values section were swapped in an
+earlier revision of this file — value-commitment.svg is 2187:6081 (Group 234)
+and value-integrity.svg is 2187:6104 (Group 237).
 
 Figma file: `Wkk573fBNNQWxyfleQIejt` (page "Website Mockup FINAL APPROVED DESIGN")
 
