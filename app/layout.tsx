@@ -2,7 +2,14 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Preloader from "@/components/Preloader";
+import CurtainTransition from "@/components/CurtainTransition";
+import ScrollFx from "@/components/ScrollFx";
 import "./globals.css";
+
+/* Runs before first paint: enables motion effects only when JS is available
+ * and the visitor has not asked for reduced motion. */
+const fxGate = `try{if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("fx")}catch(e){}`;
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -26,7 +33,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: fxGate }} />
+      </head>
       <body className={`${poppins.variable} antialiased`}>
+        <Preloader />
+        <CurtainTransition />
+        <ScrollFx />
         <Header />
         <main>{children}</main>
         <Footer />

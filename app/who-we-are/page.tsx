@@ -82,24 +82,31 @@ export default function WhoWeArePage() {
           className="object-cover object-bottom opacity-80"
         />
         <div className="relative mx-auto max-w-[1580px] px-6 py-16 text-center lg:px-10 lg:py-[110px]">
-          <SectionPill label="Our mission" variant="red" />
-          <h2 className="mx-auto mt-8 max-w-[1028px] text-[36px] font-bold capitalize leading-[1.2] text-goal-navy lg:text-[55px]">
+          <SectionPill label="Our mission" variant="red" data-reveal="zoom" />
+          <h2
+            className="mx-auto mt-8 max-w-[1028px] text-[36px] font-bold capitalize leading-[1.2] text-goal-navy lg:text-[55px]"
+            data-reveal
+          >
             Every Project We Commit
             <br />
             To Is More Than A Timeline
           </h2>
           <SectionDivider variant="red" className="mt-8" />
-          <p className="mx-auto mt-8 max-w-[824px] text-[16px] font-light leading-[30px] text-black lg:text-[18px] lg:leading-[35px]">
+          <p
+            className="mx-auto mt-8 max-w-[824px] text-[16px] font-light leading-[30px] text-black lg:text-[18px] lg:leading-[35px]"
+            data-reveal
+            data-reveal-delay="120"
+          >
             It&rsquo;s an opportunity for us to invest in our local communities
             while supporting American industry and partnering with those who
             help power that mission.
           </p>
 
-          <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-[38px]">
+          <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-[38px]" data-reveal-group>
             {missionCards.map((card) => (
               <div
                 key={card.title}
-                className="rounded-[20px] bg-white px-8 py-11 shadow-[4px_4px_10px_0px_rgba(0,0,0,0.15)]"
+                className="fx-lift rounded-[20px] bg-white px-8 py-11 shadow-[4px_4px_10px_0px_rgba(0,0,0,0.15)] hover:shadow-[4px_12px_24px_0px_rgba(0,0,0,0.18)]"
               >
                 <div className="mx-auto flex h-[100px] w-[100px] items-center justify-center rounded-full">
                   <Image src={card.icon} alt="" width={100} height={100} />
@@ -116,11 +123,15 @@ export default function WhoWeArePage() {
       {/* Leadership In Action */}
       <section className="bg-goal-navy">
         <div className="mx-auto max-w-[1580px] px-6 py-16 text-center lg:px-10 lg:py-[110px]">
-          <SectionPill label="meet the team" variant="white" />
-          <h2 className="mx-auto mt-8 text-[36px] font-bold capitalize leading-[1.2] text-white lg:text-[55px]">
+          <SectionPill label="meet the team" variant="white" data-reveal="zoom" />
+          <h2 className="mx-auto mt-8 text-[36px] font-bold capitalize leading-[1.2] text-white lg:text-[55px]" data-reveal>
             Leadership In Action
           </h2>
-          <div className="mx-auto mt-10 max-w-[1428px] space-y-6 text-[16px] font-light leading-[30px] text-white lg:text-[18px] lg:leading-[35px]">
+          <div
+            className="mx-auto mt-10 max-w-[1428px] space-y-6 text-[16px] font-light leading-[30px] text-white lg:text-[18px] lg:leading-[35px]"
+            data-reveal
+            data-reveal-delay="120"
+          >
             <p>
               Our strength comes from the combined experience of our leadership
               team, rooted in the values of mutual respect, discipline, and
@@ -144,9 +155,9 @@ export default function WhoWeArePage() {
             </p>
           </div>
 
-          <div className="mx-auto mt-16 flex max-w-[1300px] flex-wrap justify-center gap-x-[114px] gap-y-16">
+          <div className="mx-auto mt-16 flex max-w-[1300px] flex-wrap justify-center gap-x-[114px] gap-y-16" data-reveal-group>
             {team.map((member) => (
-              <div key={member.name} className="w-[280px] lg:w-[329px]">
+              <div key={member.name} className="group w-[280px] lg:w-[329px]">
                 <div className="relative mx-auto w-fit">
                   <div className="relative h-[240px] w-[240px] overflow-hidden rounded-full bg-white/10 lg:h-[329px] lg:w-[329px]">
                     <Image
@@ -154,7 +165,7 @@ export default function WhoWeArePage() {
                       alt={member.name}
                       fill
                       sizes="329px"
-                      className="object-cover"
+                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     />
                   </div>
                   <div className="absolute right-0 top-0">
@@ -187,14 +198,21 @@ export default function WhoWeArePage() {
       {/* The Way We Do Business */}
       <section className="bg-white">
         <div className="mx-auto max-w-[1580px] px-6 py-16 text-center lg:px-10 lg:py-[110px]">
-          <SectionPill label="Our Values" variant="red" />
-          <h2 className="mx-auto mt-8 max-w-[720px] text-[36px] font-bold capitalize leading-[1.2] text-goal-navy lg:text-[55px]">
+          <SectionPill label="Our Values" variant="red" data-reveal="zoom" />
+          <h2
+            className="mx-auto mt-8 max-w-[720px] text-[36px] font-bold capitalize leading-[1.2] text-goal-navy lg:text-[55px]"
+            data-reveal
+          >
             The Way We
             <br />
             do Business
           </h2>
           <SectionDivider variant="red" className="mt-8" />
-          <p className="mx-auto mt-8 max-w-[1283px] text-[16px] font-light leading-[30px] text-black lg:text-[18px] lg:leading-[35px]">
+          <p
+            className="mx-auto mt-8 max-w-[1283px] text-[16px] font-light leading-[30px] text-black lg:text-[18px] lg:leading-[35px]"
+            data-reveal
+            data-reveal-delay="120"
+          >
             Our values guide every decision, every partnership, and every
             project we undertake. As a veteran-owned and operated company, we
             believe in preparation, accountability, and discipline — principles
@@ -202,10 +220,10 @@ export default function WhoWeArePage() {
             and each other.
           </p>
 
-          <div className="mt-16 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-16 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3" data-reveal-group>
             {values.map((value) => (
-              <div key={value.title} className="mx-auto max-w-[397px]">
-                <div className="mx-auto flex h-[121px] w-[121px] items-center justify-center rounded-full border border-goal-red">
+              <div key={value.title} className="group mx-auto max-w-[397px]">
+                <div className="mx-auto flex h-[121px] w-[121px] items-center justify-center rounded-full border border-goal-red transition-transform duration-500 ease-out group-hover:scale-110">
                   <Image src={value.icon} alt="" width={60} height={60} />
                 </div>
                 <h3 className="mt-8 text-[22px] font-bold leading-[1.3] text-black lg:text-[25px]">

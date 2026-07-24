@@ -55,13 +55,16 @@ export default function HomePage() {
           fill
           priority
           sizes="100vw"
-          className="object-cover"
+          className="fx-hero-zoom object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-goal-red to-goal-navy opacity-75 mix-blend-overlay" />
         <div className="absolute inset-0 bg-goal-navy opacity-25 mix-blend-overlay" />
         <div className="absolute inset-x-0 top-0 h-[70%] bg-gradient-to-b from-goal-navy to-goal-navy/0" />
 
-        <div className="relative z-10 mx-auto max-w-[1096px] px-6 pb-24 pt-16 text-center lg:pb-32">
+        <div
+          className="relative z-10 mx-auto max-w-[1096px] px-6 pb-24 pt-16 text-center lg:pb-32"
+          data-reveal-group
+        >
           <h1 className="text-[40px] leading-[1.1] text-white sm:text-[56px] lg:text-[80px]">
             Worldwide Operations.
             <br />
@@ -87,7 +90,7 @@ export default function HomePage() {
           alt=""
           width={89}
           height={102}
-          className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 lg:block"
+          className="fx-bob absolute bottom-6 left-1/2 hidden -translate-x-1/2 lg:block"
         />
       </section>
 
@@ -108,19 +111,26 @@ export default function HomePage() {
           }}
         />
         <div className="relative mx-auto max-w-[1580px] px-6 py-16 text-center lg:px-10 lg:py-[106px]">
-          <SectionPill label="our services" variant="red" />
-          <h2 className="mx-auto mt-8 max-w-[516px] text-[36px] font-bold capitalize leading-[1.2] text-goal-navy lg:text-[55px]">
+          <SectionPill label="our services" variant="red" data-reveal="zoom" />
+          <h2
+            className="mx-auto mt-8 max-w-[516px] text-[36px] font-bold capitalize leading-[1.2] text-goal-navy lg:text-[55px]"
+            data-reveal
+          >
             Project Logistics Expertise
           </h2>
           <SectionDivider variant="red" className="mt-8" />
-          <p className="mx-auto mt-8 max-w-[848px] text-[16px] font-light leading-[30px] text-black lg:text-[18px] lg:leading-[35px]">
+          <p
+            className="mx-auto mt-8 max-w-[848px] text-[16px] font-light leading-[30px] text-black lg:text-[18px] lg:leading-[35px]"
+            data-reveal
+            data-reveal-delay="120"
+          >
             From oversized equipment to heavy-haul and out-of-gauge cargo, we
             manage complex logistics projects across the entire supply chain
             using engineering-level planning, smart technology, and coordinated
             multimodal transport solutions.
           </p>
 
-          <div className="mt-16 grid grid-cols-1 gap-[17px] sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-16 grid grid-cols-1 gap-[17px] sm:grid-cols-2 lg:grid-cols-4" data-reveal-group>
             {serviceCards.map((card) => (
               <ServiceCard key={card.title} title={card.title} image={card.image} />
             ))}
@@ -131,16 +141,19 @@ export default function HomePage() {
       {/* How we do it */}
       <section className="bg-goal-dark">
         <div className="mx-auto max-w-[1580px] px-6 py-16 text-center lg:px-10 lg:py-[106px]">
-          <SectionPill label="How we do it" variant="white" />
-          <h2 className="mx-auto mt-8 max-w-[761px] text-[36px] font-bold capitalize leading-[1.2] text-white lg:text-[55px]">
+          <SectionPill label="How we do it" variant="white" data-reveal="zoom" />
+          <h2
+            className="mx-auto mt-8 max-w-[761px] text-[36px] font-bold capitalize leading-[1.2] text-white lg:text-[55px]"
+            data-reveal
+          >
             Engineered Logistics &amp; Project Delivery
           </h2>
           <SectionDivider variant="white" className="mt-8" />
 
-          <div className="mt-16 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+          <div className="mt-16 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8" data-reveal-group>
             {features.map((feature) => (
-              <div key={feature.title} className="flex flex-col items-center">
-                <div className="relative">
+              <div key={feature.title} className="group flex flex-col items-center">
+                <div className="relative transition-transform duration-500 ease-out group-hover:scale-105">
                   <div className="relative h-[179px] w-[179px] overflow-hidden rounded-full bg-goal-navy">
                     <Image
                       src={feature.image}
@@ -177,8 +190,11 @@ export default function HomePage() {
           className="object-cover object-top opacity-80"
         />
         <div className="relative mx-auto max-w-[1580px] px-6 py-16 text-center lg:px-10 lg:py-[120px]">
-          <SectionPill label="Why choose goAL" variant="red" />
-          <h2 className="mx-auto mt-8 max-w-[884px] text-[36px] font-bold capitalize leading-[1.2] text-goal-navy lg:text-[55px]">
+          <SectionPill label="Why choose goAL" variant="red" data-reveal="zoom" />
+          <h2
+            className="mx-auto mt-8 max-w-[884px] text-[36px] font-bold capitalize leading-[1.2] text-goal-navy lg:text-[55px]"
+            data-reveal
+          >
             Technical Expertise And Disciplined Project Execution
           </h2>
         </div>

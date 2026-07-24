@@ -34,7 +34,7 @@ export default function ContactSection() {
     <section className="relative bg-goal-navy">
       <div className="grid lg:grid-cols-2">
         {/* Image side */}
-        <div className="relative min-h-[320px] lg:min-h-[1007px]">
+        <div className="relative min-h-[320px] overflow-hidden lg:min-h-[1007px]" data-reveal="left">
           <Image
             src="/images/contact-worker.png"
             alt="Gulf of America Logistics team member on site"
@@ -46,16 +46,19 @@ export default function ContactSection() {
 
         {/* Form side */}
         <div className="px-6 py-14 lg:px-[84px] lg:py-[103px]">
-          <h2 className="max-w-[581px] text-[36px] font-bold capitalize leading-[1.2] text-white lg:text-[55px]">
+          <h2
+            className="max-w-[581px] text-[36px] font-bold capitalize leading-[1.2] text-white lg:text-[55px]"
+            data-reveal="right"
+          >
             Let Us Simplify Your Next Move
           </h2>
-          <p className="mt-8 text-[18px] font-light leading-[35px] text-white">
+          <p className="mt-8 text-[18px] font-light leading-[35px] text-white" data-reveal="right" data-reveal-delay="100">
             Have A Question?
             <br />
             Talk To Us!
           </p>
 
-          <form onSubmit={handleSubmit} className="mt-8 max-w-[654px]">
+          <form onSubmit={handleSubmit} className="mt-8 max-w-[654px]" data-reveal data-reveal-delay="180">
             <div className="grid gap-5">
               <input name="company" placeholder="Company" className={inputClass} />
               <div className="grid gap-5 sm:grid-cols-2">

@@ -82,30 +82,37 @@ export default function WhatWeDoPage() {
       {/* Industries we serve */}
       <section className="bg-white">
         <div className="mx-auto max-w-[1580px] px-6 py-16 text-center lg:px-10 lg:py-[100px]">
-          <SectionPill label="industries we serve" variant="red" />
-          <h2 className="mx-auto mt-8 max-w-[1028px] text-[36px] font-bold capitalize leading-[1.2] text-goal-navy lg:text-[55px]">
+          <SectionPill label="industries we serve" variant="red" data-reveal="zoom" />
+          <h2
+            className="mx-auto mt-8 max-w-[1028px] text-[36px] font-bold capitalize leading-[1.2] text-goal-navy lg:text-[55px]"
+            data-reveal
+          >
             Supporting High-Stakes Sectors With Precision Logistics Solutions
           </h2>
           <SectionDivider variant="red" className="mt-8" />
-          <p className="mx-auto mt-8 max-w-[1028px] text-[16px] font-light leading-[30px] text-black lg:text-[18px] lg:leading-[35px]">
+          <p
+            className="mx-auto mt-8 max-w-[1028px] text-[16px] font-light leading-[30px] text-black lg:text-[18px] lg:leading-[35px]"
+            data-reveal
+            data-reveal-delay="120"
+          >
             Our focus is simple: deliver complex projects efficiently, reliably,
             and without disruption. By combining sector-specific expertise with
             a strong global network and logistics capability, we provide
             solutions that are structured, scalable, and built for execution.
           </p>
 
-          <div className="mt-16 grid gap-[30px] sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-16 grid gap-[30px] sm:grid-cols-2 lg:grid-cols-3" data-reveal-group>
             {industries.map((industry) => (
               <div
                 key={industry.title}
-                className="relative flex aspect-[458/503] flex-col items-center justify-center overflow-hidden rounded-[20px] bg-goal-navy px-10 text-center"
+                className="fx-lift group relative flex aspect-[458/503] flex-col items-center justify-center overflow-hidden rounded-[20px] bg-goal-navy px-10 text-center"
               >
                 <Image
                   src={industry.image}
                   alt=""
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
                 <div className="relative z-10">
                   <h3 className="mx-auto max-w-[300px] text-[24px] font-bold leading-[1.25] text-white lg:text-[26px]">
@@ -129,10 +136,10 @@ export default function WhatWeDoPage() {
 
       {/* Integrity / Safety / Sustainability */}
       <section className="bg-white pb-16 lg:pb-[100px]">
-        <div className="mx-auto grid max-w-[1580px] gap-12 px-6 text-center sm:grid-cols-3 lg:px-10">
+        <div className="mx-auto grid max-w-[1580px] gap-12 px-6 text-center sm:grid-cols-3 lg:px-10" data-reveal-group>
           {commitments.map((item) => (
-            <div key={item.title} className="mx-auto max-w-[320px]">
-              <div className="mx-auto flex h-[112px] w-[112px] items-center justify-center rounded-full border border-goal-red">
+            <div key={item.title} className="group mx-auto max-w-[320px]">
+              <div className="mx-auto flex h-[112px] w-[112px] items-center justify-center rounded-full border border-goal-red transition-transform duration-500 ease-out group-hover:scale-110">
                 <Image src={item.icon} alt="" width={68} height={68} />
               </div>
               <h3 className="mt-6 text-[22px] font-bold leading-[35px] text-black lg:text-[24px]">

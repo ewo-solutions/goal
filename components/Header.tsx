@@ -31,7 +31,7 @@ export default function Header() {
               <div key={link.href} className="group relative">
                 <Link
                   href={link.href}
-                  className={`flex items-center gap-2 p-[10px] text-[18px] capitalize text-white ${
+                  className={`nav-underline flex items-center gap-2 p-[10px] text-[18px] capitalize text-white ${
                     pathname.startsWith(link.href) ? "font-bold" : "font-normal"
                   }`}
                 >
@@ -56,7 +56,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`p-[10px] text-[18px] capitalize text-white ${
+                className={`nav-underline p-[10px] text-[18px] capitalize text-white ${
                   pathname === link.href ? "font-bold" : "font-normal"
                 }`}
               >

@@ -32,3 +32,226 @@ body {
     animation: none;
   }
 }
+
+/* ---------------------------------------------------------------------------
+ * Motion system. A tiny inline script in the layout adds `fx` to <html> before
+ * first paint (only when JS runs and the user does not prefer reduced motion).
+ * Every effect below is gated on that class, so content is always visible for
+ * no-JS visitors, crawlers, and reduced-motion users.
+ * ------------------------------------------------------------------------- */
+
+:root {
+  --ease-out-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-curtain: cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+/* --- Reveal on scroll --- */
+.fx [data-reveal],
+.fx [data-reveal-group] > * {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s var(--ease-out-soft),
+    transform 0.7s var(--ease-out-soft);
+  transition-delay: var(--rv-delay, 0ms);
+}
+.fx [data-reveal="left"] {
+  transform: translateX(-36px);
+}
+.fx [data-reveal="right"] {
+  transform: translateX(36px);
+}
+.fx [data-reveal="zoom"] {
+  transform: scale(0.94);
+}
+.fx [data-reveal].rv-in,
+.fx [data-reveal-group] > .rv-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* --- Preloader --- */
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 110;
+  display: none;
+  place-items: center;
+  background: var(--color-goal-dark);
+  transition: transform 0.75s var(--ease-curtain);
+}
+.fx .preloader {
+  display: grid;
+}
+.preloader-inner {
+  display: grid;
+  justify-items: center;
+  gap: 28px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.preloader-logo {
+  animation: preloader-pulse 1.6s ease-in-out infinite;
+}
+.preloader-bar {
+  position: relative;
+  height: 3px;
+  width: 220px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+}
+.preloader-bar span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 40%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--color-goal-red), #ffffff);
+  animation: preloader-slide 1.2s var(--ease-out-soft) infinite;
+}
+.preloader--exit {
+  transform: translateY(-101%);
+}
+.preloader--exit .preloader-inner {
+  opacity: 0;
+  transform: translateY(-16px);
+}
+@keyframes preloader-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+@keyframes preloader-slide {
+  from {
+    left: -40%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+/* --- Curtain page transition --- */
+.curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 105;
+  pointer-events: none;
+  visibility: hidden;
+}
+.curtain--cover,
+.curtain--reveal {
+  visibility: visible;
+}
+.curtain--cover {
+  pointer-events: auto;
+}
+.curtain-panel {
+  position: absolute;
+  inset: 0;
+  transform: translateY(-102%);
+  display: grid;
+  place-items: center;
+}
+.curtain-panel--red {
+  background: var(--color-goal-red);
+}
+.curtain-panel--navy {
+  background: var(--color-goal-navy);
+}
+.curtain-mark {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.25s ease 0.3s, transform 0.25s ease 0.3s;
+}
+.curtain--cover .curtain-panel {
+  transform: translateY(0);
+  transition: transform 0.6s var(--ease-curtain);
+}
+.curtain--cover .curtain-panel--navy {
+  transition-delay: 80ms;
+}
+.curtain--cover .curtain-mark {
+  opacity: 1;
+  transform: scale(1);
+}
+.curtain--reveal .curtain-panel {
+  transform: translateY(102%);
+  transition: transform 0.6s var(--ease-curtain);
+}
+.curtain--reveal .curtain-panel--red {
+  transition-delay: 80ms;
+}
+.curtain--reveal .curtain-mark {
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+/* --- Hero imagery: slow settle-in zoom --- */
+.fx .fx-hero-zoom {
+  animation: hero-zoom 6.5s var(--ease-out-soft) both;
+}
+@keyframes hero-zoom {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* --- Scroll-down mouse indicator bob --- */
+.fx .fx-bob {
+  animation: bob 2.2s ease-in-out infinite;
+}
+@keyframes bob {
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, 10px);
+  }
+}
+
+/* --- Header nav link underline sweep --- */
+.nav-underline {
+  position: relative;
+}
+.nav-underline::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 4px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--color-goal-red);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s var(--ease-out-soft);
+}
+.nav-underline:hover::after {
+  transform: scaleX(1);
+}
+
+/* --- Card lift used on grid items --- */
+.fx-lift {
+  transition: transform 0.45s var(--ease-out-soft), box-shadow 0.45s var(--ease-out-soft);
+}
+.fx-lift:hover {
+  transform: translateY(-8px);
+}
+/* Once the reveal has fully played out (ScrollFx adds rv-done), restore the
+ * snappy hover transition — the reveal rules above otherwise win on
+ * specificity and would delay hover feedback by the stagger amount. */
+.fx [data-reveal].rv-done,
+.fx [data-reveal-group] > .rv-done {
+  transition-delay: 0ms;
+}
+.fx .fx-lift.rv-done {
+  transition: transform 0.45s var(--ease-out-soft), box-shadow 0.45s var(--ease-out-soft);
+}

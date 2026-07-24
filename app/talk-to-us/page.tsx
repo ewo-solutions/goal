@@ -30,18 +30,25 @@ export default function TalkToUsPage() {
       {/* Connect with our teams */}
       <section className="bg-white">
         <div className="mx-auto max-w-[1580px] px-6 py-16 text-center lg:px-10 lg:py-[100px]">
-          <SectionPill label="The Right Solution" variant="red" />
-          <h2 className="mx-auto mt-8 max-w-[1028px] text-[36px] font-bold capitalize leading-[1.2] text-goal-navy lg:text-[55px]">
+          <SectionPill label="The Right Solution" variant="red" data-reveal="zoom" />
+          <h2
+            className="mx-auto mt-8 max-w-[1028px] text-[36px] font-bold capitalize leading-[1.2] text-goal-navy lg:text-[55px]"
+            data-reveal
+          >
             Connect With Our Experienced Teams
           </h2>
           <SectionDivider variant="red" className="mt-8" />
-          <p className="mx-auto mt-8 max-w-[1144px] text-[16px] font-light leading-[30px] text-black lg:text-[18px] lg:leading-[35px]">
+          <p
+            className="mx-auto mt-8 max-w-[1144px] text-[16px] font-light leading-[30px] text-black lg:text-[18px] lg:leading-[35px]"
+            data-reveal
+            data-reveal-delay="120"
+          >
             When timing, coordination, and execution matter, experience makes
             the difference. We are ready to help you plan, move and prioritize
             your project requirements.
           </p>
 
-          <div className="mx-auto mt-16 grid max-w-[1134px] gap-12 text-left sm:grid-cols-2">
+          <div className="mx-auto mt-16 grid max-w-[1134px] gap-12 text-left sm:grid-cols-2" data-reveal-group>
             <div className="text-[16px] leading-[25px]">
               <h3 className="font-bold">Corporate Headquarters</h3>
               <p className="mt-2 font-light">
