@@ -128,6 +128,13 @@ Figma file: `Wkk573fBNNQWxyfleQIejt` (page "Website Mockup FINAL APPROVED DESIGN
 | public/icons/ih-reporting.svg | 2187:5506 (Group 230) |
 
 ## Copy marked TBA in the design (needs client input)
-- In-House Support & Expediting: "what you get" section heading is "TBA" in Figma
-  (placeholder "Visibility From Supplier To Site" used in code).
 - Talk To Us: branch office details for Baton Rouge / Lafayette / Rayville are "TBA".
+
+## Service page copy source
+All service page body/heading text in `lib/servicePages.ts` was replaced on
+2026-07-27 with client-provided, SEO-reviewed copy (six .docx files, one per
+service). This also resolved the previous "TBA" placeholder on the In-House
+Support & Expediting page — its "what you get" heading is now "Active Field
+Oversight". Page titles (H1), section pills, icons, and images were left
+untouched; only description/body copy and a few "what you get" item titles
+that the new copy explicitly renamed were updated.
