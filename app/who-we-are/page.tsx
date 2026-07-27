@@ -1,15 +1,16 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import SectionPill from "@/components/SectionPill";
 import SectionDivider from "@/components/SectionDivider";
 import ContactSection from "@/components/ContactSection";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Who We Are",
   description:
     "Gulf of America Logistics is a veteran-owned logistics company with decades of expertise in project logistics, heavy haul transportation, and multimodal freight management.",
-};
+  path: "/who-we-are",
+});
 
 const missionCards = [
   { title: "Strengthen U.S. Supply Chains", icon: "/icons/mission-supply-chains.png" },

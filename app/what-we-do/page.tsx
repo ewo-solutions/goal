@@ -1,16 +1,17 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import SectionPill from "@/components/SectionPill";
 import SectionDivider from "@/components/SectionDivider";
 import ContactSection from "@/components/ContactSection";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "What We Do",
   description:
     "GoAL delivers complex projects efficiently, reliably, and without disruption — sector-specific expertise with a strong global network and logistics capability.",
-};
+  path: "/what-we-do",
+});
 
 const industries = [
   {

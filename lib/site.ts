@@ -1,3 +1,9 @@
+// Falls back to the company's email domain until a production domain is
+// confirmed and NEXT_PUBLIC_SITE_URL is set in the Vercel project.
+export const siteUrl = (
+  process.env.NEXT_PUBLIC_SITE_URL || "https://www.goalogistics.com"
+).replace(/\/$/, "");
+
 export const site = {
   name: "Gulf of America Logistics",
   shortName: "GoAL",

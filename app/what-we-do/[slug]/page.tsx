@@ -6,6 +6,7 @@ import SectionPill from "@/components/SectionPill";
 import SectionDivider from "@/components/SectionDivider";
 import ContactSection from "@/components/ContactSection";
 import { servicePages } from "@/lib/servicePages";
+import { pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return servicePages.map((page) => ({ slug: page.slug }));
@@ -19,7 +20,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const page = servicePages.find((p) => p.slug === slug);
   if (!page) return {};
-  return { title: page.metaTitle, description: page.metaDescription };
+  return pageMetadata({
+    title: page.metaTitle,
+    description: page.metaDescription,
+    path: `/what-we-do/${slug}`,
+  });
 }
 
 export default async function ServicePage({

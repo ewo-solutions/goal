@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import SectionPill from "@/components/SectionPill";
@@ -5,6 +6,26 @@ import SectionDivider from "@/components/SectionDivider";
 import ServiceCard from "@/components/ServiceCard";
 import Marquee from "@/components/Marquee";
 import ContactSection from "@/components/ContactSection";
+
+const description =
+  "Gulf of America Logistics (GoAL) is a veteran-owned project logistics and heavy haul transportation company with Gulf Coast roots specializing in heavy haul, oversized cargo, complex project logistics, and data center builds across the United States and worldwide.";
+
+// No `title` override here — the homepage keeps the root layout's
+// `title.default` verbatim instead of going through `title.template`.
+export const metadata: Metadata = {
+  description,
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Gulf of America Logistics (GoAL) | Global Project Logistics",
+    description,
+    url: "/",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gulf of America Logistics (GoAL) | Global Project Logistics",
+    description,
+  },
+};
 
 const serviceCards = [
   { title: "Turnkey Project Solutions", image: "/images/service-turnkey.png" },

@@ -1,15 +1,16 @@
-import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import SectionPill from "@/components/SectionPill";
 import SectionDivider from "@/components/SectionDivider";
 import ContactSection from "@/components/ContactSection";
 import { site } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Talk To Us",
   description:
     "Connect with our experienced teams. We are ready to help you plan, move and prioritize your project requirements.",
-};
+  path: "/talk-to-us",
+});
 
 const branchOffices = [
   { city: "Baton Rouge", detail: "TBA" },
