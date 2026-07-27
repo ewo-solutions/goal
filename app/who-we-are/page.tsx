@@ -76,7 +76,7 @@ export default function WhoWeArePage() {
       {/* Our Mission */}
       <section className="relative overflow-hidden bg-white">
         <Image
-          src="/images/why-choose-bg.png"
+          src="/images/why-choose-bg.svg"
           alt=""
           fill
           sizes="100vw"
@@ -94,7 +94,7 @@ export default function WhoWeArePage() {
           </h2>
           <SectionDivider variant="red" className="mt-8" />
           <p
-            className="mx-auto mt-8 max-w-[824px] text-[16px] font-light leading-[30px] text-black lg:text-[18px] lg:leading-[35px]"
+            className="mx-auto mt-8 max-w-[824px] text-[16px] font-light leading-[30px] text-black"
             data-reveal
             data-reveal-delay="120"
           >
@@ -129,7 +129,7 @@ export default function WhoWeArePage() {
             Leadership In Action
           </h2>
           <div
-            className="mx-auto mt-10 max-w-[1428px] space-y-6 text-[16px] font-light leading-[30px] text-white lg:text-[18px] lg:leading-[35px]"
+            className="mx-auto mt-10 max-w-[1428px] space-y-6 text-[16px] font-light leading-[30px] text-white"
             data-reveal
             data-reveal-delay="120"
           >
@@ -160,7 +160,7 @@ export default function WhoWeArePage() {
             {team.map((member) => (
               <div key={member.name} className="group w-[280px] lg:w-[329px]">
                 <div className="relative mx-auto w-fit">
-                  <div className="relative h-[240px] w-[240px] overflow-hidden rounded-full bg-white/10 lg:h-[329px] lg:w-[329px]">
+                  <div className="relative h-[240px] w-[240px] overflow-hidden rounded-full bg-goal-navy lg:h-[329px] lg:w-[329px]">
                     <Image
                       src={member.image}
                       alt={member.name}
@@ -187,7 +187,7 @@ export default function WhoWeArePage() {
                 <h3 className="mt-6 text-[24px] font-bold leading-[1.2] text-white lg:text-[26px]">
                   {member.name}
                 </h3>
-                <p className="mt-2 text-[18px] font-light leading-[25px] text-white">
+                <p className="mt-2 text-[16px] font-light leading-[25px] text-white">
                   {member.role}
                 </p>
               </div>
@@ -210,7 +210,7 @@ export default function WhoWeArePage() {
           </h2>
           <SectionDivider variant="red" className="mt-8" />
           <p
-            className="mx-auto mt-8 max-w-[1283px] text-[16px] font-light leading-[30px] text-black lg:text-[18px] lg:leading-[35px]"
+            className="mx-auto mt-8 max-w-[1283px] text-[16px] font-light leading-[30px] text-black"
             data-reveal
             data-reveal-delay="120"
           >

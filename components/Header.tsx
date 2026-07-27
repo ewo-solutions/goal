@@ -31,7 +31,7 @@ export default function Header() {
               <div key={link.href} className="group relative">
                 <Link
                   href={link.href}
-                  className={`nav-underline flex items-center gap-2 p-[10px] text-[18px] capitalize text-white ${
+                  className={`nav-underline flex items-center gap-2 p-[10px] text-[18px] capitalize text-white transition-[font-weight] hover:font-bold ${
                     pathname.startsWith(link.href) ? "font-bold" : "font-normal"
                   }`}
                 >
@@ -41,11 +41,13 @@ export default function Header() {
                   </svg>
                 </Link>
                 <div className="invisible absolute left-0 top-full min-w-[320px] rounded-b-[20px] bg-goal-navy py-2 opacity-0 shadow-xl transition-all duration-150 group-hover:visible group-hover:opacity-100">
-                  {link.children.map((child) => (
+                  {link.children.map((child, i) => (
                     <Link
                       key={child.href}
                       href={child.href}
-                      className="block px-6 py-2.5 text-[16px] text-white transition-colors hover:bg-goal-red"
+                      className={`block px-6 py-2.5 text-[16px] text-white transition-colors hover:bg-goal-red hover:font-bold ${
+                        i === 0 ? "border-b border-white/10 pb-3 font-semibold" : ""
+                      }`}
                     >
                       {child.label}
                     </Link>
@@ -56,7 +58,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`nav-underline p-[10px] text-[18px] capitalize text-white ${
+                className={`nav-underline p-[10px] text-[18px] capitalize text-white transition-[font-weight] hover:font-bold ${
                   pathname === link.href ? "font-bold" : "font-normal"
                 }`}
               >
@@ -66,7 +68,7 @@ export default function Header() {
           )}
           <Link
             href="/talk-to-us"
-            className="ml-4 rounded-full bg-goal-red px-[25px] py-[16px] text-[18px] leading-[1.2] text-white transition-opacity hover:opacity-90"
+            className="ml-4 rounded-full bg-goal-red px-[25px] py-[16px] text-[18px] leading-[1.2] text-white transition-all hover:font-bold hover:opacity-90"
           >
             Talk To Us
           </Link>
@@ -102,7 +104,7 @@ export default function Header() {
               <Link
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className={`block py-3 text-[18px] capitalize text-white ${
+                className={`block py-3 text-[18px] capitalize text-white hover:font-bold ${
                   pathname === link.href ? "font-bold" : "font-normal"
                 }`}
               >
@@ -115,7 +117,7 @@ export default function Header() {
                       key={child.href}
                       href={child.href}
                       onClick={() => setMobileOpen(false)}
-                      className="block py-2 text-[16px] font-light text-white/90"
+                      className="block py-2 text-[16px] font-light text-white/90 hover:font-bold"
                     >
                       {child.label}
                     </Link>
@@ -127,7 +129,7 @@ export default function Header() {
           <Link
             href="/talk-to-us"
             onClick={() => setMobileOpen(false)}
-            className="mt-4 inline-block rounded-full bg-goal-red px-[25px] py-[14px] text-[18px] text-white"
+            className="mt-4 inline-block rounded-full bg-goal-red px-[25px] py-[14px] text-[18px] text-white hover:font-bold"
           >
             Talk To Us
           </Link>

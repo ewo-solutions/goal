@@ -52,7 +52,7 @@ export default function ContactSection() {
           >
             Let Us Simplify Your Next Move
           </h2>
-          <p className="mt-8 text-[18px] font-light leading-[35px] text-white" data-reveal="right" data-reveal-delay="100">
+          <p className="mt-8 text-[16px] font-light leading-[28px] text-white" data-reveal="right" data-reveal-delay="100">
             Have A Question?
             <br />
             Talk To Us!
@@ -113,7 +113,7 @@ export default function ContactSection() {
 
             <button
               type="submit"
-              className="mt-8 rounded-full bg-goal-red px-[25px] py-[20px] text-[18px] leading-[1.2] text-white transition-opacity hover:opacity-90"
+              className="mt-8 rounded-full bg-goal-red px-[25px] py-[20px] text-[18px] leading-[1.2] text-white transition-all hover:font-bold hover:opacity-90"
             >
               Submit
             </button>

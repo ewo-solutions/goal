@@ -11,8 +11,8 @@ export const site = {
   email: "info@goalogistics.com",
   address: "3800 Viking Dr. Bossier City, LA, 71111, USA",
   social: {
-    linkedin: "https://www.linkedin.com/",
-    facebook: "https://www.facebook.com/",
+    linkedin: "https://www.linkedin.com/company/gulf-of-america-logistics/?viewAsMember=true",
+    facebook: "https://www.facebook.com/profile.php?id=61584967577965",
   },
 };
 
@@ -27,13 +27,16 @@ export const services = [
 
 export const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Who We Are", href: "/who-we-are" },
   {
     label: "What We Do",
     href: "/what-we-do",
-    children: services.map((s) => ({
-      label: s.title,
-      href: `/what-we-do/${s.slug}`,
-    })),
+    children: [
+      { label: "Our Solutions & Expertise", href: "/what-we-do" },
+      ...services.map((s) => ({
+        label: s.title,
+        href: `/what-we-do/${s.slug}`,
+      })),
+    ],
   },
+  { label: "Who We Are", href: "/who-we-are" },
 ];

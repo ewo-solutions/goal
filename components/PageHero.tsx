@@ -19,6 +19,8 @@ export default function PageHero({
   return (
     <section className="relative flex min-h-[420px] flex-col items-center justify-center overflow-hidden bg-goal-navy lg:min-h-[523px]">
       <Image src={image} alt="" fill priority sizes="100vw" className="fx-hero-zoom object-cover" />
+      {/* Fades the sticky navy header into the hero photo instead of a hard edge */}
+      <div className="absolute inset-x-0 top-0 h-[220px] bg-gradient-to-b from-goal-navy to-goal-navy/0" />
       <div className="absolute inset-0 bg-gradient-to-b from-goal-navy/0 to-goal-navy" />
       <div className="absolute inset-0 bg-gradient-to-l from-goal-navy/0 to-goal-navy" />
       <div className="relative z-10 mx-auto max-w-[900px] px-6 py-20 text-center" data-reveal-group>

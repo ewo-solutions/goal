@@ -40,7 +40,7 @@ export default function TalkToUsPage() {
           </h2>
           <SectionDivider variant="red" className="mt-8" />
           <p
-            className="mx-auto mt-8 max-w-[1144px] text-[16px] font-light leading-[30px] text-black lg:text-[18px] lg:leading-[35px]"
+            className="mx-auto mt-8 max-w-[1144px] text-[16px] font-light leading-[30px] text-black"
             data-reveal
             data-reveal-delay="120"
           >

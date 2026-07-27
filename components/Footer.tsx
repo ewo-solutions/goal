@@ -3,10 +3,9 @@ import Image from "next/image";
 import { site } from "@/lib/site";
 
 const quickLinks = [
-  { label: "Our Mission", href: "/who-we-are" },
-  { label: "Our Services", href: "/what-we-do" },
   { label: "What We Do", href: "/what-we-do" },
   { label: "Meet The Team", href: "/who-we-are" },
+  { label: "Our Mission", href: "/who-we-are" },
   { label: "Contact Us", href: "/talk-to-us" },
 ];
 
@@ -42,7 +41,7 @@ export default function Footer() {
                 className="h-auto w-[220px] lg:w-[282px]"
               />
             </Link>
-            <p className="mt-8 max-w-[460px] text-[18px] font-light leading-[30px] lg:text-[22px] lg:leading-[25px]">
+            <p className="mt-8 max-w-[460px] text-[15px] font-light leading-[24px] lg:text-[16px] lg:leading-[26px]">
               Gulf of America Logistics (GoAL) is a veteran-owned American-led
               logistics company that moves oversized, heavy haul, project
               cargo, and data center builds across the United States and
@@ -59,7 +58,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-[18px] font-light leading-[25px] transition-opacity hover:opacity-80 lg:text-[22px]"
+                    className="text-[16px] font-light leading-[25px] transition-all hover:font-bold hover:opacity-80 lg:text-[18px]"
                   >
                     {link.label}
                   </Link>
@@ -71,7 +70,7 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h3 className="text-[22px] font-bold leading-[1.2] lg:text-[26px]">Contact us</h3>
-            <div className="mt-6 space-y-4 text-[18px] font-light leading-[25px] lg:text-[22px]">
+            <div className="mt-6 space-y-4 text-[15px] font-light leading-[25px] lg:text-[16px]">
               <div>
                 <p className="font-semibold">Phone:</p>
                 <a href={`tel:${site.phone.replace(/[^+\d]/g, "")}`} className="hover:opacity-80">
@@ -130,7 +129,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="flex h-[55px] w-[240px] items-center gap-3 rounded-[20px] border border-white px-6 lg:w-[317px]">
+          <div className="flex h-[55px] w-[180px] items-center gap-3 rounded-[20px] border border-white px-6">
             <Image
               src="/icons/flag-us.png"
               alt=""
@@ -138,10 +137,7 @@ export default function Footer() {
               height={22}
               className="h-[22px] w-[34px] object-cover"
             />
-            <span className="text-[20px] font-light">English</span>
-            <svg width="10" height="6" viewBox="0 0 10 6" fill="none" className="ml-auto" aria-hidden>
-              <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-            </svg>
+            <span className="text-[18px] font-light">English</span>
           </div>
         </div>
       </div>

@@ -44,7 +44,7 @@ export default async function ServicePage({
         titleBold={page.hero.titleBold}
         image={page.hero.image}
       >
-        <p className="mx-auto mt-8 max-w-[1310px] text-[16px] font-light leading-[30px] text-white lg:text-[18px] lg:leading-[35px]">
+        <p className="mx-auto mt-8 max-w-[1310px] text-[16px] font-light leading-[30px] text-white">
           {page.hero.body}
         </p>
       </PageHero>
@@ -52,7 +52,7 @@ export default async function ServicePage({
       {/* Logistics that deliver — glass cards over map */}
       <section className="relative overflow-hidden bg-white">
         <Image
-          src="/images/why-choose-bg.png"
+          src="/images/why-choose-bg.svg"
           alt=""
           fill
           sizes="100vw"
@@ -68,7 +68,7 @@ export default async function ServicePage({
           </h2>
           <SectionDivider variant="red" className="mt-8" />
           <p
-            className="mx-auto mt-8 max-w-[1002px] text-[16px] font-light leading-[30px] text-black lg:text-[18px] lg:leading-[35px]"
+            className="mx-auto mt-8 max-w-[1002px] text-[16px] font-light leading-[30px] text-black"
             data-reveal
             data-reveal-delay="120"
           >
@@ -79,14 +79,9 @@ export default async function ServicePage({
             {page.deliver.cards.map((card) => (
               <div
                 key={card.title}
-                className="fx-lift w-full max-w-[446px] rounded-[25px] border-[0.5px] border-goal-navy bg-white/5 px-10 py-14 shadow-[3px_3px_10px_0px_rgba(9,30,38,0.25)] backdrop-blur-[2.5px] sm:w-[calc(50%-20px)] lg:w-[calc(33.3%-27px)]"
+                className="fx-lift flex w-full max-w-[446px] items-center justify-center rounded-[25px] border-[0.5px] border-goal-navy bg-white/5 px-10 py-14 shadow-[3px_3px_10px_0px_rgba(9,30,38,0.25)] backdrop-blur-[2.5px] sm:w-[calc(50%-20px)] lg:w-[calc(33.3%-27px)]"
               >
-                <h3 className="text-[24px] font-bold leading-[1.2] text-goal-red lg:text-[26px]">
-                  {card.title}
-                </h3>
-                <p className="mt-4 text-[16px] font-light leading-[30px] text-black lg:text-[18px] lg:leading-[35px]">
-                  {card.body}
-                </p>
+                <p className="text-[16px] font-light leading-[30px] text-black">{card.body}</p>
               </div>
             ))}
           </div>
@@ -105,7 +100,7 @@ export default async function ServicePage({
           </h2>
           <SectionDivider variant="red" className="mt-8" />
           <p
-            className="mx-auto mt-8 max-w-[1434px] text-[16px] font-light leading-[30px] text-black lg:text-[18px] lg:leading-[35px]"
+            className="mx-auto mt-8 max-w-[1434px] text-[16px] font-light leading-[30px] text-black"
             data-reveal
             data-reveal-delay="120"
           >
@@ -119,7 +114,12 @@ export default async function ServicePage({
                   <Image src={item.icon} alt="" width={66} height={66} />
                 </div>
                 <h3 className="mt-8 text-[22px] font-bold leading-[1.3] text-black lg:text-[25px]">
-                  {item.title}
+                  {item.title.split("|").map((line, i, arr) => (
+                    <span key={line}>
+                      {line}
+                      {i < arr.length - 1 && <br />}
+                    </span>
+                  ))}
                 </h3>
                 <p className="mt-3 text-[16px] leading-[1.5] text-black">{item.body}</p>
               </div>

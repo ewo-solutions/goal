@@ -92,7 +92,7 @@ export default function WhatWeDoPage() {
           </h2>
           <SectionDivider variant="red" className="mt-8" />
           <p
-            className="mx-auto mt-8 max-w-[1028px] text-[16px] font-light leading-[30px] text-black lg:text-[18px] lg:leading-[35px]"
+            className="mx-auto mt-8 max-w-[1028px] text-[16px] font-light leading-[30px] text-black"
             data-reveal
             data-reveal-delay="120"
           >
@@ -124,7 +124,7 @@ export default function WhatWeDoPage() {
                   </p>
                   <Link
                     href={industry.href}
-                    className="mt-8 inline-block rounded-full border border-white px-[25px] py-[18px] text-[18px] capitalize leading-[1.2] text-white transition-colors hover:bg-white hover:text-goal-red"
+                    className="mt-8 inline-block rounded-full border border-white px-[25px] py-[18px] text-[18px] capitalize leading-[1.2] text-white transition-all hover:bg-white hover:font-bold hover:text-goal-red"
                   >
                     Get Started
                   </Link>

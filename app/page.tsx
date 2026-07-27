@@ -28,37 +28,114 @@ export const metadata: Metadata = {
 };
 
 const serviceCards = [
-  { title: "Turnkey Project Solutions", image: "/images/service-turnkey.png" },
-  { title: "Project Management", image: "/images/service-project-management.png" },
-  { title: "Project Cargo", image: "/images/service-project-cargo.png" },
-  { title: "Over-the-Road Trucking", image: "/images/service-otr-trucking.png" },
-  { title: "Rail Transport", image: "/images/service-rail.png" },
-  { title: "Ocean Freight", image: "/images/service-ocean.png" },
-  { title: "Air Freight", image: "/images/service-air.png" },
-  { title: "Barge Services", image: "/images/service-barge.png" },
+  {
+    title: "Turnkey Project Solutions",
+    image: "/images/service-turnkey.png",
+    bullets: [
+      "Route and feasibility studies",
+      "Engineered lift plans",
+      "On-site supervision",
+      "Supply chain optimization",
+      "Multi-sector expertise",
+    ],
+  },
+  {
+    title: "Project Management",
+    image: "/images/service-project-management.png",
+    bullets: [
+      "Project manager single point of contact",
+      "EPC-aligned systems and project controls",
+      "Risk planning and mitigation",
+      "Documentation control and compliance",
+      "Reporting and milestone visibility",
+    ],
+  },
+  {
+    title: "Project Cargo",
+    image: "/images/service-project-cargo.png",
+    bullets: [
+      "Heavy haul, oversized and high-value cargo handling",
+      "Engineered lift and securement design",
+      "Barge and vessel charter support",
+      "Warehousing and staging",
+      "Cargo kitting and preparation",
+    ],
+  },
+  {
+    title: "Over-the-Road Trucking",
+    image: "/images/service-otr-trucking.png",
+    bullets: [
+      "Heavy haul and over-dimensional freight transport",
+      "Real-time GPS tracking and milestone updates",
+      "Reliable U.S. heavy haul and specialized road transport coverage",
+      "Extended capacity through carrier partnerships",
+    ],
+  },
+  {
+    title: "Rail Transport",
+    image: "/images/service-rail.png",
+    bullets: [
+      "Specialized railcars for heavy and dimensional cargo",
+      "Dimensional load planning and handling expertise",
+      "AAR-compliant cargo securement",
+      "Coordinated clearance and multi-modal transport integration",
+      "Cost-effective solution for specialized cargo",
+    ],
+  },
+  {
+    title: "Ocean Freight",
+    image: "/images/service-ocean.png",
+    bullets: [
+      "FCL, LCL, breakbulk, and OOG cargo handling",
+      "Priority carrier space allocation",
+      "Dangerous goods and temperature-sensitive shipment handling",
+      "Customs clearance and port coordination",
+    ],
+  },
+  {
+    title: "Air Freight",
+    image: "/images/service-air.png",
+    bullets: [
+      "Charter and express air freight services",
+      "IATA-compliant dangerous goods handling",
+      "Priority access for critical and high-value shipments",
+      "Door-to-door multimodal freight integration",
+    ],
+  },
+  {
+    title: "Barge Services",
+    image: "/images/service-barge.png",
+    bullets: [
+      "Engineering-led securement and loading operations",
+      "HSSE compliance and operational oversight",
+      "Real-time cargo tracking",
+      "Transport cost control",
+      "Complete inland waterway transport management",
+    ],
+  },
 ];
 
 const features = [
   {
-    title: "Technical Expertise",
+    titleLines: ["Technical", "Expertise"],
     image: "/images/feature-technical.png",
     icon: "/icons/icon-settings.svg",
     body: "Cargo movements are planned and coordinated through route surveys, CAD drawings, engineered lift plans, and securement design. Heavy-haul trailers and transport mode changes across truck, barge, and rail accommodate multifaceted shipment requirements and complex project logistics operations.",
   },
   {
-    title: "Project Cargo Specialists",
+    titleLines: ["Project Cargo", "Specialists"],
     image: "/images/feature-cargo.png",
     icon: "/icons/icon-truck.svg",
     body: "Oversized, overweight, and high-value equipment is handled with engineered lift plans, and securement designs for road, barge, air, and marine transport operations. Warehousing and laydown yards provide staging, inventory control, and kitting services for efficient project cargo handling and operational readiness.",
   },
   {
-    title: "Multimodal Transport Network",
+    titleLines: ["Multimodal Transport", "Network"],
     image: "/images/feature-multimodal.png",
     icon: "/icons/icon-sync.svg",
     body: "Truck, barge, rail, ocean, and air transport is tracked with real-time GPS tracking and milestone updates. Trucking line partnerships expand our capabilities, while specialized handling for dangerous goods, temperature-sensitive cargo, and priority space through carrier relationships supports complex global shipments.",
   },
   {
-    title: "EPC Project Standards",
+    titleLines: ["EPC Project", "Standards"],
     image: "/images/feature-epc.png",
     icon: "/icons/icon-paste.svg",
     body: "Projects are managed using EPC-aligned systems, schedules, risk management, and documentation control. Dedicated project managers provide single-point accountability, contingency planning, and change readiness as project requirements and operational conditions shift.",
@@ -91,7 +168,7 @@ export default function HomePage() {
             <br />
             <span className="font-bold">Global Project Logistics.</span>
           </h1>
-          <p className="mx-auto mt-8 max-w-[995px] text-[16px] font-light leading-[30px] text-white lg:text-[18px] lg:leading-[35px]">
+          <p className="mx-auto mt-8 max-w-[995px] text-[16px] font-light leading-[30px] text-white">
             Gulf of America Logistics (GoAL) is a veteran-owned project
             logistics and heavy haul transportation company with Gulf Coast
             roots specializing in heavy haul, oversized cargo, complex project
@@ -100,7 +177,7 @@ export default function HomePage() {
           </p>
           <Link
             href="/what-we-do"
-            className="mt-12 inline-block rounded-full bg-white px-[25px] py-[20px] text-[18px] capitalize leading-[1.2] text-goal-red transition-opacity hover:opacity-90"
+            className="mt-12 inline-block rounded-full bg-white px-[25px] py-[20px] text-[18px] capitalize leading-[1.2] text-goal-red transition-all hover:font-bold hover:opacity-90"
           >
             What we do
           </Link>
@@ -141,7 +218,7 @@ export default function HomePage() {
           </h2>
           <SectionDivider variant="red" className="mt-8" />
           <p
-            className="mx-auto mt-8 max-w-[848px] text-[16px] font-light leading-[30px] text-black lg:text-[18px] lg:leading-[35px]"
+            className="mx-auto mt-8 max-w-[848px] text-[16px] font-light leading-[30px] text-black"
             data-reveal
             data-reveal-delay="120"
           >
@@ -153,7 +230,12 @@ export default function HomePage() {
 
           <div className="mt-16 grid grid-cols-1 gap-[17px] sm:grid-cols-2 lg:grid-cols-4" data-reveal-group>
             {serviceCards.map((card) => (
-              <ServiceCard key={card.title} title={card.title} image={card.image} />
+              <ServiceCard
+                key={card.title}
+                title={card.title}
+                image={card.image}
+                bullets={card.bullets}
+              />
             ))}
           </div>
         </div>
@@ -173,7 +255,7 @@ export default function HomePage() {
 
           <div className="mt-16 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8" data-reveal-group>
             {features.map((feature) => (
-              <div key={feature.title} className="group flex flex-col items-center">
+              <div key={feature.titleLines.join(" ")} className="group flex flex-col items-center">
                 <div className="relative transition-transform duration-500 ease-out group-hover:scale-105">
                   <div className="relative h-[179px] w-[179px] overflow-hidden rounded-full bg-goal-navy">
                     <Image
@@ -190,7 +272,9 @@ export default function HomePage() {
                   </div>
                 </div>
                 <h3 className="mt-8 max-w-[312px] text-[26px] font-bold leading-[1.2] text-white">
-                  {feature.title}
+                  {feature.titleLines[0]}
+                  <br />
+                  {feature.titleLines[1]}
                 </h3>
                 <p className="mt-6 max-w-[294px] text-[16px] leading-[1.5] text-white">
                   {feature.body}
@@ -204,7 +288,7 @@ export default function HomePage() {
       {/* Why choose GoAL */}
       <section className="relative overflow-hidden bg-white">
         <Image
-          src="/images/why-choose-bg.png"
+          src="/images/why-choose-bg.svg"
           alt=""
           fill
           sizes="100vw"
@@ -222,6 +306,23 @@ export default function HomePage() {
       </section>
 
       <Marquee />
+
+      {/* White buffer section under the marquee, per QC request. The QC
+       * screenshot was cropped before showing this section's content, so
+       * this is a best-guess visual spacer pending confirmation of the
+       * exact mockup content. */}
+      <section className="relative overflow-hidden bg-white py-16 lg:py-20">
+        <Image
+          src="/images/why-choose-bg.svg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover object-center opacity-40"
+        />
+        <div className="relative mx-auto max-w-[1580px] px-6 text-center">
+          <SectionDivider variant="red" />
+        </div>
+      </section>
 
       <ContactSection />
     </>

@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Preloader from "@/components/Preloader";
 import CurtainTransition from "@/components/CurtainTransition";
 import ScrollFx from "@/components/ScrollFx";
+import BackToTop from "@/components/BackToTop";
 import { site, siteUrl } from "@/lib/site";
 import "./globals.css";
 
@@ -84,6 +85,7 @@ const localBusinessJsonLd = {
     postalCode: "71111",
     addressCountry: "US",
   },
+  sameAs: [site.social.linkedin, site.social.facebook],
 };
 
 export default function RootLayout({
@@ -107,6 +109,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <BackToTop />
       </body>
     </html>
   );

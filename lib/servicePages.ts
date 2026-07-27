@@ -30,12 +30,12 @@ export const servicePages: ServicePageData[] = [
     slug: "lead-logistics-provider",
     metaTitle: "Lead Logistics Provider for Capital Projects",
     metaDescription:
-      "Supply chain and logistics management for capital projects and industrial operations through a fourth-party logistics (4PL) operating model.",
+      "End-to-end 4PL logistics integrating suppliers, contractors, transport providers, and warehouses to deliver visibility, coordination, and reliable project execution across the entire lifecycle.",
     hero: {
       pill: "industries we serve",
       title: "Lead Logistics Provider",
       titleBold: "for Capital Projects",
-      body: "Supply chain and logistics management for capital projects and industrial operations through a fourth-party logistics (4PL) operating model. Our central control tower integrates suppliers, contractors, transportation providers, warehouses, and project stakeholders within a single governance framework, providing visibility, schedule performance, and delivery continuity throughout the project lifecycle.",
+      body: "End-to-end 4PL logistics integrating suppliers, contractors, transport providers, and warehouses to deliver visibility, coordination, and reliable project execution across the entire lifecycle.",
       image: "/images/hero-lead-logistics.png",
     },
     deliver: {
@@ -71,32 +71,32 @@ export const servicePages: ServicePageData[] = [
       body: "Coordinating suppliers, transportation providers, warehouses, trade contractors, and project teams requires clear accountability, reporting structures, and communication protocols. By connecting logistics operations, procurement activities, materials tracking, and milestone tracking within a single management framework, all stakeholders maintain visibility, alignment, and control as projects progress from planning and procurement through construction and operations to ensure schedule performance, delivery continuity, and final site handover.",
       items: [
         {
-          title: "Logistics Execution Planning",
+          title: "Logistics Execution|Planning",
           icon: "/icons/llp-planning.svg",
           body: "Route surveys, material flow mapping, delivery strategies, infrastructure assessments, and execution planning establish logistics requirements during the early stages of the project lifecycle, supporting procurement planning, construction readiness, and execution activities.",
         },
         {
-          title: "Supplier & Contractor Integration",
+          title: "Supplier & Contractor|Integration",
           icon: "/icons/llp-integration.svg",
           body: "Shared schedules, milestones, and reporting requirements coordinate procurement teams, suppliers, manufacturers, contractors, and logistics providers around common objectives. Clear reporting structures and communication protocols help maintain accountability and keep project activities progressing.",
         },
         {
-          title: "Material Readiness",
+          title: "Material|Readiness",
           icon: "/icons/llp-readiness.svg",
           body: "Fabrication progress, procurement status, warehouse operations, transportation schedules, and delivery commitments are monitored against project requirements, tracking material status throughout the supply chain to support construction schedules and installation activities.",
         },
         {
-          title: "Project Controls & Reporting",
+          title: "Project Controls &|Reporting",
           icon: "/icons/llp-controls.svg",
           body: "Logistics operations, supplier milestones, transportation status, material availability, and KPIs are consolidated into a structured reporting system, providing project teams with timely visibility regarding logistics performance, milestone achievement, and material availability.",
         },
         {
-          title: "Risk & Constraint Management",
+          title: "Risk & Constraint|Management",
           icon: "/icons/llp-risk.svg",
           body: "Transportation disruptions, supplier delays, documentation issues, infrastructure limitations, and schedule conflicts are monitored throughout the project lifecycle. Established escalation and mitigation procedures provide a structured approach for resolving issues and maintaining schedule performance.",
         },
         {
-          title: "Logistics Governance",
+          title: "Logistics|Governance",
           icon: "/icons/llp-governance.svg",
           body: "Management procedures, communication protocols, performance measurements, and reporting structures provide oversight throughout the project and asset lifecycle. Governance systems support operational compliance, manage multi-vendor interfaces, and establish clear accountability across all stakeholders.",
         },
@@ -107,12 +107,12 @@ export const servicePages: ServicePageData[] = [
     slug: "data-center-project-logistics",
     metaTitle: "Data Center Project Logistics",
     metaDescription:
-      "Engineered logistics for hyperscale and enterprise data centers and semiconductor projects, integrating storage, transport, and site delivery within a coordinated 3PL operating model.",
+      "Engineered 3PL logistics for hyperscale data centers and semiconductor projects, coordinating storage, transport, and site delivery for safe, efficient, and on-schedule execution.",
     hero: {
       pill: "industries we serve",
       title: "Data Center",
       titleBold: "Project Logistics",
-      body: "Engineered logistics for hyperscale and enterprise data centers and semiconductor projects, integrating storage, transport, and site delivery within a coordinated 3PL operating model. Each movement is planned in line with deployment schedules to maintain safety, timing, and operational flow from the warehouse straight to the construction worksite.",
+      body: "Engineered 3PL logistics for hyperscale data centers and semiconductor projects, coordinating storage, transport, and site delivery for safe, efficient, and on-schedule execution.",
       image: "/images/hero-data-center.png",
     },
     deliver: {
@@ -148,32 +148,32 @@ export const servicePages: ServicePageData[] = [
       body: "As your project third-party logistics (3PL) provider, you gain a single interface to coordinate every shipment, staging move, and delivery in line with your Key Performance Indicators (KPIs) and milestones. Communication, reporting, and shipment visibility are centralized across suppliers to keep operations aligned, reduce site congestion, and improve safety. Every delivery follows a just-in-time schedule to support construction progress while helping lower overall project costs through efficiency and control.",
       items: [
         {
-          title: "Warehousing & Inventory Management",
+          title: "Warehousing & Inventory|Management",
           icon: "/icons/dc-warehousing.svg",
           body: "Materials are stored in secure, climate-controlled facilities located onsite or near major data center hubs. Dedicated vendor zones hold OEM equipment safely, providing short- and long-term storage options with full visibility.",
         },
         {
-          title: "Trucking & Transportation",
+          title: "Trucking &|Transportation",
           icon: "/icons/dc-trucking.svg",
           body: "Freight is transported through regional and long-haul coordination supported by an insured, Department of Transportation (DOT) compliant fleet. Specialized and heavy-haul capability supports critical components reaching sites safely and on schedule.",
         },
         {
-          title: "Truck Coordination & Staging",
+          title: "Truck Coordination &|Staging",
           icon: "/icons/dc-staging.svg",
           body: "Deliveries are organized through pre-scheduled dock appointments and managed staging yards. Real-time tracking supports scheduling accuracy, reduces congestion, and maintains efficient movement from warehouse to job site.",
         },
         {
-          title: "Warehouse Management System (WMS)",
+          title: "Warehouse Management|System (WMS)",
           icon: "/icons/dc-wms.svg",
           body: "Real-time visibility of inventory through barcode tracking and digital confirmation from receipt to delivery. Reporting is customized to GC and EPC requirements, keeping every movement accurate and traceable.",
         },
         {
-          title: "Offload, Rigging & Material Handling",
+          title: "Offload, Rigging &|Material Handling",
           icon: "/icons/dc-rigging.svg",
           body: "High-value equipment handled by certified rigging crews using safe-lift systems designed for generators, switchgear, and prefabricated modules. Each lift is planned to prevent delays, minimize risk, and maintain control during site delivery.",
         },
         {
-          title: "Inter-Site Logistics",
+          title: "Inter-Site|Logistics",
           icon: "/icons/dc-intersite.svg",
           body: "Materials transfer between phases or buildings with organized handling of returnables, scrap removal, and vendor returns. Staging support for modular builds and assembly operations keeps projects on track.",
         },
@@ -184,12 +184,12 @@ export const servicePages: ServicePageData[] = [
     slug: "oil-and-gas-logistics",
     metaTitle: "Oil & Gas Logistics",
     metaDescription:
-      "Field and operational logistics services for upstream, midstream, and downstream energy sectors, managing equipment, materials, hazardous cargo, and critical spare parts.",
+      "Integrated logistics for upstream, midstream, and downstream operations, managing transport, storage, marine logistics, and hazardous cargo to ensure safe, uninterrupted operations.",
     hero: {
       pill: "industries we serve",
       title: "Oil & Gas",
       titleBold: "Logistics",
-      body: "Field and operational logistics services for upstream, midstream, and downstream energy sectors, managing the movement of equipment, materials, hazardous cargo, offshore supplies, and critical spare parts. Transportation, storage, marine logistics, and site delivery activities are coordinated to maintain operational continuity across onshore and offshore operations.",
+      body: "Integrated logistics for upstream, midstream, and downstream operations, managing transport, storage, marine logistics, and hazardous cargo to ensure safe, uninterrupted operations.",
       image: "/images/hero-oil-gas.png",
     },
     deliver: {
@@ -225,32 +225,32 @@ export const servicePages: ServicePageData[] = [
       body: "Oil and gas operations depend on the timely movement of equipment, personnel, critical spares, dangerous goods, and high-value cargo across onshore and offshore locations. Rig demobilizations and mobilizations, marine support services, supply base activities, project cargo movements of oversized modules and pipelines, and expedited deliveries are coordinated in line with operational priorities to back ongoing upstream, midstream, and downstream production, maintenance, and field requirements.",
       items: [
         {
-          title: "Onshore & Offshore Moves",
+          title: "Onshore &|Offshore Moves",
           icon: "/icons/og-rig-moves.svg",
           body: "Planning, transportation, lifting requirements, route assessments, and equipment deployment activities facilitate the relocation of drilling rigs and associated infrastructure between operating locations.",
         },
         {
-          title: "Offshore Logistics Support",
+          title: "Offshore Logistics|Support",
           icon: "/icons/og-offshore.svg",
           body: "Marine coordination, vessel scheduling, crew transfers, cargo handling, and shore base activities support offshore platforms, drilling units, floating production assets, and subsea operations.",
         },
         {
-          title: "Supply Base Operations",
+          title: "Supply Base|Operations",
           icon: "/icons/og-supply-base.svg",
           body: "Warehouses, yards, intersite staging areas, and inventory management processes supply drilling programs, production activities, maintenance requirements, and operations with equipment, consumables, and critical spares.",
         },
         {
-          title: "Project Cargo & Heavy Lift",
+          title: "Project Cargo &|Heavy Lift",
           icon: "/icons/og-heavy-lift.svg",
           body: "Transportation planning, route surveys, heavy-haul equipment, lifting operations, and delivery sequencing streamline the movement of oversized, overweight, and high-value cargo to operating facilities and project sites.",
         },
         {
-          title: "Hazardous Materials Management",
+          title: "Hazardous Materials|Management",
           icon: "/icons/og-hazmat.svg",
           body: "Handling, storage, transportation, documentation, and regulatory compliance activities support the safe movement of hazardous materials, chemicals, fuels, and regulated cargo.",
         },
         {
-          title: "Emergency & Expedited Response",
+          title: "Emergency &|Expedited Response",
           icon: "/icons/og-emergency.svg",
           body: "Priority transportation services fulfill urgent operational requirements, equipment failures, maintenance events, and production-critical situations where delays may impact field activities or asset performance.",
         },
@@ -261,12 +261,12 @@ export const servicePages: ServicePageData[] = [
     slug: "wind-energy-logistics",
     metaTitle: "Wind Energy Logistics",
     metaDescription:
-      "Project logistics services for onshore and offshore wind energy developments, coordinating turbine components, installation equipment, and project cargo delivery.",
+      "Specialized logistics for wind energy projects, coordinating turbine components, transport, port operations, and site delivery to support efficient construction and on-time installation.",
     hero: {
       pill: "industries we serve",
       title: "Wind Energy",
       titleBold: "Logistics",
-      body: "Project logistics services for onshore and offshore wind energy developments, coordinating the movement of turbine components, installation equipment, and project cargo from manufacturing facilities to project sites. Transportation planning, port operations, marshalling activities, and delivery programs are structured around construction schedules and installation requirements.",
+      body: "Specialized logistics for wind energy projects, coordinating turbine components, transport, port operations, and site delivery to support efficient construction and on-time installation.",
       image: "/images/hero-wind-energy.png",
     },
     deliver: {
@@ -302,32 +302,32 @@ export const servicePages: ServicePageData[] = [
       body: "Onshore and offshore wind energy developments depend on the timely movement of oversized components, specialized installation equipment, and high-value cargo from manufacturing facilities to site. Transport engineering, permit planning, route planning, specialized haulage configurations, marshalling yard operations, port operations, and marine vessel coordination are integrated with installation schedules to support continuous turbine erection, component assembly, and foundation activities.",
       items: [
         {
-          title: "Transport Engineering & Route Planning",
+          title: "Transport Engineering &|Route Planning",
           icon: "/icons/wind-route-planning.svg",
           body: "Feasibility studies, swept-path analysis, bridge assessments, permit acquisition, escort planning, and stakeholder coordination facilitate the safe movement of wind turbine components across public road networks and marine transport lanes.",
         },
         {
-          title: "Onshore Wind Logistics",
+          title: "Onshore Wind|Logistics",
           icon: "/icons/wind-transport.svg",
           body: "Transportation planning and execution manage the movement of turbine blades, towers, nacelles, hub assemblies, and associated components from manufacturing facilities, ports, and storage locations to land-based construction footprints and onshore project sites.",
         },
         {
-          title: "Installation Support & Delivery Sequencing",
+          title: "Installation Support &|Delivery Sequencing",
           icon: "/icons/wind-sequencing.svg",
           body: "Delivery schedules are integrated with crane availability, installation programs, and site readiness requirements to assist turbine erection activities while reducing unnecessary handling and onsite storage across all active areas.",
         },
         {
-          title: "Marshalling Yard & Staging Operations",
+          title: "Marshalling Yard &|Staging Operations",
           icon: "/icons/wind-marshalling.svg",
           body: "Temporary storage, inventory control, component inspection, cargo preparation, intersite staging, and yard activities supply the organized flow of equipment between ports, storage locations, and construction sites.",
         },
         {
-          title: "Port Operations & Vessel Coordination",
+          title: "Port Operations &|Vessel Coordination",
           icon: "/icons/wind-port.svg",
           body: "Port handling, cargo preparation, vessel scheduling, loading operations, and marine coordination aid offshore wind projects requiring the transfer of large components to installation vessels.",
         },
         {
-          title: "Offshore Wind Logistics",
+          title: "Offshore Wind|Logistics",
           icon: "/icons/wind-offshore.svg",
           body: "Transportation, port services, marshalling activities, marine support, and component delivery programs assist offshore wind developments from fabrication and storage through offshore installation campaigns.",
         },
@@ -338,12 +338,12 @@ export const servicePages: ServicePageData[] = [
     slug: "specialized-trucking-and-heavy-haul",
     metaTitle: "Specialized Trucking & Heavy Haul",
     metaDescription:
-      "Heavy-haul transportation solutions for oversized, overweight, out-of-gauge (OOG), and high-value cargo, with specialized equipment and transport engineering.",
+      "Heavy-haul transport for oversized, overweight, OOG, and high-value cargo, combining route planning, permit coordination, and transport engineering for safe, reliable delivery.",
     hero: {
       pill: "industries we serve",
       title: "Specialized Trucking &",
       titleBold: "Heavy Haul",
-      body: "Heavy-haul transportation solutions for oversized, overweight, out-of-gauge (OOG), and high-value cargo require specialized equipment, route planning, permit coordination, and transport engineering. Tailored delivery strategies are developed around cargo dimensions, infrastructure constraints, regulatory requirements, site-specific conditions, and the unique handling requirements of the load from origin to destination.",
+      body: "Heavy-haul transport for oversized, overweight, OOG, and high-value cargo, combining route planning, permit coordination, and transport engineering for safe, reliable delivery.",
       image: "/images/hero-heavy-haul.png",
     },
     deliver: {
@@ -379,32 +379,32 @@ export const servicePages: ServicePageData[] = [
       body: "Transport engineering, state-by-state permitting, regulatory compliance, and heavy-haul equipment configurations are carefully integrated before any over-dimensional movement begins. Complex transport corridors, structural load restrictions, multi-axle trailers, SPMTs, and technical site deliveries are fully managed in line with project requirements to support the safe movement of overweight, out-of-gauge cargo, industrial execution, and final equipment placement.",
       items: [
         {
-          title: "Route Engineering & Feasibility Studies",
+          title: "Route Engineering &|Feasibility Studies",
           icon: "/icons/haul-route-engineering.svg",
           body: "Route surveys, bridge evaluations, swept-path analysis, access assessments, and infrastructure reviews determine the safest and most practical transportation strategy before movement begins.",
         },
         {
-          title: "Permit & Regulatory Coordination",
+          title: "Permit & Regulatory|Coordination",
           icon: "/icons/haul-permits.svg",
           body: "Permit applications, municipal approvals, escort requirements, utility notifications, and regulatory coordination support compliance across all transport jurisdictions.",
         },
         {
-          title: "Heavy-Haul Transportation",
+          title: "Heavy-Haul|Transportation",
           icon: "/icons/haul-transport.svg",
           body: "Specialized trailers, modular transport systems, and heavy-haul equipment support the movement of oversized, overweight, and out-of-gauge cargo across short-haul and long-distance routes.",
         },
         {
-          title: "SPMT & Modular Transport Solutions",
+          title: "SPMT & Modular|Transport Solutions",
           icon: "/icons/haul-spmt.svg",
           body: "Self-Propelled Modular Transporters (SPMTs) and hydraulic platform trailers support cargo requiring precise positioning, load distribution, and controlled movement within ports, industrial facilities, and intersite locations.",
         },
         {
-          title: "Site Delivery & Positioning",
+          title: "Site Delivery &|Positioning",
           icon: "/icons/haul-positioning.svg",
           body: "Transportation schedules, lifting plans, access reviews, and site coordination activities support the delivery and final placement of large equipment and project cargo.",
         },
         {
-          title: "Critical Asset Protection",
+          title: "Critical Asset|Protection",
           icon: "/icons/haul-high-value.svg",
           body: "Controlled handling procedures, cargo securing methods, movement monitoring, and transportation oversight support the movement of sensitive, critical, and high-value equipment.",
         },
@@ -415,12 +415,12 @@ export const servicePages: ServicePageData[] = [
     slug: "in-house-support-and-expediting",
     metaTitle: "In-House Support & Expediting",
     metaDescription:
-      "Embedded project support and supplier expediting services secure procurement continuity through active manufacturing monitoring and critical-path delivery acceleration.",
+      "Supplier expediting and project support services track production, verify milestones, and coordinate with vendors to maintain visibility, reduce delays, and protect project schedules.",
     hero: {
       pill: "industries we serve",
       title: "In-House Support",
       titleBold: "& Expediting",
-      body: "Embedded project support and supplier expediting services secure procurement continuity by actively monitoring manufacturing progress, verifying production milestones, and accelerating critical-path delivery timelines. Direct engagement with these external vendors and technical teams identifies emerging bottlenecks, ensuring visibility and schedule adherence throughout the entire procurement lifecycle.",
+      body: "Supplier expediting and project support services track production, verify milestones, and coordinate with vendors to maintain visibility, reduce delays, and protect project schedules.",
       image: "/images/hero-in-house.png",
     },
     deliver: {
@@ -456,32 +456,32 @@ export const servicePages: ServicePageData[] = [
       body: "Industrial supply chains and capital projects depend on accurate material tracking and direct supplier intervention. Sourcing status, manufacturer commitments, fabrication progress, shipment readiness, and critical milestones are monitored through direct engagement with technical vendors, internal teams, transportation providers, and operational personnel. Embedded support resources provide complete visibility of materials tracking while expediting activities help maintain adherence between procurement schedules, priorities, and final delivery commitments.",
       items: [
         {
-          title: "Embedded Logistics Support",
+          title: "Embedded Logistics|Support",
           icon: "/icons/ih-embedded.svg",
           body: "Dedicated personnel operate within your facility, project office, warehouse, or operational environment to support logistics coordination, material tracking, supplier communication, and day-to-day execution requirements.",
         },
         {
-          title: "Supplier Expediting",
+          title: "Supplier|Expediting",
           icon: "/icons/ih-expediting.svg",
           body: "Manufacturing schedules, production progress, inspection milestones, and shipment readiness are actively monitored through direct engagement with suppliers to support planned delivery requirements.",
         },
         {
-          title: "Material Status Verification",
+          title: "Material Status|Verification",
           icon: "/icons/ih-verification.svg",
           body: "Factory visits, supplier reviews, progress checks, and milestone validation activities provide accurate reporting on critical path materials, equipment, and intersite procurement packages.",
         },
         {
-          title: "Critical Path Monitoring",
+          title: "Critical Path|Monitoring",
           icon: "/icons/ih-monitoring.svg",
           body: "Priority materials, long-lead equipment, and schedule-sensitive deliveries are tracked against project milestones to identify potential delays and support timely intervention.",
         },
         {
-          title: "Expedited Freight Coordination",
+          title: "Expedited Freight|Coordination",
           icon: "/icons/ih-freight.svg",
           body: "Urgent transportation requirements are coordinated through dedicated transport solutions, priority freight services, courier networks, and accelerated delivery options when standard transit schedules cannot support operational requirements.",
         },
         {
-          title: "Reporting & Escalation Management",
+          title: "Reporting &|Escalation Management",
           icon: "/icons/ih-reporting.svg",
           body: "Structured reporting, exception tracking, issue escalation, and stakeholder communication provide visibility of material readiness, supplier performance, delivery status, and emerging risks throughout the supply chain.",
         },
