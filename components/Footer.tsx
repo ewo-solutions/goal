@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { site } from "@/lib/site";
+import LanguageSelector from "@/components/LanguageSelector";
 
 const quickLinks = [
   { label: "What We Do", href: "/what-we-do" },
@@ -129,16 +130,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="flex h-[55px] w-[180px] items-center gap-3 rounded-[20px] border border-white px-6">
-            <Image
-              src="/icons/flag-us.png"
-              alt=""
-              width={34}
-              height={22}
-              className="h-[22px] w-[34px] object-cover"
-            />
-            <span className="text-[18px] font-light">English</span>
-          </div>
+          <LanguageSelector />
         </div>
       </div>
     </footer>

@@ -158,7 +158,7 @@ export default function WhoWeArePage() {
 
           <div className="mx-auto mt-16 flex max-w-[1300px] flex-wrap justify-center gap-x-[114px] gap-y-16" data-reveal-group>
             {team.map((member) => (
-              <div key={member.name} className="group w-[280px] lg:w-[329px]">
+              <div key={member.name} className="w-[280px] lg:w-[329px]">
                 <div className="relative mx-auto w-fit">
                   <div className="relative h-[240px] w-[240px] overflow-hidden rounded-full bg-goal-navy lg:h-[329px] lg:w-[329px]">
                     <Image
@@ -166,7 +166,16 @@ export default function WhoWeArePage() {
                       alt={member.name}
                       fill
                       sizes="329px"
-                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                      className="object-cover"
+                    />
+                    {/* Blends the photos' light studio backdrop into the navy
+                     * section at the rim instead of a visible white ring. */}
+                    <div
+                      className="pointer-events-none absolute inset-0 rounded-full"
+                      style={{
+                        backgroundImage:
+                          "radial-gradient(circle, rgba(16,13,63,0) 38%, rgba(16,13,63,0.65) 68%, rgba(16,13,63,1) 100%)",
+                      }}
                     />
                   </div>
                   <div className="absolute right-0 top-0">
