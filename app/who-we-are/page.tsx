@@ -168,15 +168,6 @@ export default function WhoWeArePage() {
                       sizes="329px"
                       className="object-cover"
                     />
-                    {/* Blends the photos' light studio backdrop into the navy
-                     * section at the rim instead of a visible white ring. */}
-                    <div
-                      className="pointer-events-none absolute inset-0 rounded-full"
-                      style={{
-                        backgroundImage:
-                          "radial-gradient(circle, rgba(16,13,63,0) 38%, rgba(16,13,63,0.65) 68%, rgba(16,13,63,1) 100%)",
-                      }}
-                    />
                   </div>
                   <div className="absolute right-0 top-0">
                     <div className="absolute -left-[11px] -top-[11px] h-[98px] w-[98px] rounded-full bg-goal-red opacity-50" />
