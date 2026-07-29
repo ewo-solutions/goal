@@ -19,14 +19,35 @@ const missionCards = [
 ];
 
 const team = [
-  { name: "Mike Camara", role: "President & CEO", image: "/images/team-mike-camara.png" },
-  { name: "Sara Padilla", role: "Chief HR Officer", image: "/images/team-sara-padilla.png" },
-  { name: "Chuck Paddock", role: "Member", image: "/images/team-chuck-paddock.png" },
-  { name: "Ryan Wendland", role: "VP of Commercial", image: "/images/team-ryan-wendland.png" },
+  {
+    name: "Mike Camara",
+    role: "President & CEO",
+    image: "/images/team-mike-camara.png",
+    linkedin: "https://www.linkedin.com/in/mike-camara-vp07/",
+  },
+  {
+    name: "Sara Padilla",
+    role: "Chief HR Officer",
+    image: "/images/team-sara-padilla.png",
+    linkedin: "https://www.linkedin.com/in/sara-padilla-43437113/",
+  },
+  {
+    name: "Chuck Paddock",
+    role: "Member",
+    image: "/images/team-chuck-paddock.png",
+    linkedin: "https://www.linkedin.com/in/charles-paddock-b893b025/",
+  },
+  {
+    name: "Ryan Wendland",
+    role: "VP of Commercial",
+    image: "/images/team-ryan-wendland.png",
+    linkedin: "https://www.linkedin.com/in/ryan-wendland-93150b2a/",
+  },
   {
     name: "Jake Minner",
     role: "VP Operations – Specialized Trucking & Heavy Haul",
     image: "/images/team-jake-minner.png",
+    linkedin: "https://www.linkedin.com/in/jacob-minner-24539153/",
   },
 ];
 
@@ -172,7 +193,7 @@ export default function WhoWeArePage() {
                   <div className="absolute right-0 top-0">
                     <div className="absolute -left-[11px] -top-[11px] h-[98px] w-[98px] rounded-full bg-goal-red opacity-50" />
                     <a
-                      href="https://www.linkedin.com/"
+                      href={member.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`${member.name} on LinkedIn`}
