@@ -1,0 +1,17 @@
+/*
+Theme Name: Dr Sandeep Kumar Home
+Theme URI: https://drsandeepkumar.co.uk/
+Author: EWO Solutions
+Description: A single-page WordPress theme covering the home page only. Built for a personal-brand / practice-founder site (bio, services, testimonial, achievements, video interviews, charity work, contact form). Modelled on the drsandeepkumar.co.uk home page.
+Version: 1.0.0
+Requires at least: 6.0
+Requires PHP: 7.4
+Tested up to: 6.7
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: dsk-home
+*/
+
+/* Actual styles live in assets/css/main.css (enqueued in functions.php) so
+   they can be organised by section without bloating this required header
+   file. WordPress only reads the comment block above from style.css. */
