@@ -1,7 +1,8 @@
 <?php
 /**
- * Site header: sticky nav bar that starts transparent over the hero and
- * turns solid navy on scroll (see .site-header.is-scrolled in main.css).
+ * Site header: sticky nav bar that starts transparent (so it can sit over a
+ * full-bleed hero built in Elementor) and turns solid navy on scroll (see
+ * .site-header.is-scrolled in main.css).
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -51,6 +52,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<div class="site-header__actions">
 			<div class="site-header__social"><?php echo dsk_social_links(); // phpcs:ignore ?></div>
+			<?php /* Points at #enquiry — give the Elementor section/container holding [dsk_enquiry_form] a matching CSS ID (Advanced tab) so this scrolls to it. */ ?>
 			<a class="btn btn--outline-light" href="#enquiry"><?php esc_html_e( 'Contact Me', 'dsk-home' ); ?></a>
 			<button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
 				<span></span><span></span><span></span>

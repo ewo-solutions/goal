@@ -1,79 +1,80 @@
-# Dr Sandeep Kumar Home — WordPress theme
+# Dr Sandeep Kumar Home — WordPress theme (Elementor-ready)
 
-A **home page only** WordPress theme, structured after the section layout of
-drsandeepkumar.co.uk: hero with a typewriter headline, partner logo strip,
-bio, four service cards, a course/network CTA banner, testimonial, a longer
-story section, an achievements grid, a "global speaker" strip, video
-interview cards, a charity CTA, an Instagram banner, and a contact form.
-Every other URL on the site (including individual WordPress Pages) also
-renders this same home page — there are no other templates.
+This theme provides the **coded chrome** around a page you build visually in
+Elementor: a sticky header/nav, footer, back-to-top button, and a
+`[dsk_enquiry_form]` contact-form shortcode. It intentionally does **not**
+hard-code the home page's sections (hero, services, testimonial, etc.) —
+that content is built and edited in the Elementor page editor, which is
+what makes it drag-and-drop editable.
+
+## How it fits together
+
+- `page.php` and `index.php` are a normal WordPress Loop that calls
+  `the_content()` — this is the hook Elementor uses to take over a page's
+  content. There's no `front-page.php`; whichever Page you set as the
+  static front page (Settings → Reading) renders through `page.php`.
+- Build that page's content entirely in the Elementor editor: **Pages →
+  Add New → Edit with Elementor**.
+- For the contact form, add a **Shortcode** widget (or **HTML** widget)
+  anywhere in the layout and enter `[dsk_enquiry_form]`. It submits to
+  `admin-post.php` and emails the address set in Customize → Contact —
+  no Elementor Pro / Forms add-on required.
+- If you want the header's "Contact Me" button to scroll to that section,
+  give the Elementor section/container holding the form a **CSS ID** of
+  `enquiry` (Advanced tab in Elementor).
 
 ## Install
 
-1. Zip the `dr-sandeep-kumar` folder (this directory).
-2. In WordPress: **Appearance → Themes → Add New → Upload Theme**, upload
-   the zip, then **Activate**.
-3. Go to **Appearance → Customize → Home Page Content**. Every section has
-   its own panel there for headings, body copy, links, contact details,
-   social URLs and photo uploads.
-4. Set **Appearance → Menus** to build the "Primary Menu" (used in the
-   header nav and mobile menu). Optional — the header falls back to a
-   single "Home" link if no menu is assigned.
-5. Set a **Site Identity → Logo** under Customize for the header/footer
-   logo, or the site title is used as text instead.
-
-## What's editable where
-
-- **Single values** (headings, paragraphs, contact email/phone, social
-  links, most photos) — Customize → Home Page Content.
-- **Repeating lists** — partner logos, the 4 service cards, the 4
-  achievement cards, the list of speaking locations, and the 4 video
-  interview cards — have no Customizer UI (it has no repeater control).
-  Edit the PHP arrays directly in `inc/home-content.php`; each entry is a
-  plain array with a label/URL and a Media Library attachment ID (find an
-  ID by opening an image in the Media Library and reading it from the URL
-  bar, or `0` to leave the placeholder graphic in place).
-- **Contact form**: submits to `admin-post.php` and emails the address set
-  under Contact → "Enquiries go to this email" via `wp_mail()`. No plugin
-  required. It has a honeypot field and a nonce; no CAPTCHA is wired up.
-
-## Photos and video
-
-Every image slot renders a navy/blue placeholder box with a label until you
-upload a real file, so the page never looks broken before content is added.
-None of the reference site's actual photography, logos or video are bundled
-in this theme — add your own via the Customizer image controls or the
-Media Library IDs in `inc/home-content.php`.
-
-The hero accepts either an MP4 URL (`Hero → Background video URL`) or a
-static poster image; if neither is set it shows a placeholder.
+1. Zip the `dr-sandeep-kumar` folder (this directory) and upload it via
+   **Appearance → Themes → Add New → Upload Theme**, then **Activate**.
+2. Install and activate the **Elementor** plugin (Plugins → Add New →
+   search "Elementor").
+3. Create a Page (e.g. titled "Home"), edit it with Elementor, and build
+   your layout.
+4. **Settings → Reading** → "A static page" → set that page as the
+   **Homepage**.
+5. **Appearance → Customize**:
+   - **Site Identity** — logo, used in the header and footer.
+   - **Menus** — build the "Primary Menu" for header nav (optional; falls
+     back to a single "Home" link if none is assigned).
+   - **Contact** — the email address `[dsk_enquiry_form]` sends to, and a
+     phone number if you want one elsewhere on the page.
+   - **Social Links** — Instagram / Facebook / LinkedIn URLs shown as
+     icons in the header and footer.
+   - **Footer** — copyright line and an optional credit line/link.
 
 ## File structure
 
 ```
 dr-sandeep-kumar/
 ├── style.css                  Theme header (required by WordPress)
-├── functions.php              Theme setup, asset enqueue, contact-form handler
-├── header.php / footer.php    Site chrome
-├── front-page.php             Assembles every home-page section, in order
-├── index.php / page.php       Fallbacks — both just load front-page.php
+├── functions.php              Theme setup, asset enqueue, [dsk_enquiry_form]
+│                               shortcode, contact-form email handler
+├── header.php / footer.php    Site chrome — nav, logo, social, back-to-top
+├── page.php / index.php       Standard the_content() loop (Elementor hooks here)
 ├── inc/
-│   ├── customizer.php         Registers all Customizer panels/controls
-│   ├── home-content.php       Repeating content arrays (see above)
-│   └── template-tags.php      View helpers: placeholders, icons, arrow
-├── template-parts/home/       One file per section
+│   ├── content-schema.php     Customizer field definitions + defaults
+│   ├── customizer.php         Registers the Customizer controls
+│   ├── home-content.php       Footer quick-links array (edit directly)
+│   └── template-tags.php      dsk_mod() helper, social icon SVGs
+├── template-parts/
+│   └── enquiry-form.php       Markup rendered by [dsk_enquiry_form]
 └── assets/
-    ├── css/main.css           All styling (CSS variables at the top)
-    └── js/main.js             Sticky header, mobile nav, reveal-on-scroll,
-                                back-to-top, hero typewriter
+    ├── css/main.css           Header/footer/back-to-top/contact-form styles only
+    └── js/main.js             Sticky header, mobile nav, back-to-top
 ```
+
+Elementor renders its own CSS/JS for whatever you build in the editor —
+`main.css`/`main.js` here only ever touch the coded chrome, so there's no
+overlap or conflict to worry about.
 
 ## Notes
 
-- Typography is Urbanist (Google Fonts, enqueued in `functions.php`);
-  colours are CSS custom properties at the top of `assets/css/main.css` —
-  change `--navy`, `--blue`, etc. there to re-theme the whole site.
-- No build step / bundler — plain PHP, CSS and vanilla JS, so it installs
-  and runs as-is.
-- No `screenshot.png` is included; add one (1200×900) if you want a preview
-  in the Themes screen.
+- No page-content-related Customizer fields or placeholder-image logic are
+  included (there's nothing to be a placeholder for) — all of that is now
+  the Elementor page's own content, images and styling.
+- Typography default is Urbanist (Google Fonts, enqueued in
+  `functions.php`) for the chrome; set Elementor's own Site Settings →
+  Global Fonts to match if you want page content to use the same face.
+- No build step / bundler on the theme side — plain PHP, CSS and vanilla
+  JS for the chrome.

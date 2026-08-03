@@ -1,6 +1,7 @@
 <?php
 /**
- * Small view helpers shared across the home-page template parts.
+ * Small view helpers shared by the theme's coded chrome (header, footer,
+ * contact form).
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -12,72 +13,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  * that key (from inc/content-schema.php), so a freshly-activated site
  * renders identically to what a site owner sees when they first open the
  * Customizer — no copy has to be duplicated (and kept in sync) in every
- * template part.
+ * template.
  */
 function dsk_mod( $key ) {
 	$defaults = dsk_home_content_defaults();
 	return get_theme_mod( $key, isset( $defaults[ $key ] ) ? $defaults[ $key ] : '' );
-}
-
-/**
- * Echo an <img> for a Customizer image setting, or a labelled placeholder
- * box (styled in main.css as .dsk-placeholder) when nothing has been
- * uploaded yet — so the layout looks complete before real photos exist.
- */
-function dsk_theme_mod_image( $setting, $alt, $class = '', $label = '' ) {
-	$url = get_theme_mod( $setting, '' );
-	if ( $url ) {
-		printf(
-			'<img src="%1$s" alt="%2$s" class="%3$s" loading="lazy" />',
-			esc_url( $url ),
-			esc_attr( $alt ),
-			esc_attr( $class )
-		);
-		return;
-	}
-	dsk_placeholder( $class, $label ? $label : $alt );
-}
-
-/**
- * Echo an <img> for a Media Library attachment ID from a home-content.php
- * array entry, or a placeholder box when the ID is 0 (not set yet).
- */
-function dsk_attachment_image( $attachment_id, $alt, $class = '', $size = 'large', $label = '' ) {
-	if ( $attachment_id ) {
-		$img = wp_get_attachment_image( $attachment_id, $size, false, array(
-			'alt'     => esc_attr( $alt ),
-			'class'   => esc_attr( $class ),
-			'loading' => 'lazy',
-		) );
-		if ( $img ) {
-			echo $img; // phpcs:ignore -- wp_get_attachment_image() output is already escaped.
-			return;
-		}
-	}
-	dsk_placeholder( $class, $label ? $label : $alt );
-}
-
-function dsk_placeholder( $class = '', $label = 'Image' ) {
-	printf(
-		'<div class="dsk-placeholder %1$s" aria-hidden="true"><span>%2$s</span></div>',
-		esc_attr( $class ),
-		esc_html( $label )
-	);
-}
-
-/**
- * Small inline arrow used on "Learn more" style links — two overlapping
- * circles that swap on hover via CSS, matching the reference site's effect.
- */
-function dsk_cta_arrow() {
-	?>
-	<span class="dsk-cta-arrow" aria-hidden="true">
-		<svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<path d="M8 1L13 6L8 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-			<path d="M13 6H1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-		</svg>
-	</span>
-	<?php
 }
 
 function dsk_social_icon( $name ) {

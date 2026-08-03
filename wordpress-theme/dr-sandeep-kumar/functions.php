@@ -46,23 +46,25 @@ function dsk_assets() {
 	wp_enqueue_style( 'dsk-main', DSK_THEME_URI . '/assets/css/main.css', array(), DSK_THEME_VERSION );
 
 	wp_enqueue_script( 'dsk-main', DSK_THEME_URI . '/assets/js/main.js', array(), DSK_THEME_VERSION, true );
-
-	wp_localize_script( 'dsk-main', 'dskHome', array(
-		'typewriterStrings' => array(
-			__( 'Founder of MiSmile', 'dsk-home' ),
-			__( 'Invisalign Mentor', 'dsk-home' ),
-			__( 'Dentist', 'dsk-home' ),
-			__( 'Investor', 'dsk-home' ),
-			__( 'Entrepreneur', 'dsk-home' ),
-			__( 'Philanthropist', 'dsk-home' ),
-		),
-	) );
 }
 add_action( 'wp_enqueue_scripts', 'dsk_assets' );
 
 /**
+ * [dsk_enquiry_form] — drop this into an Elementor Shortcode or HTML widget
+ * to place the contact form anywhere on a page built in the Elementor
+ * editor. Renders template-parts/enquiry-form.php, which posts to the
+ * admin-post handler below.
+ */
+function dsk_enquiry_form_shortcode() {
+	ob_start();
+	require DSK_THEME_DIR . '/template-parts/enquiry-form.php';
+	return ob_get_clean();
+}
+add_shortcode( 'dsk_enquiry_form', 'dsk_enquiry_form_shortcode' );
+
+/**
  * Contact-form email handler, hooked to admin-post so it works for logged-in
- * and logged-out visitors alike. The form in template-parts/home/enquiry.php
+ * and logged-out visitors alike. The [dsk_enquiry_form] shortcode above
  * posts here with action=dsk_enquiry.
  */
 function dsk_handle_enquiry() {
