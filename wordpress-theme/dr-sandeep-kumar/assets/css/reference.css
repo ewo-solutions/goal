@@ -1,0 +1,440 @@
+/* ==========================================================================
+   Reference-match layer for the Elementor starter template.
+
+   The starter template assigns the `dsk-*` classes below to its Elementor
+   containers/widgets; this file supplies the exact type scale, colours,
+   section rhythm and button treatments taken from the reference design.
+   Doing it here rather than in Elementor's per-element settings is what
+   makes an exact match possible: several parts of the design (a gradient
+   spanning a group of sections, the arrow-circle link buttons, the pill
+   form fields) have no equivalent in Elementor's widget controls.
+
+   Content stays editable in Elementor — only the styling lives here.
+
+   NOTE ON SELECTORS: rules are written as `.elementor-widget.dsk-x .target`
+   rather than `.dsk-x .target`. Elementor's Default Kit styles headings and
+   text with `.elementor-widget-heading .elementor-heading-title` (0,2,0) and
+   its stylesheet loads after the theme's, so an equal-specificity rule here
+   loses and everything inherits the kit's default accent colour. The extra
+   `.elementor-widget` class takes these to (0,3,0) so the reference values
+   win without resorting to `!important`.
+   ========================================================================== */
+
+:root {
+	--dsk-navy: #00255c;
+	--dsk-navy-alt: #002159;
+	--dsk-navy-deep: #032b6a;
+	--dsk-blue: #3079d1;
+	--dsk-ink: #191919;
+	--dsk-grey: #494949;
+	--dsk-offwhite: #f8f8f8;
+}
+
+/* --------------------------------------------------------------------------
+   Shared dark gradient group (reference: .common-bg1)
+   Wraps the logo strip + about + services as ONE gradient, exactly as the
+   reference does, rather than repeating a background on each section.
+   -------------------------------------------------------------------------- */
+.dsk-dark-group {
+	background-image: linear-gradient(to right top, #191919, #1c1b28, #1c1e39, #16214a, #00255c);
+	position: relative;
+	overflow: hidden;
+}
+
+/* The reference overlays a texture PNG bottom-left. That asset belongs to
+   the original site and isn't bundled, so this reproduces the same soft
+   light-bloom in pure CSS. */
+.dsk-dark-group::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 45%;
+	padding-bottom: 42%;
+	pointer-events: none;
+	background: radial-gradient(
+		ellipse at 0% 100%,
+		rgba(48, 121, 209, 0.20) 0%,
+		rgba(48, 121, 209, 0.08) 35%,
+		rgba(0, 0, 0, 0) 70%
+	);
+}
+.dsk-dark-group > .e-con-inner,
+.dsk-dark-group > .elementor-element {
+	position: relative;
+	z-index: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Type scale — exact reference values
+   -------------------------------------------------------------------------- */
+
+/* 60px display heading — the signature section title */
+.elementor-widget.dsk-title .elementor-heading-title {
+	font-size: 60px;
+	font-weight: 700;
+	color: var(--dsk-navy);
+	letter-spacing: 1.61px;
+	line-height: 1.13;
+	margin: 0;
+}
+.elementor-widget.dsk-title--light .elementor-heading-title {
+	color: #ffffff;
+}
+
+/* 40px heading — video-series and enquiry sections */
+.elementor-widget.dsk-title-40 .elementor-heading-title {
+	font-size: 40px;
+	font-weight: 700;
+	color: var(--dsk-navy-alt);
+	letter-spacing: 1.07px;
+	line-height: 1.25;
+	margin: 0;
+}
+
+/* 26px heading — inside the dark services / course sections */
+.elementor-widget.dsk-title-26 .elementor-heading-title {
+	font-size: 26px;
+	font-weight: 700;
+	color: #ffffff;
+	letter-spacing: normal;
+	line-height: 1.38;
+	margin: 0;
+}
+
+/* 90px ultra-display line ("From India to Invisalign" treatment) */
+.elementor-widget.dsk-display .elementor-heading-title {
+	font-size: 90px;
+	font-weight: 400;
+	color: #062b66;
+	letter-spacing: 2.41px;
+	line-height: 1.08;
+	margin: 0;
+}
+
+/* Small letter-spaced label above a heading */
+.elementor-widget.dsk-eyebrow .elementor-heading-title {
+	font-size: 12.5px;
+	font-weight: 800;
+	letter-spacing: 2.5px;
+	line-height: 1.36;
+	text-transform: uppercase;
+	color: #ffffff;
+	margin: 0;
+}
+.elementor-widget.dsk-eyebrow--dark .elementor-heading-title {
+	color: var(--dsk-navy);
+}
+
+/* Body copy */
+.elementor-widget.dsk-body {
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 1.73;
+	color: var(--dsk-navy);
+}
+.elementor-widget.dsk-body--light,
+.elementor-widget.dsk-body--light p {
+	color: #ffffff;
+	line-height: 1.8;
+}
+.elementor-widget.dsk-body p {
+	margin: 0 0 26px;
+}
+.elementor-widget.dsk-body p:last-child {
+	margin-bottom: 0;
+}
+
+/* Attribution under the pull quote */
+.elementor-widget.dsk-quote-name .elementor-heading-title {
+	font-size: 18px;
+	font-weight: 700;
+	color: var(--dsk-navy-alt);
+	letter-spacing: 0.48px;
+	line-height: 2.61;
+	margin: 0;
+}
+.elementor-widget.dsk-quote-role .elementor-heading-title {
+	font-size: 18px;
+	font-weight: 400;
+	color: var(--dsk-navy-alt);
+	letter-spacing: 0.48px;
+	line-height: 2.67;
+	margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Buttons
+   The reference's primary CTAs are a text label followed by an outlined
+   circle-arrow that fills on hover — not a solid block.
+   -------------------------------------------------------------------------- */
+.elementor-widget.dsk-arrow-btn .elementor-button {
+	display: inline-flex;
+	align-items: center;
+	gap: 14px;
+	width: auto;
+	background: transparent;
+	border: none;
+	border-radius: 0;
+	padding: 0;
+	font-size: 16px;
+	font-weight: 600;
+	letter-spacing: 0.43px;
+	line-height: 2.6;
+	color: var(--dsk-navy);
+	fill: var(--dsk-navy);
+	transition: color 0.25s ease-out;
+}
+/* Elementor centres button content in a full-width wrapper; keep the
+   label + circle hugging the left edge like the reference. */
+.elementor-widget.dsk-arrow-btn .elementor-button-content-wrapper {
+	display: inline-flex;
+	align-items: center;
+}
+.elementor-widget.dsk-arrow-btn .elementor-widget-container {
+	text-align: left;
+}
+
+/* Circle + chevron, drawn entirely inside one pseudo-element so nothing
+   depends on the button's width (an absolutely-positioned chevron drifts to
+   the far edge once Elementor stretches the button). */
+.elementor-widget.dsk-arrow-btn .elementor-button::after {
+	content: "";
+	flex: 0 0 auto;
+	width: 34px;
+	height: 34px;
+	border-radius: 50%;
+	border: 1px solid currentColor;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 9px 9px;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M2 1l4 4-4 4' fill='none' stroke='%2300255c' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+	transition: transform 0.28s ease-out, background-color 0.28s ease-out;
+}
+.elementor-widget.dsk-arrow-btn .elementor-button:hover::after {
+	transform: translateX(4px);
+}
+.elementor-widget.dsk-arrow-btn .elementor-button:hover {
+	color: rgba(0, 37, 92, 0.7);
+}
+
+/* Light variant for dark sections — same mark, white chevron */
+.elementor-widget.dsk-arrow-btn--light .elementor-button {
+	color: #ffffff;
+}
+.elementor-widget.dsk-arrow-btn--light .elementor-button::after {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M2 1l4 4-4 4' fill='none' stroke='%23ffffff' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+.elementor-widget.dsk-arrow-btn--light .elementor-button:hover {
+	color: rgba(255, 255, 255, 0.7);
+}
+
+/* Small white pill (reference: .abouts-btn1) */
+.elementor-widget.dsk-pill-btn .elementor-button {
+	display: inline-block;
+	width: auto;
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: 0.35px;
+	border-radius: 40px;
+	border: 1px solid #ffffff;
+	background: #ffffff;
+	color: var(--dsk-navy);
+	padding: 8px 16px;
+	transition: all 0.25s ease-out;
+}
+.elementor-widget.dsk-pill-btn .elementor-button:hover {
+	background: var(--dsk-navy);
+	color: #ffffff;
+	border-color: #ffffff;
+}
+.elementor-widget.dsk-pill-btn .elementor-widget-container {
+	text-align: left;
+}
+
+/* --------------------------------------------------------------------------
+   Section rhythm — exact reference paddings
+   -------------------------------------------------------------------------- */
+.dsk-sec-partners > .e-con-inner { padding: 46px 0 21px; }
+.dsk-sec-about > .e-con-inner { padding: 21px 0 40px; }
+.dsk-sec-services > .e-con-inner { padding: 0 0 70px; text-align: center; }
+.dsk-sec-mastering { background: var(--dsk-navy-deep); }
+.dsk-sec-mastering > .e-con-inner { padding: 68px 0 128px; }
+.dsk-sec-testimonial { background: var(--dsk-offwhite); }
+.dsk-sec-testimonial > .e-con-inner { padding: 107px 0 61px; }
+.dsk-sec-story { background: var(--dsk-offwhite); }
+.dsk-sec-story > .e-con-inner { padding: 61px 0 32px; }
+.dsk-sec-achievements { background: var(--dsk-offwhite); }
+.dsk-sec-achievements > .e-con-inner { padding: 32px 0 40px; }
+.dsk-sec-network { background: var(--dsk-offwhite); }
+.dsk-sec-network > .e-con-inner { padding: 40px 0 84px; }
+.dsk-sec-global > .e-con-inner { padding: 138px 0 142px; text-align: center; }
+.dsk-sec-conversations > .e-con-inner { padding: 92px 0 82px; }
+.dsk-sec-series > .e-con-inner { padding: 90px 0 60px; text-align: center; }
+.dsk-sec-charity > .e-con-inner { padding: 51px 0 81px; }
+.dsk-sec-enquiry > .e-con-inner { padding: 74px 0 60px; text-align: center; }
+
+/* Global-speaker band: the reference uses a photographic background. Until
+   you add your own via Elementor's Style → Background, this deep gradient
+   stands in so the band still reads as a distinct dark break. */
+.dsk-sec-global {
+	background-image: linear-gradient(to right top, #16214a, #00255c 55%, #032b6a);
+}
+
+/* Backdrop behind the video-series + charity pair (reference: .common-bg2) */
+.dsk-light-group {
+	background: var(--dsk-offwhite);
+}
+
+/* --------------------------------------------------------------------------
+   Hero (reference: .banner-wrapp — 670px tall, content bottom-aligned right)
+   -------------------------------------------------------------------------- */
+.dsk-hero > .e-con-inner {
+	justify-content: flex-end;
+	min-height: 670px;
+	padding-bottom: 51px;
+}
+.elementor-widget.dsk-hero-title .elementor-heading-title {
+	font-size: 72px;
+	font-weight: 400;
+	color: #ffffff;
+	letter-spacing: 1.93px;
+	line-height: 1.08;
+	margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Cards
+   -------------------------------------------------------------------------- */
+.elementor-widget.dsk-service-card .elementor-image-box-title {
+	font-size: 26px;
+	font-weight: 700;
+	color: #ffffff;
+	line-height: 1.38;
+	margin: 18px 0 0;
+}
+.elementor-widget.dsk-service-card .elementor-image-box-description {
+	font-size: 15px;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 0.75);
+	line-height: 1.8;
+	margin: 8px 0 0;
+}
+.elementor-widget.dsk-service-card .elementor-image-box-img {
+	overflow: hidden;
+	border-radius: 4px;
+}
+.elementor-widget.dsk-service-card img {
+	transition: transform 0.6s ease-out;
+	width: 100%;
+}
+.elementor-widget.dsk-service-card:hover img {
+	transform: scale(1.06);
+}
+
+/* Achievements: icon above small grey copy — a flat strip on the off-white
+   band in the reference, no card chrome. */
+.elementor-widget.dsk-achievement .elementor-image-box-title {
+	font-size: 14px;
+	font-weight: 400;
+	color: var(--dsk-grey);
+	letter-spacing: 0.37px;
+	line-height: 1.57;
+	margin: 16px 0 0;
+}
+
+/* Interview cards */
+.elementor-widget.dsk-interview .elementor-image-box-title {
+	font-size: 16px;
+	font-weight: 700;
+	color: var(--dsk-navy);
+	line-height: 1.4;
+	margin: 16px 0 4px;
+}
+.elementor-widget.dsk-interview .elementor-image-box-description {
+	font-size: 14px;
+	font-weight: 400;
+	color: var(--dsk-navy);
+	letter-spacing: 0.37px;
+	line-height: 1.57;
+}
+
+/* --------------------------------------------------------------------------
+   Enquiry form — reference uses centred, pill-shaped fields
+   -------------------------------------------------------------------------- */
+.dsk-sec-enquiry .enquiry-form {
+	max-width: 800px;
+	margin: 0 auto;
+}
+.dsk-sec-enquiry .field input,
+.dsk-sec-enquiry .field textarea {
+	text-align: center;
+	font-size: 14px;
+	font-weight: 400;
+	color: var(--dsk-navy);
+	letter-spacing: 0.37px;
+	background: #ffffff;
+	border: 1px solid var(--dsk-navy);
+	border-radius: 40px;
+	padding: 14px 22px;
+}
+.dsk-sec-enquiry .field textarea {
+	border-radius: 24px;
+	text-align: left;
+}
+.dsk-sec-enquiry .field input::placeholder,
+.dsk-sec-enquiry .field textarea::placeholder {
+	color: var(--dsk-navy);
+	opacity: 0.75;
+}
+.dsk-sec-enquiry .enquiry__consent {
+	justify-content: center;
+	text-align: left;
+	max-width: 560px;
+	margin-inline: auto;
+}
+.dsk-sec-enquiry .btn--pill {
+	background: transparent;
+	color: var(--dsk-navy);
+	border: 1px solid var(--dsk-navy);
+	border-radius: 40px;
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: 0.43px;
+	padding: 12px 34px;
+}
+.dsk-sec-enquiry .btn--pill:hover {
+	background: var(--dsk-navy);
+	color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive — the reference steps its display sizes down hard
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+	.elementor-widget.dsk-title .elementor-heading-title { font-size: 42px; letter-spacing: 1.1px; }
+	.elementor-widget.dsk-display .elementor-heading-title { font-size: 58px; }
+	.elementor-widget.dsk-hero-title .elementor-heading-title { font-size: 48px; }
+	.dsk-sec-global > .e-con-inner { padding: 90px 0 94px; }
+	.dsk-sec-series > .e-con-inner { padding: 64px 0 48px; }
+	.dsk-sec-mastering > .e-con-inner { padding: 54px 0 80px; }
+}
+
+@media (max-width: 767px) {
+	/* Desktop rhythm above uses zero side padding (the reference centres a
+	   fixed-width column); narrow screens need gutters back. */
+	[class*="dsk-sec-"] > .e-con-inner {
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+	.elementor-widget.dsk-title .elementor-heading-title { font-size: 30px; letter-spacing: 0.8px; }
+	.elementor-widget.dsk-title-40 .elementor-heading-title { font-size: 26px; }
+	.elementor-widget.dsk-title-26 .elementor-heading-title { font-size: 21px; }
+	.elementor-widget.dsk-display .elementor-heading-title { font-size: 38px; letter-spacing: 1px; }
+	.elementor-widget.dsk-hero-title .elementor-heading-title { font-size: 30px; letter-spacing: 0.6px; }
+	.dsk-hero > .e-con-inner { min-height: 460px; }
+	.dsk-sec-global > .e-con-inner { padding: 64px 0 66px; }
+	.dsk-sec-testimonial > .e-con-inner { padding: 56px 0 40px; }
+	.dsk-sec-conversations > .e-con-inner { padding: 56px 0 48px; }
+	.dsk-sec-mastering > .e-con-inner { padding: 40px 0 56px; }
+}

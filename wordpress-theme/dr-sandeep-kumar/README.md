@@ -56,17 +56,64 @@ a screenshot or a locked block). Every photo/logo slot is an Elementor
 Image widget left empty, which renders Elementor's own placeholder
 graphic until you swap in real images.
 
-Styling is set explicitly per element rather than left on Elementor
-defaults, to match the reference site: Urbanist typography at real heading
-scale (54px hero down to 28–36px section headings), the navy/blue palette
-(`#00255C` / `#05224C` / `#3079D1`) instead of default black/blue, fully
-rounded pill buttons (white-on-navy on dark sections, navy-on-white on
-light ones, matching whichever gives proper contrast), soft-shadowed
-rounded cards for the achievements grid, and a staggered `fadeInUp`
-entrance animation on every section and card grid — Elementor's native
-equivalent of the reference site's WOW.js scroll-reveal effect, so
-sections and cards fade/slide in as you scroll rather than appearing
-instantly.
+### How the styling works
+
+The template pairs with `assets/css/reference.css`, which the theme loads
+automatically. The template assigns `dsk-*` CSS classes to its containers
+and widgets; that stylesheet then supplies the exact reference values —
+read out of the original site's own CSS, not eyeballed:
+
+- **Type scale** — the signature 60px/700 section heading
+  (letter-spacing 1.61px, line-height 1.13), the 90px display line, 40px
+  and 26px secondary headings, 15px/500 body copy, and 12.5px/800
+  tracked-out eyebrow labels.
+- **Palette** — `#00255c` navy, `#032b6a` deep navy, `#f8f8f8` off-white,
+  `#494949` caption grey.
+- **The shared gradient group** — the reference wraps its logo strip,
+  about and services sections in *one* diagonal gradient
+  (`#191919 → #00255c`) with a soft light-bloom bottom-left, rather than
+  giving each section its own background. The template nests those three
+  sections inside a single container so this reproduces faithfully.
+- **Arrow-link CTAs** — the reference's primary buttons aren't solid
+  blocks; they're a text label followed by an outlined circle-chevron that
+  shifts on hover.
+- **Pill form fields** — centred text, 40px radius, navy hairline border.
+- **Section rhythm** — each section's exact top/bottom padding.
+- **Entrance animations** — staggered `fadeInUp` on sections and card
+  grids: Elementor's equivalent of the reference's WOW.js scroll reveals.
+
+Styling lives in CSS rather than in Elementor's per-element settings
+because several of these have no equivalent in Elementor's widget controls
+at all — a gradient spanning a group of sections, the circle-chevron
+buttons, the pill inputs. Content stays fully editable in Elementor either
+way. Every rule is scoped to a `dsk-` class, so nothing leaks into other
+pages or widgets you add yourself. To restyle, edit
+`assets/css/reference.css` — the colours are CSS custom properties at the
+top of the file.
+
+Note on selector specificity: those rules are written as
+`.elementor-widget.dsk-x .target`. Elementor's Default Kit styles headings
+with `.elementor-widget-heading .elementor-heading-title` and its
+stylesheet loads after the theme's, so an equal-specificity rule loses and
+everything silently inherits the kit's default accent colour. The extra
+class wins it back without `!important`.
+
+### What this can't match
+
+Two things are outside what a template file can carry, and both need your
+own assets:
+
+- **Imagery** — the reference's photography, partner logos and hero video
+  belong to the original site and aren't bundled. Every image slot is an
+  empty Elementor Image widget showing a placeholder until you upload
+  yours. The hero is a flat dark panel where the reference plays a Vimeo
+  background video; add one with a background-video plugin or an Elementor
+  Pro section background if you want that.
+- **Two background textures** — the reference overlays a texture PNG on
+  the dark group and uses a photographic backdrop on the global-speaker
+  band. Both are reproduced here as CSS gradients that read the same at a
+  glance; swap in real images via Elementor's Style → Background on those
+  sections if you have them.
 
 To use it:
 
@@ -101,7 +148,8 @@ dr-sandeep-kumar/
 ├── template-parts/
 │   └── enquiry-form.php       Markup rendered by [dsk_enquiry_form]
 ├── assets/
-│   ├── css/main.css           Header/footer/back-to-top/contact-form styles only
+│   ├── css/main.css           Header/footer/back-to-top/contact-form styles
+│   ├── css/reference.css      Reference-match layer for the starter template
 │   └── js/main.js             Sticky header, mobile nav, back-to-top
 └── starter-template/
     └── dr-sandeep-kumar-home.json   Importable Elementor home-page layout

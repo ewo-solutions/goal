@@ -45,6 +45,16 @@ function dsk_assets() {
 
 	wp_enqueue_style( 'dsk-main', DSK_THEME_URI . '/assets/css/main.css', array(), DSK_THEME_VERSION );
 
+	/* Reference-match styling for the Elementor starter template. Loaded
+	 * after main.css, and after Elementor's own frontend CSS, so its
+	 * `dsk-*` rules win over Elementor's widget defaults. */
+	wp_enqueue_style(
+		'dsk-reference',
+		DSK_THEME_URI . '/assets/css/reference.css',
+		array( 'dsk-main' ),
+		DSK_THEME_VERSION
+	);
+
 	wp_enqueue_script( 'dsk-main', DSK_THEME_URI . '/assets/js/main.js', array(), DSK_THEME_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'dsk_assets' );
