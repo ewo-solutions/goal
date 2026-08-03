@@ -56,6 +56,18 @@ a screenshot or a locked block). Every photo/logo slot is an Elementor
 Image widget left empty, which renders Elementor's own placeholder
 graphic until you swap in real images.
 
+Styling is set explicitly per element rather than left on Elementor
+defaults, to match the reference site: Urbanist typography at real heading
+scale (54px hero down to 28–36px section headings), the navy/blue palette
+(`#00255C` / `#05224C` / `#3079D1`) instead of default black/blue, fully
+rounded pill buttons (white-on-navy on dark sections, navy-on-white on
+light ones, matching whichever gives proper contrast), soft-shadowed
+rounded cards for the achievements grid, and a staggered `fadeInUp`
+entrance animation on every section and card grid — Elementor's native
+equivalent of the reference site's WOW.js scroll-reveal effect, so
+sections and cards fade/slide in as you scroll rather than appearing
+instantly.
+
 To use it:
 
 1. Create/open the Page you're using as the homepage, **Edit with
