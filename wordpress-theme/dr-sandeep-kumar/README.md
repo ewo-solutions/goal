@@ -29,8 +29,9 @@ what makes it drag-and-drop editable.
    **Appearance → Themes → Add New → Upload Theme**, then **Activate**.
 2. Install and activate the **Elementor** plugin (Plugins → Add New →
    search "Elementor").
-3. Create a Page (e.g. titled "Home"), edit it with Elementor, and build
-   your layout.
+3. Create a Page (e.g. titled "Home") and edit it with Elementor. Either
+   build your layout from scratch, or start from the bundled starter
+   template — see below.
 4. **Settings → Reading** → "A static page" → set that page as the
    **Homepage**.
 5. **Appearance → Customize**:
@@ -42,6 +43,34 @@ what makes it drag-and-drop editable.
    - **Social Links** — Instagram / Facebook / LinkedIn URLs shown as
      icons in the header and footer.
    - **Footer** — copyright line and an optional credit line/link.
+
+## Starter template
+
+`starter-template/dr-sandeep-kumar-home.json` is a full home-page layout —
+hero, partner-logo strip, about, services, a course CTA, testimonial, a
+longer bio section, an achievements grid, a network CTA, a "global speaker"
+strip, video-interview cards, a video-series CTA, a charity CTA, an
+Instagram banner, and the `[dsk_enquiry_form]` contact form — built as
+real Elementor sections/widgets so it's fully editable after import (not
+a screenshot or a locked block). Every photo/logo slot is an Elementor
+Image widget left empty, which renders Elementor's own placeholder
+graphic until you swap in real images.
+
+To use it:
+
+1. Create/open the Page you're using as the homepage, **Edit with
+   Elementor**.
+2. Open the **folder icon** (Templates) in the editor → **My Templates**
+   tab → **Import Template** → choose `dr-sandeep-kumar-home.json`.
+3. Once it appears in the list, click **Insert** to add it to the page.
+4. Replace the placeholder images and link URLs with your own, and edit
+   any copy you want to change — everything is a normal, editable
+   Elementor element.
+
+This was authored directly as Elementor's container/widget JSON schema and
+verified against a real WordPress + Elementor install (imported through
+Elementor's own importer, and the resulting page checked for layout and
+PHP errors) rather than just written by hand and assumed to work.
 
 ## File structure
 
@@ -59,9 +88,11 @@ dr-sandeep-kumar/
 │   └── template-tags.php      dsk_mod() helper, social icon SVGs
 ├── template-parts/
 │   └── enquiry-form.php       Markup rendered by [dsk_enquiry_form]
-└── assets/
-    ├── css/main.css           Header/footer/back-to-top/contact-form styles only
-    └── js/main.js             Sticky header, mobile nav, back-to-top
+├── assets/
+│   ├── css/main.css           Header/footer/back-to-top/contact-form styles only
+│   └── js/main.js             Sticky header, mobile nav, back-to-top
+└── starter-template/
+    └── dr-sandeep-kumar-home.json   Importable Elementor home-page layout
 ```
 
 Elementor renders its own CSS/JS for whatever you build in the editor —
