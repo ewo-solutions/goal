@@ -18,13 +18,18 @@ export default function PageHero({
 }) {
   return (
     <section className="relative flex min-h-[420px] flex-col items-center justify-center overflow-hidden bg-goal-navy lg:min-h-[523px]">
+      {/* Bottom-anchored to match the design: in Figma every hero photo is sized
+       * to the band width and pinned to the band's bottom edge, so the crop only
+       * ever takes off the top. Centering it (the CSS default) cuts the subject
+       * off at the bottom — which is what made the In-House Support banner lose
+       * most of the foreground figure. */}
       <Image
         src={image}
         alt=""
         fill
         priority
         sizes="100vw"
-        className="fx-hero-zoom object-cover object-[center_70%]"
+        className="fx-hero-zoom object-cover object-bottom"
       />
       {/* Two navy-to-transparent gradients matching the home page hero: top-to-bottom and left-to-right */}
       <div className="absolute inset-0 bg-gradient-to-b from-goal-navy to-goal-navy/0" />

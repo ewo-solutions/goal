@@ -3,6 +3,7 @@ import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import SectionPill from "@/components/SectionPill";
 import SectionDivider from "@/components/SectionDivider";
+import CircleIcon from "@/components/CircleIcon";
 import ContactSection from "@/components/ContactSection";
 import { pageMetadata } from "@/lib/seo";
 
@@ -151,7 +152,7 @@ export default function WhatWeDoPage() {
           {commitments.map((item) => (
             <div key={item.title} className="group mx-auto max-w-[320px]">
               <div className="mx-auto flex h-[121px] w-[121px] items-center justify-center rounded-full border border-goal-red transition-transform duration-500 ease-out group-hover:scale-110">
-                <Image src={item.icon} alt="" width={60} height={60} className="object-contain" />
+                <CircleIcon src={item.icon} />
               </div>
               <h3 className="mt-6 text-[22px] font-bold leading-[35px] text-black lg:text-[24px]">
                 {item.title}

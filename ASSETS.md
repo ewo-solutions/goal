@@ -144,3 +144,42 @@ Support & Expediting page — its "what you get" heading is now "Active Field
 Oversight". Page titles (H1), section pills, icons, and images were left
 untouched; only description/body copy and a few "what you get" item titles
 that the new copy explicitly renamed were updated.
+
+## Icon sizing rule (important — do not "normalise" these)
+Every line icon renders at the **intrinsic width/height baked into its SVG**,
+which is exactly the size Figma places it at. `components/CircleIcon.tsx` reads
+those numbers off the file at build time via `lib/iconMeta.ts`.
+
+Two traps that produced three rounds of "the icons are the wrong size" QC:
+
+1. **Do not scale them all to a shared box** (66px, `object-contain`, etc).
+   Figma sizes each icon individually — placed sizes range from 41x55 to 83x83.
+   Forcing a tall/narrow icon and a short/wide one into the same square makes
+   them read as noticeably different weights.
+2. **Set both width and height in `style`, not just as attributes.** Tailwind's
+   preflight ships `img, video { max-width: 100%; height: auto }`, and that
+   `height: auto` overrides the height *attribute*. The icon then renders at
+   `width x its own aspect ratio` and any `object-fit` is a no-op — which is
+   what silently stretched llp-planning, llp-integration and og-rig-moves.
+
+### Locally tightened viewBoxes
+`haul-transport.svg` and `haul-spmt.svg` came out of Figma as vectorised traces
+on padded canvases (136x146 and 122x122, only ~53% of which is artwork), so at
+their placed size they overflowed the 121px circle. Their `viewBox` and
+width/height were tightened to the artwork bounds; the artwork renders at the
+same scale as before, it just no longer carries the empty margin. **If either
+is re-exported from Figma, re-tighten it** or it will overflow again.
+
+## Hero banner positioning
+`PageHero` uses `object-cover object-bottom`. In Figma every hero photo is sized
+to the band width and pinned to the band's *bottom* edge (image bottoms all land
+at y≈770-781 on the service pages, y≈675 on What We Do / Who We Are), so the
+crop only ever removes from the top. The CSS default of centring cuts the
+subject off at the bottom.
+
+Note: the In-House Support banner is drawn on a taller band in Figma (1728x767,
+aspect 2.25) than the other five service pages (aspect 2.65-2.85, which the
+523px band matches). Its photo is therefore uncropped in the mockup but still
+loses ~18% off the top on the site. Raising that one page's band to match would
+make its hero taller than every other page — flagged to the client rather than
+changed unilaterally.

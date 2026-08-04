@@ -2,6 +2,7 @@ import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import SectionPill from "@/components/SectionPill";
 import SectionDivider from "@/components/SectionDivider";
+import CircleIcon from "@/components/CircleIcon";
 import ContactSection from "@/components/ContactSection";
 import { pageMetadata } from "@/lib/seo";
 
@@ -246,7 +247,7 @@ export default function WhoWeArePage() {
             {values.map((value) => (
               <div key={value.title} className="group mx-auto max-w-[397px]">
                 <div className="mx-auto flex h-[121px] w-[121px] items-center justify-center rounded-full border border-goal-red transition-transform duration-500 ease-out group-hover:scale-110">
-                  <Image src={value.icon} alt="" width={60} height={60} className="object-contain" />
+                  <CircleIcon src={value.icon} />
                 </div>
                 <h3 className="mt-8 text-[22px] font-bold leading-[1.3] text-black lg:text-[25px]">
                   {value.title}
