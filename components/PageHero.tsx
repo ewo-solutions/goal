@@ -24,7 +24,7 @@ export default function PageHero({
         fill
         priority
         sizes="100vw"
-        className="fx-hero-zoom object-cover object-[center_35%]"
+        className="fx-hero-zoom object-cover object-[center_70%]"
       />
       {/* Two navy-to-transparent gradients matching the home page hero: top-to-bottom and left-to-right */}
       <div className="absolute inset-0 bg-gradient-to-b from-goal-navy to-goal-navy/0" />
