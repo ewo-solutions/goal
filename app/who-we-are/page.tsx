@@ -131,7 +131,7 @@ export default function WhoWeArePage() {
                 className="fx-lift rounded-[20px] bg-white px-8 py-11 shadow-[4px_4px_10px_0px_rgba(0,0,0,0.15)] hover:shadow-[4px_12px_24px_0px_rgba(0,0,0,0.18)]"
               >
                 <div className="mx-auto flex h-[100px] w-[100px] items-center justify-center rounded-full">
-                  <Image src={card.icon} alt="" width={100} height={100} />
+                  <Image src={card.icon} alt="" width={100} height={100} className="object-contain" />
                 </div>
                 <h3 className="mx-auto mt-6 max-w-[254px] text-[22px] font-bold leading-[1.2] text-goal-navy lg:text-[26px]">
                   {card.title}
@@ -246,7 +246,7 @@ export default function WhoWeArePage() {
             {values.map((value) => (
               <div key={value.title} className="group mx-auto max-w-[397px]">
                 <div className="mx-auto flex h-[121px] w-[121px] items-center justify-center rounded-full border border-goal-red transition-transform duration-500 ease-out group-hover:scale-110">
-                  <Image src={value.icon} alt="" width={60} height={60} />
+                  <Image src={value.icon} alt="" width={60} height={60} className="object-contain" />
                 </div>
                 <h3 className="mt-8 text-[22px] font-bold leading-[1.3] text-black lg:text-[25px]">
                   {value.title}

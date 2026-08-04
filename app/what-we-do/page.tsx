@@ -40,7 +40,7 @@ const industries = [
   },
   {
     title: "Specialized Trucking &|Heavy Haul",
-    body: "Road transport planning and execution for oversized and overweight loads",
+    body: "Road transport planning|and execution for oversized|and overweight loads",
     href: "/what-we-do/specialized-trucking-and-heavy-haul",
     image: "/images/industry-card-5.png",
   },
@@ -125,7 +125,12 @@ export default function WhatWeDoPage() {
                     ))}
                   </h3>
                   <p className="mx-auto mt-5 max-w-[320px] text-[15px] font-light leading-[1.6] text-white text-pretty lg:text-[16px]">
-                    {industry.body}
+                    {industry.body.split("|").map((line, i, arr) => (
+                      <span key={line}>
+                        {line}
+                        {i < arr.length - 1 && <br />}
+                      </span>
+                    ))}
                   </p>
                   <Link
                     href={industry.href}
@@ -146,7 +151,7 @@ export default function WhatWeDoPage() {
           {commitments.map((item) => (
             <div key={item.title} className="group mx-auto max-w-[320px]">
               <div className="mx-auto flex h-[121px] w-[121px] items-center justify-center rounded-full border border-goal-red transition-transform duration-500 ease-out group-hover:scale-110">
-                <Image src={item.icon} alt="" width={60} height={60} />
+                <Image src={item.icon} alt="" width={60} height={60} className="object-contain" />
               </div>
               <h3 className="mt-6 text-[22px] font-bold leading-[35px] text-black lg:text-[24px]">
                 {item.title}

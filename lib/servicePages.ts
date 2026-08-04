@@ -21,7 +21,10 @@ export type ServicePageData = {
     pill: string;
     heading: string;
     body: string;
-    items: { title: string; body: string; icon: string }[];
+    /** iconSize overrides the default 66px render box for icons whose native
+     * export canvas is much larger than the rest of the set (e.g. vectorized
+     * from a bigger source), so their line weight matches sibling icons. */
+    items: { title: string; body: string; icon: string; iconSize?: number }[];
   };
 };
 
@@ -391,11 +394,13 @@ export const servicePages: ServicePageData[] = [
         {
           title: "Heavy-Haul|Transportation",
           icon: "/icons/haul-transport.svg",
+          iconSize: 96,
           body: "Specialized trailers, modular transport systems, and heavy-haul equipment support the movement of oversized, overweight, and out-of-gauge cargo across short-haul and long-distance routes.",
         },
         {
           title: "SPMT & Modular|Transport Solutions",
           icon: "/icons/haul-spmt.svg",
+          iconSize: 96,
           body: "Self-Propelled Modular Transporters (SPMTs) and hydraulic platform trailers support cargo requiring precise positioning, load distribution, and controlled movement within ports, industrial facilities, and intersite locations.",
         },
         {

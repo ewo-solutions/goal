@@ -18,11 +18,17 @@ export default function PageHero({
 }) {
   return (
     <section className="relative flex min-h-[420px] flex-col items-center justify-center overflow-hidden bg-goal-navy lg:min-h-[523px]">
-      <Image src={image} alt="" fill priority sizes="100vw" className="fx-hero-zoom object-cover" />
-      {/* Fades the sticky navy header into the hero photo instead of a hard edge */}
-      <div className="absolute inset-x-0 top-0 h-[220px] bg-gradient-to-b from-goal-navy to-goal-navy/0" />
-      {/* Bottom-heavy fade only (not a full-image wash) so the photo stays visible, matching the approved Figma overlay treatment */}
-      <div className="absolute inset-x-0 bottom-0 h-[65%] bg-gradient-to-b from-goal-navy/0 to-goal-navy/90" />
+      <Image
+        src={image}
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="fx-hero-zoom object-cover object-[center_35%]"
+      />
+      {/* Two navy-to-transparent gradients matching the home page hero: top-to-bottom and left-to-right */}
+      <div className="absolute inset-0 bg-gradient-to-b from-goal-navy to-goal-navy/0" />
+      <div className="absolute inset-0 bg-gradient-to-r from-goal-navy to-goal-navy/0" />
       <div className="relative z-10 mx-auto max-w-[900px] px-6 py-20 text-center" data-reveal-group>
         <SectionPill label={pill} variant="white" />
         <h1 className="mt-10 text-[34px] capitalize leading-[1.1] text-white sm:text-[44px] lg:text-[60px]">

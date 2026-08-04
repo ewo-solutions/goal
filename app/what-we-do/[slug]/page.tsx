@@ -112,7 +112,13 @@ export default async function ServicePage({
             {page.whatYouGet.items.map((item) => (
               <div key={item.title} className="group mx-auto max-w-[397px]">
                 <div className="mx-auto flex h-[121px] w-[121px] items-center justify-center rounded-full border border-goal-red transition-transform duration-500 ease-out group-hover:scale-110">
-                  <Image src={item.icon} alt="" width={66} height={66} />
+                  <Image
+                    src={item.icon}
+                    alt=""
+                    width={item.iconSize ?? 66}
+                    height={item.iconSize ?? 66}
+                    className="object-contain"
+                  />
                 </div>
                 <h3 className="mt-8 text-[22px] font-bold leading-[1.3] text-black lg:text-[25px]">
                   {item.title.split("|").map((line, i, arr) => (

@@ -54,7 +54,7 @@ export default function Footer() {
           </div>
 
           {/* Quick links */}
-          <div className="lg:justify-self-center">
+          <div className="lg:w-[280px] lg:justify-self-center">
             <h3 className="text-[22px] font-bold leading-[1.2] lg:text-[26px]">Quick Links</h3>
             <ul className="mt-6 space-y-3">
               {quickLinks.map((link) => (
