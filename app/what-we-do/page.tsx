@@ -15,31 +15,31 @@ export const metadata = pageMetadata({
 
 const industries = [
   {
-    title: "Lead Logistics Provider for Capital Projects",
+    title: "Lead Logistics Provider|for Capital Projects",
     body: "Single point of control responsible for managing and executing capital project logistics operations",
     href: "/what-we-do/lead-logistics-provider",
     image: "/images/industry-card-1.png",
   },
   {
-    title: "Data Center Project Logistics",
+    title: "Data Center|Project Logistics",
     body: "Engineered solutions for hyperscale and enterprise data center and semiconductor projects",
     href: "/what-we-do/data-center-project-logistics",
     image: "/images/industry-card-2.png",
   },
   {
-    title: "Oil & Gas Logistics",
-    body: "End-to-end movement of high value cargo across upstream, midstream and downstream sectors",
+    title: "Oil & Gas|Logistics",
+    body: "End-to-end movement of high value cargo across upstream, midstream, and downstream sectors",
     href: "/what-we-do/oil-and-gas-logistics",
     image: "/images/industry-card-3.png",
   },
   {
-    title: "Renewable Energy",
-    body: "Integrated services for transport, staging and last-mile delivery of cargo from source to site",
+    title: "Renewable|Energy",
+    body: "Integrated services for transport, staging, and last-mile delivery of cargo from source to site",
     href: "/what-we-do/wind-energy-logistics",
     image: "/images/industry-card-4.png",
   },
   {
-    title: "Specialized Trucking & Heavy Haul",
+    title: "Specialized Trucking &|Heavy Haul",
     body: "Road transport planning and execution for oversized and overweight loads",
     href: "/what-we-do/specialized-trucking-and-heavy-haul",
     image: "/images/industry-card-5.png",
@@ -55,17 +55,17 @@ const industries = [
 const commitments = [
   {
     title: "Integrity",
-    icon: "/icons/commitment-integrity.png",
+    icon: "/icons/commitment-integrity.svg",
     body: "Ethics, honesty, and transparency guide every decision we make",
   },
   {
     title: "Safety",
-    icon: "/icons/commitment-safety.png",
+    icon: "/icons/commitment-safety.svg",
     body: "Safety first is a priority in how we plan, how we operate, and how we deliver",
   },
   {
     title: "Sustainability",
-    icon: "/icons/commitment-sustainability.png",
+    icon: "/icons/commitment-sustainability.svg",
     body: "Committed to long-term responsible and sustainable operations",
   },
 ];
@@ -92,7 +92,7 @@ export default function WhatWeDoPage() {
           </h2>
           <SectionDivider variant="red" className="mt-8" />
           <p
-            className="mx-auto mt-8 max-w-[1028px] text-[16px] font-light leading-[30px] text-black"
+            className="mx-auto mt-8 max-w-[1028px] text-[16px] font-light leading-[30px] text-black text-pretty"
             data-reveal
             data-reveal-delay="120"
           >
@@ -116,10 +116,15 @@ export default function WhatWeDoPage() {
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
                 <div className="relative z-10">
-                  <h3 className="mx-auto max-w-[300px] text-[24px] font-bold leading-[1.25] text-white lg:text-[26px]">
-                    {industry.title}
+                  <h3 className="mx-auto max-w-[380px] text-[24px] font-bold leading-[1.25] text-white lg:text-[26px]">
+                    {industry.title.split("|").map((line, i, arr) => (
+                      <span key={line}>
+                        {line}
+                        {i < arr.length - 1 && <br />}
+                      </span>
+                    ))}
                   </h3>
-                  <p className="mx-auto mt-5 max-w-[320px] text-[15px] font-light leading-[1.6] text-white lg:text-[16px]">
+                  <p className="mx-auto mt-5 max-w-[320px] text-[15px] font-light leading-[1.6] text-white text-pretty lg:text-[16px]">
                     {industry.body}
                   </p>
                   <Link
@@ -140,13 +145,13 @@ export default function WhatWeDoPage() {
         <div className="mx-auto grid max-w-[1580px] gap-12 px-6 text-center sm:grid-cols-3 lg:px-10" data-reveal-group>
           {commitments.map((item) => (
             <div key={item.title} className="group mx-auto max-w-[320px]">
-              <div className="mx-auto flex h-[112px] w-[112px] items-center justify-center rounded-full border border-goal-red transition-transform duration-500 ease-out group-hover:scale-110">
-                <Image src={item.icon} alt="" width={68} height={68} />
+              <div className="mx-auto flex h-[121px] w-[121px] items-center justify-center rounded-full border border-goal-red transition-transform duration-500 ease-out group-hover:scale-110">
+                <Image src={item.icon} alt="" width={60} height={60} />
               </div>
               <h3 className="mt-6 text-[22px] font-bold leading-[35px] text-black lg:text-[24px]">
                 {item.title}
               </h3>
-              <p className="mt-2 text-[15px] leading-[1.6] text-black lg:text-[16px]">
+              <p className="mt-2 text-[15px] leading-[1.6] text-black text-pretty lg:text-[16px]">
                 {item.body}
               </p>
             </div>

@@ -10,6 +10,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteUrl}/who-we-are`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${siteUrl}/what-we-do`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${siteUrl}/talk-to-us`, lastModified: now, changeFrequency: "yearly", priority: 0.7 },
+    { url: `${siteUrl}/privacy-policy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${siteUrl}/cookies-policy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${siteUrl}/terms-and-conditions`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
   ];
 
   const serviceRoutes: MetadataRoute.Sitemap = servicePages.map((page) => ({

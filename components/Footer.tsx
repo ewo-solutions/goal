@@ -6,8 +6,10 @@ import LanguageSelector from "@/components/LanguageSelector";
 const quickLinks = [
   { label: "What We Do", href: "/what-we-do" },
   { label: "Meet The Team", href: "/who-we-are" },
-  { label: "Our Mission", href: "/who-we-are" },
-  { label: "Contact Us", href: "/talk-to-us" },
+  { label: "Talk To Us", href: "/talk-to-us" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Trading Terms & Conditions", href: "/terms-and-conditions" },
+  { label: "Cookies Policy", href: "/cookies-policy" },
 ];
 
 function LinkedinIcon() {
@@ -42,7 +44,7 @@ export default function Footer() {
                 className="h-auto w-[220px] lg:w-[282px]"
               />
             </Link>
-            <p className="mt-8 max-w-[460px] text-[15px] font-light leading-[24px] lg:text-[16px] lg:leading-[26px]">
+            <p className="mt-8 max-w-[460px] text-[15px] font-light leading-[24px] text-pretty lg:text-[16px] lg:leading-[26px]">
               Gulf of America Logistics (GoAL) is a veteran-owned American-led
               logistics company that moves oversized, heavy haul, project
               cargo, and data center builds across the United States and

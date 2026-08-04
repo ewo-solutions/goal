@@ -115,7 +115,7 @@ export default function WhoWeArePage() {
           </h2>
           <SectionDivider variant="red" className="mt-8" />
           <p
-            className="mx-auto mt-8 max-w-[824px] text-[16px] font-light leading-[30px] text-black"
+            className="mx-auto mt-8 max-w-[824px] text-[16px] font-light leading-[30px] text-black text-pretty"
             data-reveal
             data-reveal-delay="120"
           >
@@ -150,7 +150,7 @@ export default function WhoWeArePage() {
             Leadership In Action
           </h2>
           <div
-            className="mx-auto mt-10 max-w-[1428px] space-y-6 text-[16px] font-light leading-[30px] text-white"
+            className="mx-auto mt-10 max-w-[1428px] space-y-6 text-[16px] font-light leading-[30px] text-white text-pretty"
             data-reveal
             data-reveal-delay="120"
           >
@@ -208,7 +208,7 @@ export default function WhoWeArePage() {
                 <h3 className="mt-6 text-[24px] font-bold leading-[1.2] text-white lg:text-[26px]">
                   {member.name}
                 </h3>
-                <p className="mt-2 text-[16px] font-light leading-[25px] text-white">
+                <p className="mt-2 text-[16px] font-light leading-[25px] text-white text-pretty">
                   {member.role}
                 </p>
               </div>
@@ -231,7 +231,7 @@ export default function WhoWeArePage() {
           </h2>
           <SectionDivider variant="red" className="mt-8" />
           <p
-            className="mx-auto mt-8 max-w-[1283px] text-[16px] font-light leading-[30px] text-black"
+            className="mx-auto mt-8 max-w-[1283px] text-[16px] font-light leading-[30px] text-black text-pretty"
             data-reveal
             data-reveal-delay="120"
           >
@@ -251,7 +251,7 @@ export default function WhoWeArePage() {
                 <h3 className="mt-8 text-[22px] font-bold leading-[1.3] text-black lg:text-[25px]">
                   {value.title}
                 </h3>
-                <p className="mt-3 text-[16px] leading-[1.5] text-black">{value.body}</p>
+                <p className="mt-3 text-[16px] leading-[1.5] text-black text-pretty">{value.body}</p>
               </div>
             ))}
           </div>

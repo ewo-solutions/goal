@@ -72,9 +72,15 @@ Figma file: `Wkk573fBNNQWxyfleQIejt` (page "Website Mockup FINAL APPROVED DESIGN
 | public/images/industry-card-4.png | 2187:691 (Rectangle 318) |
 | public/images/industry-card-5.png | 2187:692 (Rectangle 319) |
 | public/images/industry-card-6.png | 2187:693 (Rectangle 320) |
-| public/icons/commitment-integrity.png | 2187:3921 (image 3) |
-| public/icons/commitment-safety.png | 2187:3928 (image 4) |
-| public/icons/commitment-sustainability.png | 2187:3932 (image 5) |
+| public/icons/commitment-integrity.svg | 2187:3919 (image 3 [Vectorized]) |
+| public/icons/commitment-safety.svg | 2187:3922 (image 4 [Vectorized]) |
+| public/icons/commitment-sustainability.svg | 2187:3929 (image 5 [Vectorized]) |
+
+Note: the sibling raster nodes (2187:3921/3928/3932, plain "image N") are
+hidden fallback layers in the design — the vectorized frames above are the
+visible line-icon style used consistently across the site; an earlier export
+grabbed the hidden raster instead, causing an icon-weight mismatch that was
+fixed 2026-08-04.
 
 ## Service pages — hero banners
 | Local path | Source node |

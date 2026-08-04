@@ -54,7 +54,7 @@ const serviceCards = [
     title: "Project Cargo",
     image: "/images/service-project-cargo.png",
     bullets: [
-      "Heavy haul, oversized and high-value cargo handling",
+      "Heavy haul, oversized, and high-value cargo handling",
       "Engineered lift and securement design",
       "Barge and vessel charter support",
       "Warehousing and staging",
@@ -168,7 +168,7 @@ export default function HomePage() {
             <br />
             <span className="font-bold">Global Project Logistics.</span>
           </h1>
-          <p className="mx-auto mt-8 max-w-[995px] text-[16px] font-light leading-[30px] text-white">
+          <p className="mx-auto mt-8 max-w-[995px] text-[16px] font-light leading-[30px] text-white text-pretty">
             Gulf of America Logistics (GoAL) is a veteran-owned project
             logistics and heavy haul transportation company with Gulf Coast
             roots specializing in heavy haul, oversized cargo, complex project
@@ -218,7 +218,7 @@ export default function HomePage() {
           </h2>
           <SectionDivider variant="red" className="mt-8" />
           <p
-            className="mx-auto mt-8 max-w-[848px] text-[16px] font-light leading-[30px] text-black"
+            className="mx-auto mt-8 max-w-[848px] text-[16px] font-light leading-[30px] text-black text-pretty"
             data-reveal
             data-reveal-delay="120"
           >

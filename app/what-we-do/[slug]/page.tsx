@@ -44,7 +44,7 @@ export default async function ServicePage({
         titleBold={page.hero.titleBold}
         image={page.hero.image}
       >
-        <p className="mx-auto mt-8 max-w-[1310px] text-[16px] font-light leading-[30px] text-white">
+        <p className="mx-auto mt-8 max-w-[1310px] text-[16px] font-light leading-[30px] text-white text-pretty">
           {page.hero.body}
         </p>
       </PageHero>
@@ -68,7 +68,7 @@ export default async function ServicePage({
           </h2>
           <SectionDivider variant="red" className="mt-8" />
           <p
-            className="mx-auto mt-8 max-w-[1002px] text-[16px] font-light leading-[30px] text-black"
+            className="mx-auto mt-8 max-w-[1002px] text-[16px] font-light leading-[30px] text-black text-pretty"
             data-reveal
             data-reveal-delay="120"
           >
@@ -79,9 +79,10 @@ export default async function ServicePage({
             {page.deliver.cards.map((card) => (
               <div
                 key={card.title}
-                className="fx-lift flex w-full max-w-[446px] items-center justify-center rounded-[25px] border-[0.5px] border-goal-navy bg-white/5 px-10 py-14 shadow-[3px_3px_10px_0px_rgba(9,30,38,0.25)] backdrop-blur-[2.5px] sm:w-[calc(50%-20px)] lg:w-[calc(33.3%-27px)]"
+                className="fx-lift flex w-full max-w-[446px] flex-col items-center justify-center rounded-[25px] border-[0.5px] border-goal-navy bg-white/5 px-10 py-14 shadow-[3px_3px_10px_0px_rgba(9,30,38,0.25)] backdrop-blur-[2.5px] sm:w-[calc(50%-20px)] lg:w-[calc(33.3%-27px)]"
               >
-                <p className="text-[16px] font-light leading-[30px] text-black">{card.body}</p>
+                <h3 className="text-[20px] font-bold leading-[1.2] text-goal-red">{card.title}</h3>
+                <p className="mt-3 text-[16px] font-light leading-[30px] text-black text-pretty">{card.body}</p>
               </div>
             ))}
           </div>
@@ -100,7 +101,7 @@ export default async function ServicePage({
           </h2>
           <SectionDivider variant="red" className="mt-8" />
           <p
-            className="mx-auto mt-8 max-w-[1434px] text-[16px] font-light leading-[30px] text-black"
+            className="mx-auto mt-8 max-w-[1434px] text-[16px] font-light leading-[30px] text-black text-pretty"
             data-reveal
             data-reveal-delay="120"
           >
@@ -121,7 +122,7 @@ export default async function ServicePage({
                     </span>
                   ))}
                 </h3>
-                <p className="mt-3 text-[16px] leading-[1.5] text-black">{item.body}</p>
+                <p className="mt-3 text-[16px] leading-[1.5] text-black text-pretty">{item.body}</p>
               </div>
             ))}
           </div>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { site } from "@/lib/site";
 
 const inputClass =
@@ -105,9 +106,13 @@ export default function ContactSection() {
                 className="mt-[2px] h-[19px] w-[19px] shrink-0 cursor-pointer appearance-none rounded-full border border-white bg-transparent checked:border-goal-red checked:bg-goal-red"
               />
               <span>
-                I consent to Gulf of America Logistics storing my submitted
-                information so they can respond to my enquiry{" "}
-                <span className="text-goal-red">*</span>
+                I have read, understood, and agree to GoAL&rsquo;s{" "}
+                <Link href="/privacy-policy" className="underline hover:opacity-80">
+                  Privacy Policy
+                </Link>
+                , and consent to the collection, use, and storage of my
+                submitted information for the purpose of responding to my
+                enquiry <span className="text-goal-red">*</span>
               </span>
             </label>
 

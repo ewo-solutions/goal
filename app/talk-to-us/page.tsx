@@ -8,7 +8,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Talk To Us",
   description:
-    "Connect with our experienced teams. We are ready to help you plan, move and prioritize your project requirements.",
+    "Connect with our experienced teams. We are ready to help you plan, move, and prioritize your project requirements.",
   path: "/talk-to-us",
 });
 
@@ -40,12 +40,12 @@ export default function TalkToUsPage() {
           </h2>
           <SectionDivider variant="red" className="mt-8" />
           <p
-            className="mx-auto mt-8 max-w-[1144px] text-[16px] font-light leading-[30px] text-black"
+            className="mx-auto mt-8 max-w-[1144px] text-[16px] font-light leading-[30px] text-black text-pretty"
             data-reveal
             data-reveal-delay="120"
           >
             When timing, coordination, and execution matter, experience makes
-            the difference. We are ready to help you plan, move and prioritize
+            the difference. We are ready to help you plan, move, and prioritize
             your project requirements.
           </p>
 
