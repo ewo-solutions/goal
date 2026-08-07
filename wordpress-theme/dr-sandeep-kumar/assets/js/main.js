@@ -8,9 +8,6 @@
 
 	/* --- Sticky header background on scroll --- */
 	function onScroll() {
-		if ( header ) {
-			header.classList.toggle( 'is-scrolled', window.scrollY > 40 );
-		}
 		if ( backToTop ) {
 			backToTop.classList.toggle( 'is-visible', window.scrollY > 600 );
 		}
@@ -18,26 +15,29 @@
 	window.addEventListener( 'scroll', onScroll, { passive: true } );
 	onScroll();
 
-	/* --- Mobile menu toggle --- */
-	if ( navToggle && primaryNav ) {
-		navToggle.addEventListener( 'click', function () {
-			var isOpen = primaryNav.classList.toggle( 'is-open' );
-			navToggle.setAttribute( 'aria-expanded', isOpen ? 'true' : 'false' );
-		} );
-
-		// Submenus: tap the parent link to expand instead of navigating,
-		// mirroring the reference site's mobile nav behaviour.
-		primaryNav.querySelectorAll( 'li' ).forEach( function ( item ) {
-			if ( item.querySelector( 'ul' ) ) {
-				var link = item.querySelector( 'a' );
-				link.addEventListener( 'click', function ( e ) {
-					if ( window.innerWidth > 782 ) {
-						return;
-					}
-					e.preventDefault();
-					item.classList.toggle( 'is-open' );
+	/* --- Slide-in nav panel (menu pill) --- */
+	var navPanel = document.getElementById( 'nav-panel' );
+	var navScrim = document.getElementById( 'nav-scrim' );
+	if ( navToggle && navPanel ) {
+		var setNav = function ( open ) {
+			navPanel.classList.toggle( 'is-open', open );
+			navToggle.setAttribute( 'aria-expanded', open ? 'true' : 'false' );
+			if ( navScrim ) {
+				navScrim.hidden = ! open;
+				// let the element paint before transitioning opacity
+				window.requestAnimationFrame( function () {
+					navScrim.classList.toggle( 'is-open', open );
 				} );
 			}
+		};
+		navToggle.addEventListener( 'click', function () {
+			setNav( ! navPanel.classList.contains( 'is-open' ) );
+		} );
+		if ( navScrim ) {
+			navScrim.addEventListener( 'click', function () { setNav( false ); } );
+		}
+		document.addEventListener( 'keydown', function ( e ) {
+			if ( e.key === 'Escape' ) { setNav( false ); }
 		} );
 	}
 

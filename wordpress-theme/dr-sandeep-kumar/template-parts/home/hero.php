@@ -1,7 +1,7 @@
 <?php
 /**
- * Hero — reference `.banner-wrapp`: 670px tall, headline bottom-right over
- * a full-bleed video (or still) with a dark scrim.
+ * Hero — reference is a 670px full-bleed video band with no overlaid copy
+ * (their typewriter headline is disabled in the live site's JS).
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -19,9 +19,5 @@ $hero = dsk_home()['hero'];
 		<?php else : ?>
 			<img src="<?php echo esc_url( $hero['image'] ); ?>" alt="" />
 		<?php endif; ?>
-	</div>
-
-	<div class="shell hero__inner">
-		<h1 class="hero__title"><?php echo wp_kses_post( $hero['title'] ); ?></h1>
 	</div>
 </section>

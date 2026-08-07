@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="344" viewBox="0 0 360 344" role="img" aria-label="Service placeholder">
+  <rect width="360" height="344" fill="#1b2740"/>
+  <g fill="#2b3a58">
+    <circle cx="108" cy="116" r="24"/>
+    <path d="M0 344 L100 178 L198 344 Z"/>
+    <path d="M198 344 L288 137 L360 344 Z"/>
+  </g>
+  <text x="180" y="319" font-family="Urbanist, Helvetica, Arial, sans-serif" font-size="15" fill="#6f8099" text-anchor="middle">Service · 360×344</text>
+</svg>

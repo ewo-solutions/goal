@@ -31,9 +31,9 @@ function dsk_home_content_schema() {
 		'social' => array(
 			'title'  => __( 'Social Links', 'dsk-home' ),
 			'fields' => array(
-				'dsk_social_instagram' => array( __( 'Instagram URL', 'dsk-home' ), 'url', '' ),
-				'dsk_social_facebook'  => array( __( 'Facebook URL', 'dsk-home' ), 'url', '' ),
-				'dsk_social_linkedin'  => array( __( 'LinkedIn URL', 'dsk-home' ), 'url', '' ),
+				'dsk_social_instagram' => array( __( 'Instagram URL', 'dsk-home' ), 'url', 'https://www.instagram.com/' ),
+				'dsk_social_facebook'  => array( __( 'Facebook URL', 'dsk-home' ), 'url', 'https://www.facebook.com/' ),
+				'dsk_social_linkedin'  => array( __( 'LinkedIn URL', 'dsk-home' ), 'url', 'https://www.linkedin.com/' ),
 			),
 		),
 		'footer' => array(

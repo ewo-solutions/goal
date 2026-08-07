@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="700" height="520" viewBox="0 0 700 520" role="img" aria-label="Story photo placeholder">
-  <rect width="700" height="520" fill="#e6e9ee"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="620" viewBox="0 0 700 620" role="img" aria-label="Story photo placeholder">
+  <rect width="700" height="620" fill="#e6e9ee"/>
   <g fill="#c3cad4">
-    <circle cx="210" cy="176" r="36"/>
-    <path d="M0 520 L196 270 L385 520 Z"/>
-    <path d="M385 520 L560 208 L700 520 Z"/>
+    <circle cx="210" cy="210" r="43"/>
+    <path d="M0 620 L196 322 L385 620 Z"/>
+    <path d="M385 620 L560 248 L700 620 Z"/>
   </g>
-  <text x="350" y="483" font-family="Urbanist, Helvetica, Arial, sans-serif" font-size="23" fill="#8b95a3" text-anchor="middle">Story photo · 700×520</text>
+  <text x="350" y="576" font-family="Urbanist, Helvetica, Arial, sans-serif" font-size="27" fill="#8b95a3" text-anchor="middle">Story photo · 700×620</text>
 </svg>

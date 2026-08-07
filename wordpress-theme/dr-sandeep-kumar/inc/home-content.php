@@ -28,7 +28,6 @@ function dsk_home() {
 			// Leave 'video' empty to show the still image instead.
 			'video' => '',
 			'image' => dsk_ph( 'hero' ),
-			'title' => 'Founder of MiSmile,<br>Invisalign Mentor,<br>Dentist &amp; <strong>Philanthropist</strong>',
 		),
 
 		'partners' => array(
@@ -42,26 +41,25 @@ function dsk_home() {
 
 		'about' => array(
 			'image'   => dsk_ph( 'portrait' ),
-			'badges'  => array( dsk_ph( 'badge' ), dsk_ph( 'badge' ) ),
+			'badges'  => array( dsk_ph( 'badge-dark' ), dsk_ph( 'badge-dark' ), dsk_ph( 'badge-dark' ) ),
 			'lead'    => 'Dr Sandeep Kumar, the behind-the-scenes leader of MiSmile, is stepping forward to reveal how you can build your million-pound Invisalign business in this never-been-shared-before, exclusive experience.',
 			'body'    => 'Originally from India, Dr Sandeep came to the UK in 1999 and qualified with the GDC in 2000. On the lookout for his next opportunity and recognising the huge business potential Invisalign could bring, he bought his first practice and built it into the UK&rsquo;s first Invisalign-only clinic &ndash; MiSmile Birmingham. Now, MiSmile Birmingham is just one of Sandeep&rsquo;s million-pound practices.',
+			'credential' => 'Invisalign Diamond Apex Provider',
 			'handle'  => 'drsandeepkumar_',
 			'cta'     => array( 'label' => 'Follow', 'url' => 'https://www.instagram.com/' ),
 		),
 
 		'services' => array(
-			'eyebrow' => 'What I Do',
-			'items'   => array(
-				array( 'title' => 'MiSmile Network', 'sub' => '', 'url' => '#', 'image' => dsk_ph( 'service-card' ) ),
-				array( 'title' => 'The Growth Series', 'sub' => '', 'url' => '#', 'image' => dsk_ph( 'service-card' ) ),
-				array( 'title' => 'Book', 'sub' => '', 'url' => '#', 'image' => dsk_ph( 'service-card' ) ),
-				array( 'title' => 'Podcast', 'sub' => 'In conversation with Sandeep Kumar', 'url' => '#', 'image' => dsk_ph( 'service-card' ) ),
-			),
+			array( 'title' => 'MiSmile Network', 'sub' => '', 'url' => '#', 'image' => dsk_ph( 'service-tile' ) ),
+			array( 'title' => 'The Growth Series', 'sub' => '', 'url' => '#', 'image' => dsk_ph( 'service-tile' ) ),
+			array( 'title' => 'Book', 'sub' => '', 'url' => '#', 'image' => dsk_ph( 'service-tile' ) ),
+			array( 'title' => 'Podcast', 'sub' => 'In conversation with Sandeep Kumar', 'url' => '#', 'image' => dsk_ph( 'service-tile' ) ),
 		),
 
 		'mastering' => array(
 			'image' => dsk_ph( 'mastering' ),
-			'title' => 'Mastering your Invisalign Business',
+			'title'  => 'Mastering your Invisalign Business',
+			'byline' => 'by Dr Sandeep Kumar',
 			'body'  => array(
 				'Mastering your Invisalign Business gives you the opportunity to build your own multi-million pound Invisalign business. A one day, fully immersive education experience that will give you the tools to independent practice growth with the Invisalign system, whatever your goal may be.',
 				'Dr Sandeep will take you through the four non-negotiable strategic pillars that underpin the MiSmile Network and MiSmile Birmingham, and guide you on how to implement these in your own practice with a step-by-step action plan.',
@@ -78,7 +76,7 @@ function dsk_home() {
 		'story' => array(
 			'image'   => dsk_ph( 'story' ),
 			'badges'  => array( dsk_ph( 'badge' ) ),
-			'display' => 'From India to Invisalign',
+			'strapline' => 'From India to Invisalign',
 			'title'   => 'Sandeep can only be described as a trailblazer in the world of Invisalign.',
 			'body'    => array(
 				'Originally from India, Sandeep came to the UK in 1999. He qualified with the GDC in 2000 and on the lookout for his next opportunity, bought his first practice in 2003.',
@@ -89,10 +87,9 @@ function dsk_home() {
 		),
 
 		'achievements' => array(
-			array( 'text' => 'Sandeep has created more than 4,000 beautiful smiles with Invisalign&reg;', 'image' => dsk_ph( 'achievement' ) ),
-			array( 'text' => 'Sandeep is one of a handful of Invisalign Diamond Apex Providers in Europe', 'image' => dsk_ph( 'achievement' ) ),
-			array( 'text' => 'Sandeep is a highly respected speaker for Align Technology', 'image' => dsk_ph( 'achievement' ) ),
-			array( 'text' => 'Sandeep has been Highly Commended as Business Leader of the Year', 'image' => dsk_ph( 'achievement' ) ),
+			array( 'icon' => 'diamond', 'text' => 'Sandeep is one of a handful of Invisalign Diamond Apex Providers in Europe' ),
+			array( 'icon' => 'megaphone', 'text' => 'Sandeep is a highly respected speaker for Align Technology' ),
+			array( 'icon' => 'rosette', 'text' => 'Sandeep has been Highly Commended as Business Leader of the Year' ),
 		),
 
 		'network' => array(
@@ -108,7 +105,7 @@ function dsk_home() {
 		'global' => array(
 			// Add your own photographic backdrop here (a URL) to match the
 			// reference exactly; otherwise the CSS gradient is used.
-			'background' => '',
+			'background' => dsk_ph( 'global-bg' ),
 			'title'      => 'Global Invisalign speaker',
 			'body'       => 'Sandeep has spoken and lectured globally',
 			'locations'  => array( 'London', 'Brazil', 'Mexico', 'India', 'Macau', 'Barcelona' ),
@@ -139,13 +136,16 @@ function dsk_home() {
 		),
 
 		'enquiry' => array(
-			'title' => 'Have a question? Talk to us!',
+			'title' => 'Contact Sandeep',
+			'intro' => 'For all enquires, please feel free to contact Sandeep using the form below.',
 		),
 
 		'instagram' => array(
-			'image' => dsk_ph( 'instagram' ),
-			'url'   => 'https://www.instagram.com/',
+			'url' => 'https://www.instagram.com/',
 		),
+
+		// Soft misty backdrop behind the video-series + charity pair.
+		'mist_background' => dsk_ph( 'mist-bg' ),
 	);
 }
 

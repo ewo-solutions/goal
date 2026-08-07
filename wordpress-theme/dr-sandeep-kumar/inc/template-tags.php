@@ -31,9 +31,9 @@ function dsk_social_icon( $name ) {
 
 function dsk_social_links() {
 	$links = array(
-		'instagram' => get_theme_mod( 'dsk_social_instagram', '' ),
-		'facebook'  => get_theme_mod( 'dsk_social_facebook', '' ),
-		'linkedin'  => get_theme_mod( 'dsk_social_linkedin', '' ),
+		'instagram' => dsk_mod( 'dsk_social_instagram' ),
+		'facebook'  => dsk_mod( 'dsk_social_facebook' ),
+		'linkedin'  => dsk_mod( 'dsk_social_linkedin' ),
 	);
 	$out = '';
 	foreach ( $links as $name => $url ) {
@@ -48,4 +48,19 @@ function dsk_social_links() {
 		);
 	}
 	return $out;
+}
+
+/**
+ * Outline line-icons used by the achievements strip. Stroke inherits from
+ * CSS so they follow the section's colour.
+ */
+function dsk_line_icon( $name ) {
+	$paths = array(
+		'diamond'   => '<path d="M7 4h18l6 8-15 16L1 12l6-8Z"/><path d="M1 12h30M13 4l-4 8 7 16M19 4l4 8-7 16"/>',
+		'megaphone' => '<path d="M4 12v8a2 2 0 0 0 2 2h3l3 8h4l-3-8h1l14 6V6L14 12H6a2 2 0 0 0-2 2Z"/>',
+		'rosette'   => '<circle cx="16" cy="12" r="9"/><path d="M11 20l-4 11 9-4 9 4-4-11"/><circle cx="16" cy="12" r="4"/>',
+	);
+	$d = isset( $paths[ $name ] ) ? $paths[ $name ] : $paths['rosette'];
+	return '<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" '
+		. 'stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">' . $d . '</svg>';
 }

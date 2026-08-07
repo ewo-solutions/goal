@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="558" viewBox="0 0 1440 558" role="img" aria-label="Speaking photo backdrop placeholder">
+  <rect width="1440" height="558" fill="#1b2740"/>
+  <g fill="#2b3a58">
+    <circle cx="432" cy="189" r="39"/>
+    <path d="M0 558 L403 290 L792 558 Z"/>
+    <path d="M792 558 L1152 223 L1440 558 Z"/>
+  </g>
+  <text x="720" y="518" font-family="Urbanist, Helvetica, Arial, sans-serif" font-size="25" fill="#6f8099" text-anchor="middle">Speaking photo backdrop · 1440×558</text>
+</svg>

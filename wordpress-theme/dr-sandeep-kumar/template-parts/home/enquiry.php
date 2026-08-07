@@ -1,7 +1,6 @@
 <?php
 /**
- * Enquiry — reference `.enquiry-wrapp`: centred 40px heading over the
- * pill-field contact form, followed by the Instagram banner.
+ * Enquiry + social mark + footer link row — the tail of the reference page.
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -15,16 +14,33 @@ $insta = $c['instagram'];
 <section class="enquiry" id="enquiry">
 	<div class="shell reveal">
 		<h2 class="h-lg"><?php echo esc_html( $enq['title'] ); ?></h2>
+		<p class="enquiry__intro"><?php echo esc_html( $enq['intro'] ); ?></p>
 		<?php get_template_part( 'template-parts/enquiry-form' ); ?>
 	</div>
 </section>
 
-<section class="insta-section">
-	<a class="insta-banner" href="<?php echo esc_url( $insta['url'] ); ?>" target="_blank" rel="noopener noreferrer">
-		<img src="<?php echo esc_url( $insta['image'] ); ?>" alt="" loading="lazy" />
-		<span class="insta-banner__overlay">
-			<?php echo dsk_social_icon( 'instagram' ); // phpcs:ignore ?>
-			<span><?php esc_html_e( 'Follow on Instagram', 'dsk-home' ); ?></span>
-		</span>
+<section class="social-row">
+	<a href="<?php echo esc_url( $insta['url'] ); ?>" target="_blank" rel="noopener noreferrer"
+	   aria-label="<?php esc_attr_e( 'Instagram', 'dsk-home' ); ?>" style="color:#00255c">
+		<?php echo dsk_social_icon( 'instagram' ); // phpcs:ignore ?>
 	</a>
+</section>
+
+<section class="flinker">
+	<div class="shell">
+		<div class="flinker__row">
+			<?php
+			$links = dsk_get_footer_links();
+			$half  = (int) ceil( count( $links ) / 2 );
+			foreach ( array_slice( $links, 0, $half ) as $l ) : ?>
+				<a href="<?php echo esc_url( $l['url'] ); ?>"><?php echo esc_html( $l['label'] ); ?></a>
+			<?php endforeach; ?>
+
+			<span class="script script--navy flinker__sig"><?php bloginfo( 'name' ); ?></span>
+
+			<?php foreach ( array_slice( $links, $half ) as $l ) : ?>
+				<a href="<?php echo esc_url( $l['url'] ); ?>"><?php echo esc_html( $l['label'] ); ?></a>
+			<?php endforeach; ?>
+		</div>
+	</div>
 </section>

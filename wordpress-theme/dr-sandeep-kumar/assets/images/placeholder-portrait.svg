@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="494" height="620" viewBox="0 0 494 620" role="img" aria-label="Portrait placeholder">
-  <rect width="494" height="620" fill="#e6e9ee"/>
-  <g fill="#c3cad4">
-    <circle cx="148" cy="210" r="34"/>
-    <path d="M0 620 L138 322 L271 620 Z"/>
-    <path d="M271 620 L395 248 L494 620 Z"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="666" viewBox="0 0 560 666" role="img" aria-label="Portrait placeholder">
+  <rect width="560" height="666" fill="#1b2740"/>
+  <g fill="#2b3a58">
+    <circle cx="168" cy="226" r="39"/>
+    <path d="M0 666 L156 346 L308 666 Z"/>
+    <path d="M308 666 L448 266 L560 666 Z"/>
   </g>
-  <text x="247" y="576" font-family="Urbanist, Helvetica, Arial, sans-serif" font-size="22" fill="#8b95a3" text-anchor="middle">Portrait · 494×620</text>
+  <text x="280" y="619" font-family="Urbanist, Helvetica, Arial, sans-serif" font-size="25" fill="#6f8099" text-anchor="middle">Portrait · 560×666</text>
 </svg>

@@ -43,17 +43,21 @@ dimensions, so the layout reads correctly before you have artwork:
 | Slot | Size | File |
 |---|---|---|
 | Hero background | 1920×900 | `placeholder-hero.svg` |
-| Portrait (about) | 494×620 | `placeholder-portrait.svg` |
-| Service cards | 300×340 | `placeholder-service-card.svg` |
-| Course photo | 580×480 | `placeholder-mastering.svg` |
-| Story photo | 700×520 | `placeholder-story.svg` |
-| Network photo | 580×470 | `placeholder-network.svg` |
-| Interview stills | 290×195 | `placeholder-interview.svg` |
-| Charity photo | 560×380 | `placeholder-charity.svg` |
+| Portrait (about) | 560×666 | `placeholder-portrait.svg` |
+| Service tiles | 360×344 | `placeholder-service-tile.svg` |
+| Course photo | 620×470 | `placeholder-mastering.svg` |
+| Story photo | 700×620 | `placeholder-story.svg` |
+| Network photo | 560×500 | `placeholder-network.svg` |
+| Interview stills | 330×220 | `placeholder-interview.svg` |
+| Charity photo | 640×470 | `placeholder-charity.svg` |
+| Charity logo | 300×70 | `placeholder-charity-logo.svg` |
 | Partner logos | 170×62 | `placeholder-partner-logo.svg` |
-| Award badges | 120×120 | `placeholder-badge.svg` |
-| Achievement icons | 92×92 | `placeholder-achievement.svg` |
-| Instagram banner | 1440×360 | `placeholder-instagram.svg` |
+| Award badges | 100×100 | `placeholder-badge.svg` / `-badge-dark.svg` |
+| Global backdrop | 1440×558 | `placeholder-global-bg.svg` |
+| Misty backdrop | 1440×700 | `placeholder-mist-bg.svg` |
+
+Achievement icons are inline SVG line-icons (`dsk_line_icon()` in
+`inc/template-tags.php`), not images.
 
 Match those aspect ratios and everything drops in without reflowing.
 
@@ -69,7 +73,13 @@ gradient is used.
 
 Built to the reference's measured values:
 
-- **Type scale** — 72px hero, the 60px/700 signature section heading
+- **Header** — navy pill "☰ Menu" toggle top-left opening a slide-in panel,
+  with "Contact Me" and social marks top-right. No inline nav bar.
+- **Hero** — a 670px full-bleed video band with no overlaid copy, as the
+  reference renders it.
+- **Services** — four full-bleed tiles, edge to edge with no gutters, the
+  label set over a darkened photo.
+- **Type scale** — the 60px/700 signature section heading
   (letter-spacing 1.61px, line-height 1.13), the 90px display line, 40/26/20px
   secondary headings, 15px/500 body, 12.5px/800 tracked eyebrow labels.
 - **Palette** — `#00255c`, `#002159`, `#032b6a`, `#062b66`, `#f8f8f8`, `#494949`.
@@ -79,8 +89,11 @@ Built to the reference's measured values:
   as the reference groups them.
 - **Section rhythm** — each section's real top/bottom padding, and the
   1276px content column.
-- **Arrow-link CTAs** — label plus outlined circle-chevron that shifts on
-  hover, not solid buttons.
+- **Arrow-link CTAs** — an outlined circle-chevron *before* the label (the
+  reference's order), shifting on hover; not solid buttons.
+- **Signature script** — the reference uses a licensed handwriting face for
+  the name, straplines and footer mark. Sacramento (Google Fonts) stands in;
+  swap `--script` in `home.css` if you license the original.
 - **Pill form fields** — centred, 40px radius, navy hairline border.
 - **Scroll reveals** — staggered fade-up, the same effect the reference gets
   from WOW.js, here via IntersectionObserver. Gated on a `js` class so

@@ -38,7 +38,7 @@ add_action( 'after_setup_theme', 'dsk_setup' );
 function dsk_assets() {
 	wp_enqueue_style(
 		'dsk-google-fonts',
-		'https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800&display=swap',
+		'https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800&family=Sacramento&display=swap',
 		array(),
 		null
 	);
