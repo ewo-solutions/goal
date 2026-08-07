@@ -48,6 +48,50 @@
 		} );
 	}
 
+
+	/* --- Interviews carousel ---
+	 * Single-line track; arrows step by one card. Cards visible comes from
+	 * the --per custom property so CSS stays the source of truth for the
+	 * breakpoints, and the track re-clamps on resize. */
+	document.querySelectorAll( '.interviews__row' ).forEach( function ( row ) {
+		var track = row.querySelector( '.interviews__track' );
+		var prev = row.querySelector( '.interviews__nav--prev' );
+		var next = row.querySelector( '.interviews__nav--next' );
+		if ( ! track || ! prev || ! next ) { return; }
+
+		var cards = track.children;
+		var index = 0;
+
+		function perView() {
+			var v = parseInt( getComputedStyle( row ).getPropertyValue( '--per' ), 10 );
+			return v > 0 ? v : 1;
+		}
+		function maxIndex() {
+			return Math.max( 0, cards.length - perView() );
+		}
+		function apply() {
+			index = Math.min( index, maxIndex() );
+			var step = 0;
+			if ( cards.length ) {
+				var gap = parseFloat( getComputedStyle( track ).columnGap ) || 0;
+				step = cards[ 0 ].getBoundingClientRect().width + gap;
+			}
+			track.style.transform = 'translateX(' + ( -index * step ) + 'px)';
+			prev.disabled = index <= 0;
+			next.disabled = index >= maxIndex();
+		}
+
+		prev.addEventListener( 'click', function () { index--; apply(); } );
+		next.addEventListener( 'click', function () { index++; apply(); } );
+
+		var t;
+		window.addEventListener( 'resize', function () {
+			clearTimeout( t );
+			t = setTimeout( apply, 120 );
+		} );
+		apply();
+	} );
+
 	/* --- Scroll reveal ---
 	 * Equivalent of the reference site's WOW.js fadeInUp. Elements opt in
 	 * with class="reveal" and stagger via a --reveal-delay custom property.

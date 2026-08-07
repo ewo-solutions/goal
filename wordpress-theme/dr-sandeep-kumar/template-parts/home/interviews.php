@@ -15,11 +15,12 @@ $iv = dsk_home()['interviews'];
 		<h2 class="h-xl reveal"><?php echo esc_html( $iv['title'] ); ?></h2>
 
 		<div class="interviews__row reveal" style="--reveal-delay:120ms">
-			<button type="button" class="interviews__nav" aria-label="<?php esc_attr_e( 'Previous', 'dsk-home' ); ?>">
+			<button type="button" class="interviews__nav interviews__nav--prev" aria-label="<?php esc_attr_e( 'Previous', 'dsk-home' ); ?>">
 				<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M6.5 1 2.5 5l4 4" /></svg>
 			</button>
 
-			<div class="interviews__grid">
+			<div class="interviews__viewport">
+				<div class="interviews__track">
 				<?php foreach ( $iv['items'] as $item ) : ?>
 					<a class="interviews__card" href="<?php echo esc_url( $item['url'] ); ?>" target="_blank" rel="noopener noreferrer">
 						<span class="interviews__thumb">
@@ -34,9 +35,10 @@ $iv = dsk_home()['interviews'];
 						</p>
 					</a>
 				<?php endforeach; ?>
+				</div>
 			</div>
 
-			<button type="button" class="interviews__nav" aria-label="<?php esc_attr_e( 'Next', 'dsk-home' ); ?>">
+			<button type="button" class="interviews__nav interviews__nav--next" aria-label="<?php esc_attr_e( 'Next', 'dsk-home' ); ?>">
 				<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M3.5 1l4 4-4 4" /></svg>
 			</button>
 		</div>
