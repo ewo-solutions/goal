@@ -13,7 +13,7 @@ $partners = $c['partners'];
 $about    = $c['about'];
 $services = $c['services'];
 ?>
-<div class="dark-group">
+<div class="dark-group" style="--texture:url(<?php echo esc_url( $c['texture'] ); ?>)">
 
 	<section class="partners">
 		<div class="shell">
@@ -42,7 +42,7 @@ $services = $c['services'];
 			</div>
 
 			<div class="about__body reveal" style="--reveal-delay:140ms">
-				<p class="script about__sig"><?php echo esc_html( $c['signature'] ); ?></p>
+				<img class="sig about__sig" src="<?php echo esc_url( $c['signature_light'] ); ?>" alt="<?php echo esc_attr( $c['signature_alt'] ); ?>" />
 				<p class="copy copy--light"><?php echo wp_kses_post( $about['lead'] ); ?></p>
 				<p class="copy copy--light"><?php echo wp_kses_post( $about['body'] ); ?></p>
 

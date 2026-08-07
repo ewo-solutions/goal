@@ -13,8 +13,7 @@ $m = dsk_home()['mastering'];
 <section class="mastering">
 	<div class="shell mastering__grid">
 		<div class="mastering__body reveal">
-			<h2 class="h-md"><?php echo esc_html( $m['title'] ); ?></h2>
-			<p class="script mastering__sig"><?php echo esc_html( $m['byline'] ); ?></p>
+			<img class="mastering__wordmark" src="<?php echo esc_url( $m['wordmark'] ); ?>" alt="<?php echo esc_attr( $m['title'] ); ?>" />
 			<?php foreach ( $m['body'] as $para ) : ?>
 				<p class="copy copy--light copy--sm"><?php echo wp_kses_post( $para ); ?></p>
 			<?php endforeach; ?>

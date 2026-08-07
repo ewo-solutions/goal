@@ -36,7 +36,7 @@ $insta = $c['instagram'];
 				<a href="<?php echo esc_url( $l['url'] ); ?>"><?php echo esc_html( $l['label'] ); ?></a>
 			<?php endforeach; ?>
 
-			<span class="script script--navy flinker__sig"><?php echo esc_html( $c['signature'] ); ?></span>
+			<img class="sig flinker__sig" src="<?php echo esc_url( $c['signature'] ); ?>" alt="<?php echo esc_attr( $c['signature_alt'] ); ?>" />
 
 			<?php foreach ( array_slice( $links, $half ) as $l ) : ?>
 				<a href="<?php echo esc_url( $l['url'] ); ?>"><?php echo esc_html( $l['label'] ); ?></a>

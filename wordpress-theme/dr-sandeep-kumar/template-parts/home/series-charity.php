@@ -16,7 +16,7 @@ $charity = $c['charity'];
 
 	<section class="series">
 		<div class="shell reveal">
-			<p class="script script--navy series__sig"><?php echo esc_html( $c['signature'] ); ?></p>
+			<img class="sig series__sig" src="<?php echo esc_url( $c['signature'] ); ?>" alt="<?php echo esc_attr( $c['signature_alt'] ); ?>" />
 			<h2 class="h-lg"><?php echo esc_html( $series['title'] ); ?></h2>
 			<p class="copy"><?php echo wp_kses_post( $series['body'] ); ?></p>
 			<a class="btn-arrow" href="<?php echo esc_url( $series['cta']['url'] ); ?>">

@@ -21,12 +21,10 @@ $network = $c['network'];
 			<p class="testimonial__name"><?php echo esc_html( $t['name'] ); ?></p>
 			<p class="testimonial__role"><?php echo wp_kses_post( $t['role'] ); ?></p>
 			<p class="testimonial__quote">
-				<svg viewBox="0 0 42 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-					<path d="M0 19.5C0 8.5 7.2 1 17.8 1v6.1c-6.7.5-11.9 4.8-11.9 12.4H15V31H0V19.5Zm24 0C24 8.5 31.2 1 41.8 1v6.1c-6.7.5-11.9 4.8-11.9 12.4H39V31H24V19.5Z" />
-				</svg>
+				<img class="testimonial__mark" src="<?php echo esc_url( $t['mark'] ); ?>" alt="" />
 				<span><?php echo esc_html( $t['quote'] ); ?></span>
 			</p>
-			<p class="script script--navy testimonial__sig"><?php echo esc_html( $c['signature'] ); ?></p>
+			<img class="sig testimonial__sig" src="<?php echo esc_url( $c['signature'] ); ?>" alt="<?php echo esc_attr( $c['signature_alt'] ); ?>" />
 		</div>
 	</section>
 
@@ -61,7 +59,7 @@ $network = $c['network'];
 			<div class="achievements__grid">
 				<?php foreach ( $achieve as $i => $item ) : ?>
 					<div class="achievements__item reveal" style="--reveal-delay:<?php echo (int) ( $i * 90 ); ?>ms">
-						<?php echo dsk_line_icon( $item['icon'] ); // phpcs:ignore ?>
+						<img class="achievements__icon" src="<?php echo esc_url( $item['icon'] ); ?>" alt="" loading="lazy" />
 						<p class="caption"><?php echo wp_kses_post( $item['text'] ); ?></p>
 					</div>
 				<?php endforeach; ?>
