@@ -24,6 +24,10 @@ function dsk_ph( $name ) {
 function dsk_home() {
 	return array(
 
+		// Handwritten signature used in the about, quote, series and footer
+		// blocks. Kept separate from the WP site title on purpose.
+		'signature' => 'Dr Sandeep Kumar',
+
 		'hero' => array(
 			// Leave 'video' empty to show the still image instead.
 			'video' => '',

@@ -26,7 +26,7 @@ $network = $c['network'];
 				</svg>
 				<span><?php echo esc_html( $t['quote'] ); ?></span>
 			</p>
-			<p class="script script--navy testimonial__sig"><?php bloginfo( 'name' ); ?></p>
+			<p class="script script--navy testimonial__sig"><?php echo esc_html( $c['signature'] ); ?></p>
 		</div>
 	</section>
 

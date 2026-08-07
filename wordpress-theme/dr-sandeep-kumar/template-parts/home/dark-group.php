@@ -42,7 +42,7 @@ $services = $c['services'];
 			</div>
 
 			<div class="about__body reveal" style="--reveal-delay:140ms">
-				<p class="script about__sig"><?php bloginfo( 'name' ); ?></p>
+				<p class="script about__sig"><?php echo esc_html( $c['signature'] ); ?></p>
 				<p class="copy copy--light"><?php echo wp_kses_post( $about['lead'] ); ?></p>
 				<p class="copy copy--light"><?php echo wp_kses_post( $about['body'] ); ?></p>
 
