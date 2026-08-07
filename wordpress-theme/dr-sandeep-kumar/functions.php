@@ -45,18 +45,29 @@ function dsk_assets() {
 
 	wp_enqueue_style( 'dsk-main', DSK_THEME_URI . '/assets/css/main.css', array(), DSK_THEME_VERSION );
 
-	/* Reference-match styling for the Elementor starter template. Loaded
-	 * after main.css, and after Elementor's own frontend CSS, so its
-	 * `dsk-*` rules win over Elementor's widget defaults. */
-	wp_enqueue_style(
-		'dsk-reference',
-		DSK_THEME_URI . '/assets/css/reference.css',
-		array( 'dsk-main' ),
-		DSK_THEME_VERSION
-	);
+	/* Home page styling. Only loaded on the front page — every other page
+	 * runs through page.php and is styled by its own content/builder. */
+	if ( is_front_page() ) {
+		wp_enqueue_style(
+			'dsk-home',
+			DSK_THEME_URI . '/assets/css/home.css',
+			array( 'dsk-main' ),
+			DSK_THEME_VERSION
+		);
+	}
 
 	wp_enqueue_script( 'dsk-main', DSK_THEME_URI . '/assets/js/main.js', array(), DSK_THEME_VERSION, true );
 }
+
+/**
+ * Marks <html> with `js` before first paint. The scroll-reveal styles are
+ * gated on that class, so content is visible from the start for no-JS
+ * visitors and crawlers instead of being stuck at opacity 0.
+ */
+function dsk_js_flag() {
+	echo '<script>document.documentElement.className+=" js";</script>' . "\n";
+}
+add_action( 'wp_head', 'dsk_js_flag', 1 );
 add_action( 'wp_enqueue_scripts', 'dsk_assets' );
 
 /**

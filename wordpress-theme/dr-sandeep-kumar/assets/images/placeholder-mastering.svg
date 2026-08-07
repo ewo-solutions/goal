@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="580" height="480" viewBox="0 0 580 480" role="img" aria-label="Course photo placeholder">
+  <rect width="580" height="480" fill="#1b2740"/>
+  <g fill="#2b3a58">
+    <circle cx="174" cy="163" r="33"/>
+    <path d="M0 480 L162 249 L319 480 Z"/>
+    <path d="M319 480 L464 192 L580 480 Z"/>
+  </g>
+  <text x="290" y="446" font-family="Urbanist, Helvetica, Arial, sans-serif" font-size="21" fill="#6f8099" text-anchor="middle">Course photo · 580×480</text>
+</svg>

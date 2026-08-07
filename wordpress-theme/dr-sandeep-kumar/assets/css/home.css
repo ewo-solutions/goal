@@ -1,0 +1,647 @@
+/* ==========================================================================
+   Home page — hand-coded to mirror the reference design.
+
+   Values here (type scale, section padding, column widths, colours) were
+   read out of the reference site's own stylesheet rather than estimated,
+   so the layout matches rather than approximates. The markup in
+   template-parts/home/*.php mirrors the reference's section structure.
+   ========================================================================== */
+
+:root {
+	--navy: #00255c;
+	--navy-alt: #002159;
+	--navy-deep: #032b6a;
+	--navy-mid: #062b66;
+	--blue: #3079d1;
+	--ink: #191919;
+	--grey: #494949;
+	--offwhite: #f8f8f8;
+	--shell: 1276px;
+}
+
+/* Container — reference `.margin` */
+.shell {
+	width: 100%;
+	max-width: var(--shell);
+	margin: 0 auto;
+	padding: 0 24px;
+}
+
+.home-page img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+/* --------------------------------------------------------------------------
+   Shared type scale
+   -------------------------------------------------------------------------- */
+.h-display {           /* 90px ultra-display */
+	font-size: 90px;
+	font-weight: 400;
+	color: var(--navy-mid);
+	letter-spacing: 2.41px;
+	line-height: 1.08;
+	margin: 0 0 8px;
+}
+.h-xl {                /* 60px signature section heading */
+	font-size: 60px;
+	font-weight: 700;
+	color: var(--navy);
+	letter-spacing: 1.61px;
+	line-height: 1.13;
+	margin: 0 0 14px;
+}
+.h-lg {                /* 40px */
+	font-size: 40px;
+	font-weight: 700;
+	color: var(--navy-alt);
+	letter-spacing: 1.07px;
+	line-height: 1.25;
+	margin: 0 0 18px;
+}
+.h-md {                /* 26px, used on dark sections */
+	font-size: 26px;
+	font-weight: 700;
+	color: #fff;
+	line-height: 1.38;
+	margin: 0 0 18px;
+}
+.h-sm {                /* 20px */
+	font-size: 20px;
+	font-weight: 700;
+	color: var(--navy);
+	letter-spacing: 0.54px;
+	line-height: 1.35;
+	margin: 0 0 10px;
+}
+.eyebrow {             /* 12.5px tracked-out label */
+	font-size: 12.5px;
+	font-weight: 800;
+	color: #fff;
+	letter-spacing: 2.5px;
+	line-height: 1.36;
+	text-transform: uppercase;
+	margin: 0 0 14px;
+}
+.eyebrow--dark { color: var(--navy); }
+
+.copy {
+	font-size: 15px;
+	font-weight: 500;
+	color: var(--navy);
+	line-height: 1.73;
+	margin: 0 0 26px;
+}
+.copy--light { color: #fff; line-height: 1.8; }
+.copy:last-child { margin-bottom: 0; }
+
+.caption {
+	font-size: 14px;
+	font-weight: 400;
+	color: var(--grey);
+	letter-spacing: 0.37px;
+	line-height: 1.57;
+	margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Buttons
+   -------------------------------------------------------------------------- */
+/* Arrow link — the reference's primary CTA: label + outlined circle chevron */
+.btn-arrow {
+	display: inline-flex;
+	align-items: center;
+	gap: 14px;
+	font-size: 16px;
+	font-weight: 600;
+	letter-spacing: 0.43px;
+	line-height: 2.6;
+	color: var(--navy);
+	transition: color 0.25s ease-out;
+}
+.btn-arrow::after {
+	content: "";
+	flex: 0 0 auto;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	border: 1px solid currentColor;
+	background: no-repeat center / 9px 9px
+		url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M2 1l4 4-4 4' fill='none' stroke='%2300255c' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+	transition: transform 0.28s ease-out;
+}
+.btn-arrow:hover { color: rgba(0, 37, 92, 0.7); }
+.btn-arrow:hover::after { transform: translateX(4px); }
+
+.btn-arrow--light { color: #fff; }
+.btn-arrow--light::after {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M2 1l4 4-4 4' fill='none' stroke='%23ffffff' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+.btn-arrow--light:hover { color: rgba(255, 255, 255, 0.7); }
+
+/* Small white pill — reference `.abouts-btn1` */
+.btn-pill {
+	display: inline-block;
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: 0.35px;
+	color: var(--navy);
+	background: #fff;
+	border: 1px solid #fff;
+	border-radius: 40px;
+	padding: 8px 16px;
+	transition: all 0.25s ease-out;
+}
+.btn-pill:hover { background: var(--navy); color: #fff; }
+
+/* --------------------------------------------------------------------------
+   Hero — reference `.banner-wrapp`: 670px, content bottom-right
+   -------------------------------------------------------------------------- */
+.hero {
+	position: relative;
+	min-height: 670px;
+	display: flex;
+	align-items: flex-end;
+	overflow: hidden;
+	background: #0b1b33;
+}
+.hero__media {
+	position: absolute;
+	inset: 0;
+}
+.hero__media img,
+.hero__media video {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.hero__media::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(to bottom, rgba(9, 16, 32, 0.55), rgba(9, 16, 32, 0.78));
+}
+.hero__inner {
+	position: relative;
+	z-index: 2;
+	width: 100%;
+	padding-bottom: 51px;
+	text-align: right;
+}
+.hero__title {
+	font-size: 72px;
+	font-weight: 400;
+	color: #fff;
+	letter-spacing: 1.93px;
+	line-height: 1.08;
+	margin: 0;
+}
+.hero__title strong { font-weight: 700; }
+
+/* --------------------------------------------------------------------------
+   Dark gradient group — reference `.common-bg1`
+   One gradient behind the logo strip, about and services.
+   -------------------------------------------------------------------------- */
+.dark-group {
+	position: relative;
+	overflow: hidden;
+	background-image: linear-gradient(to right top, #191919, #1c1b28, #1c1e39, #16214a, #00255c);
+}
+/* Reference overlays a texture PNG bottom-left; that asset belongs to the
+   original site, so this reproduces the same bloom in CSS. */
+.dark-group::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 42%;
+	padding-bottom: 40%;
+	pointer-events: none;
+	background: radial-gradient(ellipse at 0% 100%,
+		rgba(48, 121, 209, 0.22) 0%, rgba(48, 121, 209, 0.08) 38%, rgba(0, 0, 0, 0) 72%);
+}
+.dark-group > * { position: relative; z-index: 1; }
+
+/* --- Partner logo strip (reference padding 46px 0 21px) --- */
+.partners { padding: 46px 0 21px; }
+.partners__track {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 40px;
+	flex-wrap: wrap;
+}
+.partners__item {
+	flex: 0 1 auto;
+	opacity: 0.85;
+	transition: opacity 0.25s ease-out;
+}
+.partners__item:hover { opacity: 1; }
+.partners__item img { max-height: 62px; width: auto; }
+
+/* --- About (reference padding 21px 0 0) --- */
+.about { padding: 46px 0 60px; }
+.about__grid {
+	display: flex;
+	align-items: center;
+	gap: 7.8%;
+}
+.about__media {
+	flex: 0 0 38.6%;
+	position: relative;
+}
+.about__badges {
+	position: absolute;
+	right: -28px;
+	bottom: 28px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+.about__badges img {
+	width: 96px;
+	border-radius: 50%;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+.about__body { flex: 1 1 auto; }
+.about__body h2 {
+	font-size: 15px;
+	font-weight: 600;
+	color: #fff;
+	line-height: 1.44;
+	margin: 0 0 18px;
+}
+.about__insta {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	color: #fff;
+	font-size: 15px;
+	font-weight: 500;
+	margin-top: 6px;
+}
+.about__insta svg { width: 20px; height: 20px; fill: currentColor; }
+
+/* --- Services (reference bg #032b6a, centred) --- */
+.services {
+	text-align: center;
+	padding: 10px 0 78px;
+}
+.services__grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 24px;
+	margin-top: 34px;
+}
+.services__card { display: block; }
+.services__thumb {
+	overflow: hidden;
+	border-radius: 4px;
+}
+.services__thumb img {
+	width: 100%;
+	transition: transform 0.6s ease-out;
+}
+.services__card:hover .services__thumb img { transform: scale(1.06); }
+.services__card h2 {
+	font-size: 26px;
+	font-weight: 700;
+	color: #fff;
+	line-height: 1.38;
+	margin: 18px 0 0;
+}
+.services__card p {
+	font-size: 15px;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 0.78);
+	line-height: 1.8;
+	margin: 6px 0 0;
+}
+
+/* --------------------------------------------------------------------------
+   Course CTA — reference `.mastering-wrapp` (#032b6a, 68px / 128px)
+   -------------------------------------------------------------------------- */
+.mastering {
+	background: var(--navy-deep);
+	padding: 68px 0 128px;
+}
+.mastering__grid {
+	display: flex;
+	align-items: center;
+	gap: 60px;
+}
+.mastering__body { flex: 0 0 51.9%; }
+.mastering__body .copy { line-height: 1.87; }
+.mastering__media { flex: 1 1 auto; }
+
+/* --------------------------------------------------------------------------
+   Off-white band — reference `.common-bg2` region
+   -------------------------------------------------------------------------- */
+.band-light { background: var(--offwhite); }
+
+/* --- Testimonial (107px / 61px, 82% centred, 60px quote) --- */
+.testimonial { padding: 107px 0 61px; }
+.testimonial__inner {
+	width: 82%;
+	margin: 0 auto;
+	display: flex;
+	gap: 3%;
+}
+.testimonial__mark {
+	flex: 0 0 3.8%;
+	margin-top: 1.6%;
+}
+.testimonial__mark svg { width: 100%; fill: var(--navy); opacity: 0.9; }
+.testimonial__body { flex: 1 1 auto; }
+.testimonial__quote {
+	font-size: 60px;
+	font-weight: 700;
+	color: var(--navy);
+	letter-spacing: 1.61px;
+	line-height: 1.13;
+	margin: 0 0 16px;
+}
+.testimonial__name {
+	font-size: 18px;
+	font-weight: 700;
+	color: var(--navy-alt);
+	letter-spacing: 0.48px;
+	line-height: 2.61;
+	margin: 0;
+}
+.testimonial__role {
+	font-size: 18px;
+	font-weight: 400;
+	color: var(--navy-alt);
+	letter-spacing: 0.48px;
+	line-height: 2.67;
+	margin: 0;
+}
+
+/* --- Story (61px / 32px; 90px display over 60px heading) --- */
+.story { padding: 61px 0 32px; }
+.story__grid {
+	display: flex;
+	align-items: center;
+	gap: 5%;
+}
+.story__body { flex: 0 0 52%; }
+.story__media { flex: 1 1 auto; position: relative; }
+.story__badges {
+	position: absolute;
+	left: -30px;
+	bottom: -18px;
+	display: flex;
+	gap: 12px;
+}
+.story__badges img { width: 84px; }
+
+/* --- Achievements (32px / 40px, 90% centred, 4 across) --- */
+.achievements { padding: 32px 0 40px; }
+.achievements__grid {
+	width: 90%;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 34px;
+}
+.achievements__item {
+	display: flex;
+	align-items: flex-start;
+	gap: 16px;
+}
+.achievements__item img { width: 62px; flex: 0 0 auto; }
+
+/* --- Network (40px / 84px) --- */
+.network { padding: 40px 0 84px; }
+.network__grid {
+	display: flex;
+	align-items: center;
+	gap: 6%;
+}
+.network__media { flex: 0 0 44%; }
+.network__body { flex: 1 1 auto; }
+.network__body .h-xl { margin-bottom: 26px; }
+
+/* --------------------------------------------------------------------------
+   Global speaker — reference uses a photo backdrop; gradient stands in
+   until you add one. (138px / 142px, centred)
+   -------------------------------------------------------------------------- */
+.global {
+	text-align: center;
+	padding: 138px 0 142px;
+	background-image: linear-gradient(to right top, #16214a, #00255c 55%, #032b6a);
+	background-size: cover;
+	background-position: center;
+}
+.global__icon { width: 58px; margin: 0 auto 22px; }
+.global__icon svg { width: 100%; fill: #fff; }
+.global .h-xl { color: #fff; }
+.global .copy { color: #fff; margin-bottom: 20px; }
+.global__list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 12px 38px;
+	margin-top: 26px;
+}
+.global__list li {
+	font-size: 15px;
+	font-weight: 600;
+	color: #fff;
+	position: relative;
+	padding-left: 16px;
+}
+.global__list li::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 9px;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: var(--blue);
+}
+
+/* --------------------------------------------------------------------------
+   Interviews — reference `.conversation-wrapp` (92px / 82px, 60px heading)
+   -------------------------------------------------------------------------- */
+.interviews { padding: 92px 0 82px; }
+.interviews .h-xl { margin-bottom: 50px; }
+.interviews__grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 26px;
+}
+.interviews__card { display: block; }
+.interviews__thumb {
+	position: relative;
+	overflow: hidden;
+	border-radius: 4px;
+}
+.interviews__thumb img {
+	width: 100%;
+	transition: transform 0.5s ease-out;
+}
+.interviews__card:hover .interviews__thumb img { transform: scale(1.05); }
+.interviews__play {
+	position: absolute;
+	inset: 0;
+	display: grid;
+	place-items: center;
+	background: rgba(0, 37, 92, 0.28);
+}
+.interviews__play svg { width: 42px; fill: #fff; }
+.interviews__card p { margin: 14px 0 0; }
+.interviews__card strong { display: block; font-weight: 700; }
+
+/* --------------------------------------------------------------------------
+   Video series + charity (reference `.common-bg2` group)
+   -------------------------------------------------------------------------- */
+.series {
+	text-align: center;
+	padding: 90px 0 60px;
+}
+.series .copy { margin-left: auto; margin-right: auto; max-width: 860px; }
+
+.charity { padding: 51px 0 90px; }
+.charity__grid {
+	display: flex;
+	align-items: center;
+	gap: 5%;
+}
+.charity__logo { flex: 0 0 16%; }
+.charity__body { flex: 1 1 auto; text-align: center; }
+.charity__raised {
+	font-size: 60px;
+	font-weight: 700;
+	color: var(--navy);
+	letter-spacing: 1.61px;
+	line-height: 1.13;
+	margin: 6px 0 0;
+}
+.charity__raised span { font-weight: 400; }
+.charity__media { flex: 0 0 34%; }
+
+/* --------------------------------------------------------------------------
+   Enquiry — reference `.enquiry-wrapp` (74px / 30px, centred pill fields)
+   -------------------------------------------------------------------------- */
+.enquiry {
+	text-align: center;
+	padding: 74px 0 70px;
+}
+.enquiry .enquiry-form { max-width: 800px; margin: 0 auto; }
+.enquiry .field input,
+.enquiry .field textarea {
+	text-align: center;
+	font-size: 14px;
+	font-weight: 400;
+	color: var(--navy);
+	letter-spacing: 0.37px;
+	background: #fff;
+	border: 1px solid var(--navy);
+	border-radius: 40px;
+	padding: 14px 22px;
+}
+.enquiry .field textarea { border-radius: 24px; text-align: left; }
+.enquiry .field input::placeholder,
+.enquiry .field textarea::placeholder { color: var(--navy); opacity: 0.75; }
+.enquiry .enquiry__consent {
+	justify-content: center;
+	text-align: left;
+	max-width: 560px;
+	margin-inline: auto;
+}
+.enquiry .btn--pill {
+	background: transparent;
+	color: var(--navy);
+	border: 1px solid var(--navy);
+	border-radius: 40px;
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: 0.43px;
+	padding: 12px 34px;
+}
+.enquiry .btn--pill:hover { background: var(--navy); color: #fff; }
+
+/* --------------------------------------------------------------------------
+   Instagram banner
+   -------------------------------------------------------------------------- */
+.insta-banner { position: relative; display: block; }
+.insta-banner img { width: 100%; }
+.insta-banner__overlay {
+	position: absolute;
+	inset: 0;
+	display: grid;
+	place-items: center;
+	gap: 10px;
+	background: rgba(0, 37, 92, 0.4);
+	color: #fff;
+	opacity: 0;
+	transition: opacity 0.3s ease-out;
+}
+.insta-banner:hover .insta-banner__overlay { opacity: 1; }
+.insta-banner__overlay span { font-size: 20px; font-weight: 700; }
+
+/* --------------------------------------------------------------------------
+   Scroll reveal — the reference uses WOW.js fadeInUp; this is the same
+   effect with an IntersectionObserver. Content is visible by default so it
+   never disappears for no-JS visitors or crawlers.
+   -------------------------------------------------------------------------- */
+.js .reveal {
+	opacity: 0;
+	transform: translateY(30px);
+	transition: opacity 0.75s cubic-bezier(0.22, 0.61, 0.36, 1),
+	            transform 0.75s cubic-bezier(0.22, 0.61, 0.36, 1);
+	transition-delay: var(--reveal-delay, 0ms);
+}
+.js .reveal.is-in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+	.js .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+@media (max-width: 1100px) {
+	.h-display { font-size: 58px; }
+	.h-xl, .testimonial__quote, .charity__raised { font-size: 42px; letter-spacing: 1.1px; }
+	.hero__title { font-size: 48px; }
+	.services__grid, .interviews__grid { grid-template-columns: repeat(2, 1fr); }
+	.achievements__grid { grid-template-columns: repeat(2, 1fr); width: 100%; }
+	.global { padding: 90px 0 94px; }
+	.mastering { padding: 54px 0 80px; }
+}
+
+@media (max-width: 860px) {
+	.about__grid, .mastering__grid, .story__grid, .network__grid,
+	.charity__grid, .testimonial__inner {
+		flex-direction: column;
+		gap: 34px;
+	}
+	.about__media, .mastering__body, .story__body,
+	.network__media, .charity__logo, .charity__media { flex: 1 1 auto; width: 100%; }
+	.testimonial__inner { width: 100%; }
+	.testimonial__mark { display: none; }
+	.about__badges { right: 8px; bottom: 8px; flex-direction: row; }
+	.about__badges img { width: 70px; }
+	.story__badges { left: 8px; bottom: 8px; }
+	.story__badges img { width: 64px; }
+}
+
+@media (max-width: 640px) {
+	.h-display { font-size: 38px; letter-spacing: 1px; }
+	.h-xl, .testimonial__quote, .charity__raised { font-size: 30px; letter-spacing: 0.8px; }
+	.h-lg { font-size: 26px; }
+	.h-md { font-size: 21px; }
+	.hero__title { font-size: 30px; letter-spacing: 0.6px; }
+	.hero { min-height: 460px; }
+	.hero__inner { text-align: left; }
+	.services__grid, .interviews__grid, .achievements__grid { grid-template-columns: 1fr; }
+	.testimonial { padding: 56px 0 40px; }
+	.interviews { padding: 56px 0 48px; }
+	.global { padding: 64px 0 66px; }
+	.series { padding: 56px 0 40px; }
+	.charity { padding: 30px 0 60px; }
+}

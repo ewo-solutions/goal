@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="92" height="92" viewBox="0 0 92 92" role="img" aria-label="Icon placeholder">
+  <rect width="92" height="92" fill="#e6e9ee"/>
+  <g fill="#c3cad4">
+    <circle cx="27" cy="31" r="8"/>
+    <path d="M0 92 L25 47 L50 92 Z"/>
+    <path d="M50 92 L73 36 L92 92 Z"/>
+  </g>
+  <text x="46" y="85" font-family="Urbanist, Helvetica, Arial, sans-serif" font-size="10" fill="#8b95a3" text-anchor="middle">Icon · 92×92</text>
+</svg>

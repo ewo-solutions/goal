@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="170" height="62" viewBox="0 0 170 62" role="img" aria-label="Partner logo placeholder">
+  <rect width="170" height="62" fill="#1b2740"/>
+  <g fill="#2b3a58">
+    <circle cx="51" cy="21" r="8"/>
+    <path d="M0 62 L47 32 L93 62 Z"/>
+    <path d="M93 62 L136 24 L170 62 Z"/>
+  </g>
+  <text x="85" y="57" font-family="Urbanist, Helvetica, Arial, sans-serif" font-size="10" fill="#6f8099" text-anchor="middle">Partner logo · 170×62</text>
+</svg>

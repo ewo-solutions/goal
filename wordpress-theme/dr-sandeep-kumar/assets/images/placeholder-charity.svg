@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="380" viewBox="0 0 560 380" role="img" aria-label="Charity photo placeholder">
+  <rect width="560" height="380" fill="#e6e9ee"/>
+  <g fill="#c3cad4">
+    <circle cx="168" cy="129" r="26"/>
+    <path d="M0 380 L156 197 L308 380 Z"/>
+    <path d="M308 380 L448 152 L560 380 Z"/>
+  </g>
+  <text x="280" y="353" font-family="Urbanist, Helvetica, Arial, sans-serif" font-size="17" fill="#8b95a3" text-anchor="middle">Charity photo · 560×380</text>
+</svg>

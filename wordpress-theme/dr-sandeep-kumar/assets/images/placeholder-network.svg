@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="580" height="470" viewBox="0 0 580 470" role="img" aria-label="Network photo placeholder">
+  <rect width="580" height="470" fill="#e6e9ee"/>
+  <g fill="#c3cad4">
+    <circle cx="174" cy="159" r="32"/>
+    <path d="M0 470 L162 244 L319 470 Z"/>
+    <path d="M319 470 L464 188 L580 470 Z"/>
+  </g>
+  <text x="290" y="437" font-family="Urbanist, Helvetica, Arial, sans-serif" font-size="21" fill="#8b95a3" text-anchor="middle">Network photo · 580×470</text>
+</svg>

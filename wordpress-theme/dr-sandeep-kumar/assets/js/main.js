@@ -47,4 +47,26 @@
 			window.scrollTo( { top: 0, behavior: 'smooth' } );
 		} );
 	}
+
+	/* --- Scroll reveal ---
+	 * Equivalent of the reference site's WOW.js fadeInUp. Elements opt in
+	 * with class="reveal" and stagger via a --reveal-delay custom property.
+	 * Without JS the `js` class is never added, so nothing is hidden. */
+	var reveals = document.querySelectorAll( '.reveal' );
+	if ( reveals.length && 'IntersectionObserver' in window ) {
+		var io = new IntersectionObserver(
+			function ( entries ) {
+				entries.forEach( function ( entry ) {
+					if ( entry.isIntersecting ) {
+						entry.target.classList.add( 'is-in' );
+						io.unobserve( entry.target );
+					}
+				} );
+			},
+			{ rootMargin: '0px 0px -8% 0px', threshold: 0.08 }
+		);
+		reveals.forEach( function ( el ) { io.observe( el ); } );
+	} else {
+		reveals.forEach( function ( el ) { el.classList.add( 'is-in' ); } );
+	}
 } )();

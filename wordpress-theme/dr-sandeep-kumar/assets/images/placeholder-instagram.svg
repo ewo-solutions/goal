@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="360" viewBox="0 0 1440 360" role="img" aria-label="Instagram banner placeholder">
+  <rect width="1440" height="360" fill="#1b2740"/>
+  <g fill="#2b3a58">
+    <circle cx="432" cy="122" r="25"/>
+    <path d="M0 360 L403 187 L792 360 Z"/>
+    <path d="M792 360 L1152 144 L1440 360 Z"/>
+  </g>
+  <text x="720" y="334" font-family="Urbanist, Helvetica, Arial, sans-serif" font-size="16" fill="#6f8099" text-anchor="middle">Instagram banner · 1440×360</text>
+</svg>

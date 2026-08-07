@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" role="img" aria-label="Award badge placeholder">
+  <rect width="120" height="120" fill="#e6e9ee"/>
+  <g fill="#c3cad4">
+    <circle cx="36" cy="40" r="8"/>
+    <path d="M0 120 L33 62 L66 120 Z"/>
+    <path d="M66 120 L96 48 L120 120 Z"/>
+  </g>
+  <text x="60" y="111" font-family="Urbanist, Helvetica, Arial, sans-serif" font-size="10" fill="#8b95a3" text-anchor="middle">Award badge · 120×120</text>
+</svg>

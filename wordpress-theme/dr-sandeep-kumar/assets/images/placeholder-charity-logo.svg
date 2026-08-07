@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="90" viewBox="0 0 200 90" role="img" aria-label="Charity logo placeholder">
+  <rect width="200" height="90" fill="#e6e9ee"/>
+  <g fill="#c3cad4">
+    <circle cx="60" cy="30" r="8"/>
+    <path d="M0 90 L56 46 L110 90 Z"/>
+    <path d="M110 90 L160 36 L200 90 Z"/>
+  </g>
+  <text x="100" y="83" font-family="Urbanist, Helvetica, Arial, sans-serif" font-size="10" fill="#8b95a3" text-anchor="middle">Charity logo · 200×90</text>
+</svg>

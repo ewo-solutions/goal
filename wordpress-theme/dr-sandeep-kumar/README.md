@@ -1,171 +1,142 @@
-# Dr Sandeep Kumar Home — WordPress theme (Elementor-ready)
+# Dr Sandeep Kumar — WordPress theme
 
-This theme provides the **coded chrome** around a page you build visually in
-Elementor: a sticky header/nav, footer, back-to-top button, and a
-`[dsk_enquiry_form]` contact-form shortcode. It intentionally does **not**
-hard-code the home page's sections (hero, services, testimonial, etc.) —
-that content is built and edited in the Elementor page editor, which is
-what makes it drag-and-drop editable.
+A hand-coded WordPress theme whose home page mirrors the reference design:
+layout, spacing, type scale, colours, backgrounds and scroll effects are
+built to the reference's own measured values rather than approximated.
 
-## How it fits together
-
-- `page.php` and `index.php` are a normal WordPress Loop that calls
-  `the_content()` — this is the hook Elementor uses to take over a page's
-  content. There's no `front-page.php`; whichever Page you set as the
-  static front page (Settings → Reading) renders through `page.php`.
-- Build that page's content entirely in the Elementor editor: **Pages →
-  Add New → Edit with Elementor**.
-- For the contact form, add a **Shortcode** widget (or **HTML** widget)
-  anywhere in the layout and enter `[dsk_enquiry_form]`. It submits to
-  `admin-post.php` and emails the address set in Customize → Contact —
-  no Elementor Pro / Forms add-on required.
-- If you want the header's "Contact Me" button to scroll to that section,
-  give the Elementor section/container holding the form a **CSS ID** of
-  `enquiry` (Advanced tab in Elementor).
+The home page is **not** built with a page builder. That's deliberate —
+going through Elementor's widget system caps how closely the layout can be
+matched, because it emits its own DOM and CSS. Hand-coding it is what makes
+the exact match possible. Every *other* page still runs through `page.php`
+with a normal `the_content()` loop, so you can keep using Elementor or the
+block editor everywhere else.
 
 ## Install
 
-1. Zip the `dr-sandeep-kumar` folder (this directory) and upload it via
-   **Appearance → Themes → Add New → Upload Theme**, then **Activate**.
-2. Install and activate the **Elementor** plugin (Plugins → Add New →
-   search "Elementor").
-3. Create a Page (e.g. titled "Home") and edit it with Elementor. Either
-   build your layout from scratch, or start from the bundled starter
-   template — see below.
-4. **Settings → Reading** → "A static page" → set that page as the
-   **Homepage**.
-5. **Appearance → Customize**:
-   - **Site Identity** — logo, used in the header and footer.
-   - **Menus** — build the "Primary Menu" for header nav (optional; falls
-     back to a single "Home" link if none is assigned).
-   - **Contact** — the email address `[dsk_enquiry_form]` sends to, and a
-     phone number if you want one elsewhere on the page.
-   - **Social Links** — Instagram / Facebook / LinkedIn URLs shown as
-     icons in the header and footer.
-   - **Footer** — copyright line and an optional credit line/link.
+1. Zip the `dr-sandeep-kumar` folder and upload via **Appearance → Themes →
+   Add New → Upload Theme**, then **Activate**.
+2. That's it — the home page renders immediately with placeholder imagery.
+   No page builder, no template import, no starter content to load.
+3. **Appearance → Customize → Site Identity** for the logo, **Menus** for
+   the header nav, and **Home Page Content** for contact/social/footer.
 
-## Starter template
+If your site uses a static front page, WordPress will use `front-page.php`
+automatically. Nothing to configure.
 
-`starter-template/dr-sandeep-kumar-home.json` is a full home-page layout —
-hero, partner-logo strip, about, services, a course CTA, testimonial, a
-longer bio section, an achievements grid, a network CTA, a "global speaker"
-strip, video-interview cards, a video-series CTA, a charity CTA, an
-Instagram banner, and the `[dsk_enquiry_form]` contact form — built as
-real Elementor sections/widgets so it's fully editable after import (not
-a screenshot or a locked block). Every photo/logo slot is an Elementor
-Image widget left empty, which renders Elementor's own placeholder
-graphic until you swap in real images.
+## Editing content
 
-### How the styling works
+All home page copy, links and images live in one file:
+**`inc/home-content.php`**. It's a single `dsk_home()` array, one block per
+section, with inline comments. Change text directly; for images, paste a
+URL from your Media Library (Media → select the item → *Copy URL to
+clipboard*) in place of the `dsk_ph( ... )` placeholder call.
 
-The template pairs with `assets/css/reference.css`, which the theme loads
-automatically. The template assigns `dsk-*` CSS classes to its containers
-and widgets; that stylesheet then supplies the exact reference values —
-read out of the original site's own CSS, not eyeballed:
+Contact email, phone, social links and the footer are in
+**Appearance → Customize** (they're shared with the header/footer, not just
+the home page).
 
-- **Type scale** — the signature 60px/700 section heading
-  (letter-spacing 1.61px, line-height 1.13), the 90px display line, 40px
-  and 26px secondary headings, 15px/500 body copy, and 12.5px/800
-  tracked-out eyebrow labels.
-- **Palette** — `#00255c` navy, `#032b6a` deep navy, `#f8f8f8` off-white,
-  `#494949` caption grey.
-- **The shared gradient group** — the reference wraps its logo strip,
-  about and services sections in *one* diagonal gradient
-  (`#191919 → #00255c`) with a soft light-bloom bottom-left, rather than
-  giving each section its own background. The template nests those three
-  sections inside a single container so this reproduces faithfully.
-- **Arrow-link CTAs** — the reference's primary buttons aren't solid
-  blocks; they're a text label followed by an outlined circle-chevron that
-  shifts on hover.
-- **Pill form fields** — centred text, 40px radius, navy hairline border.
-- **Section rhythm** — each section's exact top/bottom padding.
-- **Entrance animations** — staggered `fadeInUp` on sections and card
-  grids: Elementor's equivalent of the reference's WOW.js scroll reveals.
+## Replacing the placeholders
 
-Styling lives in CSS rather than in Elementor's per-element settings
-because several of these have no equivalent in Elementor's widget controls
-at all — a gradient spanning a group of sections, the circle-chevron
-buttons, the pill inputs. Content stays fully editable in Elementor either
-way. Every rule is scoped to a `dsk-` class, so nothing leaks into other
-pages or widgets you add yourself. To restyle, edit
-`assets/css/reference.css` — the colours are CSS custom properties at the
-top of the file.
+The theme ships neutral SVG placeholders at the reference's real
+dimensions, so the layout reads correctly before you have artwork:
 
-Note on selector specificity: those rules are written as
-`.elementor-widget.dsk-x .target`. Elementor's Default Kit styles headings
-with `.elementor-widget-heading .elementor-heading-title` and its
-stylesheet loads after the theme's, so an equal-specificity rule loses and
-everything silently inherits the kit's default accent colour. The extra
-class wins it back without `!important`.
+| Slot | Size | File |
+|---|---|---|
+| Hero background | 1920×900 | `placeholder-hero.svg` |
+| Portrait (about) | 494×620 | `placeholder-portrait.svg` |
+| Service cards | 300×340 | `placeholder-service-card.svg` |
+| Course photo | 580×480 | `placeholder-mastering.svg` |
+| Story photo | 700×520 | `placeholder-story.svg` |
+| Network photo | 580×470 | `placeholder-network.svg` |
+| Interview stills | 290×195 | `placeholder-interview.svg` |
+| Charity photo | 560×380 | `placeholder-charity.svg` |
+| Partner logos | 170×62 | `placeholder-partner-logo.svg` |
+| Award badges | 120×120 | `placeholder-badge.svg` |
+| Achievement icons | 92×92 | `placeholder-achievement.svg` |
+| Instagram banner | 1440×360 | `placeholder-instagram.svg` |
 
-### What this can't match
+Match those aspect ratios and everything drops in without reflowing.
 
-Two things are outside what a template file can carry, and both need your
-own assets:
+**Hero video**: set `hero → video` in `inc/home-content.php` to an MP4 URL
+and it plays full-bleed behind the headline, with the still as its poster.
+Leave it empty to use the still image.
 
-- **Imagery** — the reference's photography, partner logos and hero video
-  belong to the original site and aren't bundled. Every image slot is an
-  empty Elementor Image widget showing a placeholder until you upload
-  yours. The hero is a flat dark panel where the reference plays a Vimeo
-  background video; add one with a background-video plugin or an Elementor
-  Pro section background if you want that.
-- **Two background textures** — the reference overlays a texture PNG on
-  the dark group and uses a photographic backdrop on the global-speaker
-  band. Both are reproduced here as CSS gradients that read the same at a
-  glance; swap in real images via Elementor's Style → Background on those
-  sections if you have them.
+**Global-speaker backdrop**: the reference uses a photograph there. Set
+`global → background` to an image URL; otherwise a matching deep-navy
+gradient is used.
 
-To use it:
+## What matches, and what needs your assets
 
-1. Create/open the Page you're using as the homepage, **Edit with
-   Elementor**.
-2. Open the **folder icon** (Templates) in the editor → **My Templates**
-   tab → **Import Template** → choose `dr-sandeep-kumar-home.json`.
-3. Once it appears in the list, click **Insert** to add it to the page.
-4. Replace the placeholder images and link URLs with your own, and edit
-   any copy you want to change — everything is a normal, editable
-   Elementor element.
+Built to the reference's measured values:
 
-This was authored directly as Elementor's container/widget JSON schema and
-verified against a real WordPress + Elementor install (imported through
-Elementor's own importer, and the resulting page checked for layout and
-PHP errors) rather than just written by hand and assumed to work.
+- **Type scale** — 72px hero, the 60px/700 signature section heading
+  (letter-spacing 1.61px, line-height 1.13), the 90px display line, 40/26/20px
+  secondary headings, 15px/500 body, 12.5px/800 tracked eyebrow labels.
+- **Palette** — `#00255c`, `#002159`, `#032b6a`, `#062b66`, `#f8f8f8`, `#494949`.
+- **Section grouping** — the partner strip, about and services share one
+  diagonal `#191919 → #00255c` gradient with a light-bloom bottom-left; the
+  quote, story, achievements and network share one off-white field, exactly
+  as the reference groups them.
+- **Section rhythm** — each section's real top/bottom padding, and the
+  1276px content column.
+- **Arrow-link CTAs** — label plus outlined circle-chevron that shifts on
+  hover, not solid buttons.
+- **Pill form fields** — centred, 40px radius, navy hairline border.
+- **Scroll reveals** — staggered fade-up, the same effect the reference gets
+  from WOW.js, here via IntersectionObserver. Gated on a `js` class so
+  content is never hidden from crawlers or no-JS visitors.
+
+Needs your own assets (not bundled — the originals belong to the reference
+site and to a real person):
+
+- Photography, partner/award logos, and the hero video.
+- Two backdrops the reference uses as images — the dark group's texture
+  overlay and the global-speaker photo — are reproduced here as CSS
+  gradients that read the same at a glance. Swap in real images any time.
 
 ## File structure
 
 ```
 dr-sandeep-kumar/
 ├── style.css                  Theme header (required by WordPress)
-├── functions.php              Theme setup, asset enqueue, [dsk_enquiry_form]
-│                               shortcode, contact-form email handler
+├── functions.php              Setup, asset enqueue, [dsk_enquiry_form], mail handler
 ├── header.php / footer.php    Site chrome — nav, logo, social, back-to-top
-├── page.php / index.php       Standard the_content() loop (Elementor hooks here)
+├── front-page.php             Home page: assembles the sections below
+├── page.php / index.php       the_content() loop — Elementor/blocks work here
 ├── inc/
+│   ├── home-content.php       ← all home page copy, links and images
 │   ├── content-schema.php     Customizer field definitions + defaults
 │   ├── customizer.php         Registers the Customizer controls
-│   ├── home-content.php       Footer quick-links array (edit directly)
 │   └── template-tags.php      dsk_mod() helper, social icon SVGs
 ├── template-parts/
-│   └── enquiry-form.php       Markup rendered by [dsk_enquiry_form]
-├── assets/
-│   ├── css/main.css           Header/footer/back-to-top/contact-form styles
-│   ├── css/reference.css      Reference-match layer for the starter template
-│   └── js/main.js             Sticky header, mobile nav, back-to-top
-└── starter-template/
-    └── dr-sandeep-kumar-home.json   Importable Elementor home-page layout
+│   ├── enquiry-form.php       Contact form markup ([dsk_enquiry_form])
+│   └── home/                  One file per background group, mirroring the
+│       ├── hero.php             reference's own section grouping
+│       ├── dark-group.php       (partners + about + services)
+│       ├── mastering.php
+│       ├── light-band.php       (quote + story + achievements + network)
+│       ├── global.php
+│       ├── interviews.php
+│       ├── series-charity.php
+│       └── enquiry.php          (+ Instagram banner)
+└── assets/
+    ├── css/main.css           Header/footer/back-to-top/form chrome
+    ├── css/home.css           Home page — the reference-matched styling
+    ├── js/main.js             Sticky header, mobile nav, back-to-top, reveals
+    └── images/                Placeholder SVGs
 ```
 
-Elementor renders its own CSS/JS for whatever you build in the editor —
-`main.css`/`main.js` here only ever touch the coded chrome, so there's no
-overlap or conflict to worry about.
+## Contact form
+
+`[dsk_enquiry_form]` renders the form anywhere (it's already on the home
+page). It posts to `admin-post.php` and emails the address set in
+Customize → Contact via `wp_mail()` — no plugin needed. Includes a nonce
+and a honeypot; no CAPTCHA is wired up.
 
 ## Notes
 
-- No page-content-related Customizer fields or placeholder-image logic are
-  included (there's nothing to be a placeholder for) — all of that is now
-  the Elementor page's own content, images and styling.
-- Typography default is Urbanist (Google Fonts, enqueued in
-  `functions.php`) for the chrome; set Elementor's own Site Settings →
-  Global Fonts to match if you want page content to use the same face.
-- No build step / bundler on the theme side — plain PHP, CSS and vanilla
-  JS for the chrome.
+- Typography is Urbanist (Google Fonts, enqueued in `functions.php`).
+- `home.css` only loads on the front page.
+- No build step — plain PHP, CSS and vanilla JS.
+- Colours are CSS custom properties at the top of `home.css` if you want to
+  re-theme.

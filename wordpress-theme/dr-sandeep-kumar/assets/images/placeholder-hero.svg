@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="900" viewBox="0 0 1920 900" role="img" aria-label="Hero image or video still placeholder">
+  <rect width="1920" height="900" fill="#1b2740"/>
+  <g fill="#2b3a58">
+    <circle cx="576" cy="306" r="63"/>
+    <path d="M0 900 L537 468 L1056 900 Z"/>
+    <path d="M1056 900 L1536 360 L1920 900 Z"/>
+  </g>
+  <text x="960" y="837" font-family="Urbanist, Helvetica, Arial, sans-serif" font-size="40" fill="#6f8099" text-anchor="middle">Hero image or video still · 1920×900</text>
+</svg>
