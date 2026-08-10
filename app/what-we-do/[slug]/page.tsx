@@ -44,6 +44,7 @@ export default async function ServicePage({
         title={page.hero.title}
         titleBold={page.hero.titleBold}
         image={page.hero.image}
+        imagePosition={page.hero.imagePosition}
       >
         <p className="mx-auto mt-8 max-w-[1310px] text-[16px] font-light leading-[30px] text-white text-pretty">
           {page.hero.body}
@@ -52,12 +53,14 @@ export default async function ServicePage({
 
       {/* Logistics that deliver — glass cards over map */}
       <section className="relative overflow-hidden bg-white">
+        {/* Faded well back so the connection lines don't compete with the card
+         * copy sitting on top of them */}
         <Image
           src="/images/why-choose-bg.svg"
           alt=""
           fill
           sizes="100vw"
-          className="object-cover object-center opacity-80"
+          className="object-cover object-center opacity-35"
         />
         <div className="relative mx-auto max-w-[1580px] px-6 py-16 text-center lg:px-10 lg:py-[100px]">
           <SectionPill label={page.deliver.pill} variant="red" data-reveal="zoom" />
@@ -76,14 +79,16 @@ export default async function ServicePage({
             {page.deliver.body}
           </p>
 
+          {/* No `text-pretty` on the card copy: it pulls words back off the last
+           * line, which left each card's text block a different visual width. */}
           <div className="mt-16 flex flex-wrap justify-center gap-10" data-reveal-group>
             {page.deliver.cards.map((card) => (
               <div
                 key={card.title}
-                className="fx-lift flex w-full max-w-[446px] flex-col items-center justify-center rounded-[25px] border-[0.5px] border-goal-navy bg-white/5 px-10 py-14 shadow-[3px_3px_10px_0px_rgba(9,30,38,0.25)] backdrop-blur-[2.5px] sm:w-[calc(50%-20px)] lg:w-[calc(33.3%-27px)]"
+                className="fx-lift flex w-full max-w-[446px] flex-col items-center justify-center rounded-[25px] border-[0.5px] border-goal-navy bg-white/80 px-8 py-10 shadow-[3px_3px_10px_0px_rgba(9,30,38,0.25)] backdrop-blur-[2.5px] sm:w-[calc(50%-20px)] lg:w-[calc(33.3%-27px)]"
               >
                 <h3 className="text-[20px] font-bold leading-[1.2] text-goal-red">{card.title}</h3>
-                <p className="mt-3 text-[16px] font-light leading-[30px] text-black text-pretty">{card.body}</p>
+                <p className="mt-3 w-full text-[16px] font-light leading-[28px] text-black">{card.body}</p>
               </div>
             ))}
           </div>
@@ -101,8 +106,10 @@ export default async function ServicePage({
             {page.whatYouGet.heading}
           </h2>
           <SectionDivider variant="red" className="mt-8" />
+          {/* Same measure as the "Logistics That Deliver" intro above so the two
+           * section intros line up instead of one running much wider */}
           <p
-            className="mx-auto mt-8 max-w-[1434px] text-[16px] font-light leading-[30px] text-black text-pretty"
+            className="mx-auto mt-8 max-w-[1002px] text-[16px] font-light leading-[30px] text-black text-pretty"
             data-reveal
             data-reveal-delay="120"
           >
@@ -111,7 +118,7 @@ export default async function ServicePage({
 
           <div className="mt-16 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3" data-reveal-group>
             {page.whatYouGet.items.map((item) => (
-              <div key={item.title} className="group mx-auto max-w-[397px]">
+              <div key={item.title} className="group mx-auto w-full max-w-[397px]">
                 <div className="mx-auto flex h-[121px] w-[121px] items-center justify-center rounded-full border border-goal-red transition-transform duration-500 ease-out group-hover:scale-110">
                   <CircleIcon src={item.icon} />
                 </div>
@@ -123,7 +130,7 @@ export default async function ServicePage({
                     </span>
                   ))}
                 </h3>
-                <p className="mt-3 text-[16px] leading-[1.5] text-black text-pretty">{item.body}</p>
+                <p className="mt-3 w-full text-[16px] font-light leading-[1.6] text-black">{item.body}</p>
               </div>
             ))}
           </div>

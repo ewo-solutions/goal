@@ -6,6 +6,7 @@ export default function PageHero({
   title,
   titleBold,
   image,
+  imagePosition = "object-bottom",
   children,
 }: {
   pill: string;
@@ -14,6 +15,8 @@ export default function PageHero({
   /** Bold line of the heading */
   titleBold: string;
   image: string;
+  /** Tailwind object-position class; defaults to the bottom-anchored crop */
+  imagePosition?: string;
   children?: React.ReactNode;
 }) {
   return (
@@ -29,7 +32,7 @@ export default function PageHero({
         fill
         priority
         sizes="100vw"
-        className="fx-hero-zoom object-cover object-bottom"
+        className={`fx-hero-zoom object-cover ${imagePosition}`}
       />
       {/* Two navy-to-transparent gradients matching the home page hero: top-to-bottom and left-to-right */}
       <div className="absolute inset-0 bg-gradient-to-b from-goal-navy to-goal-navy/0" />

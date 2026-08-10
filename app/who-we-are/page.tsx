@@ -252,7 +252,7 @@ export default function WhoWeArePage() {
                 <h3 className="mt-8 text-[22px] font-bold leading-[1.3] text-black lg:text-[25px]">
                   {value.title}
                 </h3>
-                <p className="mt-3 text-[16px] leading-[1.5] text-black text-pretty">{value.body}</p>
+                <p className="mt-3 text-[16px] font-light leading-[1.5] text-black text-pretty">{value.body}</p>
               </div>
             ))}
           </div>

@@ -276,7 +276,7 @@ export default function HomePage() {
                   <br />
                   {feature.titleLines[1]}
                 </h3>
-                <p className="mt-6 max-w-[294px] text-[16px] leading-[1.5] text-white">
+                <p className="mt-6 max-w-[294px] text-[16px] font-light leading-[1.5] text-white">
                   {feature.body}
                 </p>
               </div>

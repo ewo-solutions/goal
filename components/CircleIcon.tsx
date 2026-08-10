@@ -14,6 +14,13 @@ import { getSvgIntrinsicSize } from "@/lib/iconMeta";
  *    beats the height *attribute* — so without an inline height the icon gets
  *    resized to `width x its own aspect ratio` and `object-contain` never gets
  *    a chance to do anything. `max-w-none` disarms the matching `max-width`.
+ * 3. `mix-blend-multiply` hides the opaque near-white backdrop that ten of the
+ *    vectorised icons carry (a full-canvas rect baked into the trace). It was
+ *    showing as a block flashing behind the icon during the hover scale. The
+ *    backdrop cannot simply be deleted from the files — those traces interleave
+ *    white shapes with the line art, so removing them breaks the artwork. Every
+ *    section these icons sit in has a white background, where multiply leaves
+ *    the strokes untouched and makes the white backdrop disappear.
  */
 export default function CircleIcon({
   src,
@@ -31,7 +38,7 @@ export default function CircleIcon({
       width={Math.round(width)}
       height={Math.round(height)}
       style={{ width: `${width}px`, height: `${height}px` }}
-      className={`max-w-none shrink-0 ${className}`}
+      className={`max-w-none shrink-0 mix-blend-multiply ${className}`}
     />
   );
 }

@@ -4,12 +4,14 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
+import DialCodeSelect, { dialCodes } from "@/components/DialCodeSelect";
 
 const inputClass =
   "h-[55px] w-full rounded-[20px] border border-white bg-goal-navy px-6 text-[18px] font-light text-white placeholder-white/90 outline-none transition-colors focus:border-goal-red lg:text-[20px]";
 
 export default function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
+  const [dial, setDial] = useState(dialCodes[0]);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -22,7 +24,7 @@ export default function ContactSection() {
         `Company: ${data.get("company")}`,
         `Name: ${data.get("firstName")} ${data.get("lastName")}`,
         `Email: ${data.get("email")}`,
-        `Contact Number: ${data.get("phone")}`,
+        `Contact Number: ${dial.code} ${data.get("phone")}`,
         "",
         `${data.get("enquiry")}`,
       ].join("\n")
@@ -75,18 +77,12 @@ export default function ContactSection() {
                   className={inputClass}
                 />
                 <div className="relative">
-                  <Image
-                    src="/icons/flag-us.png"
-                    alt=""
-                    width={34}
-                    height={22}
-                    className="pointer-events-none absolute left-6 top-1/2 h-[22px] w-[34px] -translate-y-1/2 object-cover"
-                  />
+                  <DialCodeSelect value={dial} onChange={setDial} />
                   <input
                     name="phone"
                     type="tel"
                     placeholder="Contact Number"
-                    className={`${inputClass} pl-[72px]`}
+                    className={`${inputClass} pl-[124px]`}
                   />
                 </div>
               </div>

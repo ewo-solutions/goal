@@ -34,7 +34,7 @@ const industries = [
     image: "/images/industry-card-3.png",
   },
   {
-    title: "Renewable|Energy",
+    title: "Wind Energy|Logistics",
     body: "Integrated services for transport, staging, and last-mile delivery of cargo from source to site",
     href: "/what-we-do/wind-energy-logistics",
     image: "/images/industry-card-4.png",
@@ -107,7 +107,7 @@ export default function WhatWeDoPage() {
             {industries.map((industry) => (
               <div
                 key={industry.title}
-                className="fx-lift group relative flex aspect-[458/503] flex-col items-center justify-center overflow-hidden rounded-[20px] bg-goal-navy px-10 text-center"
+                className="fx-lift group relative flex aspect-[458/400] flex-col items-center justify-center overflow-hidden rounded-[20px] bg-goal-navy px-8 text-center"
               >
                 <Image
                   src={industry.image}
@@ -135,7 +135,7 @@ export default function WhatWeDoPage() {
                   </p>
                   <Link
                     href={industry.href}
-                    className="mt-8 inline-block rounded-full border border-white px-[25px] py-[18px] text-[18px] capitalize leading-[1.2] text-white transition-all hover:bg-white hover:font-bold hover:text-goal-red"
+                    className="mt-6 inline-block rounded-full border border-white px-[22px] py-[14px] text-[17px] capitalize leading-[1.2] text-white transition-all hover:bg-white hover:font-bold hover:text-goal-red"
                   >
                     Get Started
                   </Link>
@@ -157,7 +157,7 @@ export default function WhatWeDoPage() {
               <h3 className="mt-6 text-[22px] font-bold leading-[35px] text-black lg:text-[24px]">
                 {item.title}
               </h3>
-              <p className="mt-2 text-[15px] leading-[1.6] text-black text-pretty lg:text-[16px]">
+              <p className="mt-2 text-[15px] font-light leading-[1.6] text-black text-pretty lg:text-[16px]">
                 {item.body}
               </p>
             </div>
