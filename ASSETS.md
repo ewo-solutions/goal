@@ -90,7 +90,7 @@ fixed 2026-08-04.
 |---|---|
 | public/images/hero-lead-logistics.png | 2187:3957 (Lead Logistics Provider Banner Image 1) |
 | public/images/hero-data-center.png | 2187:4699 (aerial industrial facility construction) |
-| public/images/hero-oil-gas.png | 2187:4793 (oil and gas platform) |
+| public/images/hero-oil-gas.jpg | client-supplied 2026-08-11 (not a Figma export) |
 | public/images/hero-wind-energy.png | 2187:4973 (wind turbine) |
 | public/images/hero-heavy-haul.png | 2187:5168 (Project and heavy haul 5 1) |
 | public/images/hero-in-house.png | 2187:5360 (In-House Support Banner Image) |

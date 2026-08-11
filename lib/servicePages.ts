@@ -194,11 +194,13 @@ export const servicePages: ServicePageData[] = [
       title: "Oil & Gas",
       titleBold: "Logistics",
       body: "Integrated logistics for upstream, midstream, and downstream operations, managing transport, storage, marine logistics, and hazardous cargo to ensure safe, uninterrupted operations.",
-      image: "/images/hero-oil-gas.png",
-      // Full source photo (2528x1350) rather than Figma's pre-cropped banner
-      // render, so the rig operations stay visible. It is far taller in aspect
-      // than the band, so it is centred instead of bottom-anchored.
-      imagePosition: "object-center",
+      image: "/images/hero-oil-gas.jpg",
+      // Client-supplied photo (5272x2962, aspect 1.78) rather than a Figma
+      // export. It is much taller in aspect than the band, so ~34% of its
+      // height is cropped; 60% is the position that keeps the whole platform
+      // in frame - crane boom at the top through to the substructure - instead
+      // of losing the boom (bottom-anchored) or the base (centred).
+      imagePosition: "object-[center_60%]",
     },
     deliver: {
       pill: "Logistics That Deliver",
