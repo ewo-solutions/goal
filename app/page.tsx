@@ -182,18 +182,6 @@ export default function HomePage() {
             What we do
           </Link>
         </div>
-
-        {/* Centred by the full-width flex wrapper rather than by a transform,
-         * so the bob animation can't knock it off centre. */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-6 hidden justify-center lg:flex">
-          <Image
-            src="/icons/scroll-down.png"
-            alt=""
-            width={89}
-            height={102}
-            className="fx-bob"
-          />
-        </div>
       </section>
 
       {/* Our Services */}

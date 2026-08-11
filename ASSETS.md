@@ -22,7 +22,6 @@ Figma file: `Wkk573fBNNQWxyfleQIejt` (page "Website Mockup FINAL APPROVED DESIGN
 | Local path | Source node |
 |---|---|
 | public/images/hero-ship.png | 2187:5843 (raw image fill) |
-| public/icons/scroll-down.png | 2187:5850 |
 | public/images/services-bg.png | 2187:5841 (Rectangle 306 fill) |
 | public/images/service-turnkey.png | I2187:5882;18:196 (Rectangle 158) |
 | public/images/service-project-management.png | 18:204 (Rectangle 131) |
@@ -42,6 +41,10 @@ Figma file: `Wkk573fBNNQWxyfleQIejt` (page "Website Mockup FINAL APPROVED DESIGN
 | public/icons/icon-paste.svg | 2187:5921 (iconixto/linear/paste) |
 | public/images/why-choose-bg.png | 2187:5840 (Vector map background) |
 | public/images/contact-worker.png | 2187:5852 (Rectangle 226) |
+
+Note: the scroll-down mouse indicator (node 2187:5850) was removed from the
+home hero on request 2026-08-11, along with its `bob` keyframes. Re-export
+from that node if it is ever wanted back.
 
 ## Who We Are (2187:5932)
 | Local path | Source node |
