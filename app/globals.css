@@ -207,13 +207,17 @@ body {
 .fx .fx-bob {
   animation: bob 2.2s ease-in-out infinite;
 }
+/* Vertical bob only — horizontal centring is done by the wrapper. Baking a
+ * translateX(-50%) into the keyframes made the animation responsible for
+ * centring too, which is fragile: the element sat half its own width off
+ * centre whenever the transform and the `left` offset disagreed. */
 @keyframes bob {
   0%,
   100% {
-    transform: translate(-50%, 0);
+    transform: translateY(0);
   }
   50% {
-    transform: translate(-50%, 10px);
+    transform: translateY(10px);
   }
 }
 

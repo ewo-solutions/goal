@@ -177,7 +177,7 @@ export const servicePages: ServicePageData[] = [
           body: "Scheduled dock appointments, managed staging yards, and real-time tracking control delivery flow, reduce congestion, and maintain site planning.",
         },
         {
-          title: "Inter-Site|Logistics",
+          title: "Intersite|Logistics",
           icon: "/icons/dc-intersite.svg",
           body: "Site-to-site material transfers, returnables management, scrap removal, vendor returns, modular staging, and assembly maintain flow across project phases and buildings.",
         },

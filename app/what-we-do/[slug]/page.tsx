@@ -85,9 +85,14 @@ export default async function ServicePage({
             {page.deliver.cards.map((card) => (
               <div
                 key={card.title}
-                className="fx-lift flex w-full max-w-[446px] flex-col items-center justify-center rounded-[25px] border-[0.5px] border-goal-navy bg-white/80 px-8 py-10 shadow-[3px_3px_10px_0px_rgba(9,30,38,0.25)] backdrop-blur-[2.5px] sm:w-[calc(50%-20px)] lg:w-[calc(33.3%-27px)]"
+                className="fx-lift flex w-full max-w-[446px] flex-col items-center justify-start rounded-[25px] border-[0.5px] border-goal-navy bg-white/80 px-8 py-10 shadow-[3px_3px_10px_0px_rgba(9,30,38,0.25)] backdrop-blur-[2.5px] sm:w-[calc(50%-20px)] lg:min-h-[366px] lg:w-[calc(33.3%-27px)] xl:min-h-[310px] 2xl:min-h-[254px]"
               >
-                <h3 className="text-[20px] font-bold leading-[1.2] text-goal-red">{card.title}</h3>
+                {/* Two lines are always reserved for the title (20px x 1.2 line
+                 * box), so the body copy starts at the same height on every
+                 * card whether the title runs to one line or two. */}
+                <h3 className="flex min-h-[48px] items-center text-[20px] font-bold leading-[1.2] text-goal-red">
+                  {card.title}
+                </h3>
                 <p className="mt-3 w-full text-[16px] font-light leading-[28px] text-black">{card.body}</p>
               </div>
             ))}

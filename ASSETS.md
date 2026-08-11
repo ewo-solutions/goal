@@ -183,3 +183,22 @@ aspect 2.25) than the other five service pages (aspect 2.65-2.85, which the
 loses ~18% off the top on the site. Raising that one page's band to match would
 make its hero taller than every other page — flagged to the client rather than
 changed unilaterally.
+
+## Hero band height
+`PageHero` sizes the band from the design's banner aspect
+(`clamp(523px, 100vw/2.7, 720px)` at lg) rather than a fixed height. A fixed
+523px only matched the design around 1440px wide — at 1920 the band became a
+3.67 letterbox and `object-cover` discarded ~49% of the photo, which is what
+made the Oil & Gas rig still read as "zoomed in" on wide monitors even after
+the full source photo was swapped in. The floor keeps small laptops as they
+were; the cap stops the hero swallowing very large displays.
+
+## Service page data blocks
+The "Logistics That Deliver" cards are top-aligned (`justify-start`) with two
+lines always reserved for the title, so headings and body copy start at the
+same height on every card. Card heights are pinned per breakpoint
+(`lg:366 / xl:310 / 2xl:254`) because the card width — and therefore how the
+copy wraps — changes with the viewport, so no single value equalises them.
+Those numbers are the measured tallest card across all six service pages at
+each breakpoint; **if the card copy is edited, re-measure and update them**,
+otherwise the blocks stop matching.
