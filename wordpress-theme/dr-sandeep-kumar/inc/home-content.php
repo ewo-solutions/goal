@@ -2,12 +2,15 @@
 /**
  * Home page content.
  *
- * All copy, links and images for the home page live here in one place.
- * `dsk_img()` points at the bundled files in assets/images/; swap any value
- * for a Media Library URL (Media → the item → "Copy URL to clipboard") to
- * change an image without touching a template.
+ * `dsk_home_defaults()` below is the shipped copy — the values the page falls
+ * back to on a fresh install. Anything the client edits under the "Home Page"
+ * admin screen is stored in the `dsk_home_content` option and merged over the
+ * top by `dsk_home()`, which is what the templates actually read.
  *
- * Contact details, social links and the footer are edited in
+ * To change a default here, edit the array. To change the live site, use the
+ * admin screen — inc/home-fields.php describes which slots it exposes.
+ *
+ * Contact details, social links and the footer credit are edited in
  * Appearance → Customize instead (see inc/content-schema.php).
  */
 
@@ -25,7 +28,16 @@ function dsk_ph( $name ) {
 	return DSK_THEME_URI . '/assets/images/placeholder-' . $name . '.svg';
 }
 
-function dsk_home() {
+/** Option holding the client's edits, as `dot.path => value`. */
+define( 'DSK_HOME_OPTION', 'dsk_home_content' );
+
+/**
+ * The shipped content. Never read this directly from a template — use
+ * `dsk_home()`, which layers the client's edits on top.
+ *
+ * @return array
+ */
+function dsk_home_defaults() {
 	return array(
 
 		// Handwritten signature marks. Light sits on the dark gradient,
@@ -184,16 +196,60 @@ function dsk_home() {
 		'mist_background' => dsk_img( 'bg-mist.png' ),
 		// Diagonal texture down the left edge of the dark gradient group.
 		'texture'         => dsk_img( 'bg-texture.png' ),
+
+		'footer_links' => array(
+			array( 'label' => __( 'About Dr Sandeep', 'dsk-home' ), 'url' => '#' ),
+			array( 'label' => __( 'Mastering Invisalign', 'dsk-home' ), 'url' => '#' ),
+			array( 'label' => __( 'MiSmile Network', 'dsk-home' ), 'url' => '#' ),
+			array( 'label' => __( 'The Growth Series', 'dsk-home' ), 'url' => '#' ),
+			array( 'label' => __( 'Contact Me', 'dsk-home' ), 'url' => '#enquiry' ),
+		),
 	);
+}
+
+/**
+ * The content the templates render: shipped defaults with the client's saved
+ * edits merged over the top, path by path.
+ *
+ * Only paths the admin screen knows about can be overridden, so a stale or
+ * hand-edited option can never introduce keys the templates don't expect.
+ *
+ * @return array
+ */
+function dsk_home() {
+	static $content = null;
+
+	if ( null !== $content ) {
+		return $content;
+	}
+
+	$content = dsk_home_defaults();
+	$saved   = get_option( DSK_HOME_OPTION, array() );
+
+	// Guarded so the page still renders its defaults if inc/home-fields.php
+	// is ever missing.
+	if ( is_array( $saved ) && function_exists( 'dsk_home_field_index' ) ) {
+		foreach ( dsk_home_field_index() as $path => $def ) {
+			if ( ! array_key_exists( $path, $saved ) ) {
+				continue;
+			}
+			dsk_path_set( $content, $path, $saved[ $path ] );
+		}
+	}
+
+	/**
+	 * Filters the assembled home page content.
+	 *
+	 * @param array $content Nested content array.
+	 */
+	$content = apply_filters( 'dsk_home_content', $content );
+
+	return $content;
 }
 
 /** Footer quick-links (used by the home page's link row). */
 function dsk_get_footer_links() {
-	return array(
-		array( 'label' => __( 'About Dr Sandeep', 'dsk-home' ), 'url' => '#' ),
-		array( 'label' => __( 'Mastering Invisalign', 'dsk-home' ), 'url' => '#' ),
-		array( 'label' => __( 'MiSmile Network', 'dsk-home' ), 'url' => '#' ),
-		array( 'label' => __( 'The Growth Series', 'dsk-home' ), 'url' => '#' ),
-		array( 'label' => __( 'Contact Me', 'dsk-home' ), 'url' => '#enquiry' ),
-	);
+	$links = dsk_home()['footer_links'];
+
+	return is_array( $links ) ? $links : array();
 }

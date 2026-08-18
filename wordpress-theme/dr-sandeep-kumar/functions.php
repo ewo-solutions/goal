@@ -130,7 +130,23 @@ function dsk_handle_enquiry() {
 add_action( 'admin_post_dsk_enquiry', 'dsk_handle_enquiry' );
 add_action( 'admin_post_nopriv_dsk_enquiry', 'dsk_handle_enquiry' );
 
-require DSK_THEME_DIR . '/inc/content-schema.php';
-require DSK_THEME_DIR . '/inc/customizer.php';
-require DSK_THEME_DIR . '/inc/template-tags.php';
-require DSK_THEME_DIR . '/inc/home-content.php';
+/*
+ * Include the theme's parts. A missing file is skipped rather than fatal:
+ * an interrupted upload should degrade the admin screen, never take the whole
+ * site down with a white screen.
+ *
+ * admin-home.php is loaded on the front end too, for the toolbar shortcut.
+ */
+foreach ( array(
+	'inc/content-schema.php',
+	'inc/customizer.php',
+	'inc/template-tags.php',
+	'inc/home-fields.php',
+	'inc/home-content.php',
+	'inc/admin-home.php',
+) as $dsk_part ) {
+	if ( file_exists( DSK_THEME_DIR . '/' . $dsk_part ) ) {
+		require DSK_THEME_DIR . '/' . $dsk_part;
+	}
+}
+unset( $dsk_part );
