@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
 import DialCodeSelect, { dialCodes } from "@/components/DialCodeSelect";
+import Turnstile from "@/components/Turnstile";
 
 const inputClass =
   "h-[55px] w-full rounded-[20px] border border-white bg-goal-navy px-6 text-[18px] font-light text-white placeholder-white/90 outline-none transition-colors focus:border-goal-red lg:text-[20px]";
@@ -12,9 +13,16 @@ const inputClass =
 export default function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
   const [dial, setDial] = useState(dialCodes[0]);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const [captchaResetKey, setCaptchaResetKey] = useState(0);
+  // Set when the widget can't load at all, so a blocked script never stops
+  // someone getting in touch
+  const [captchaUnavailable, setCaptchaUnavailable] = useState(false);
+  const captchaCleared = captchaToken !== null || captchaUnavailable;
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (!captchaCleared) return;
     const data = new FormData(e.currentTarget);
     const subject = encodeURIComponent(
       `Project Inquiry from ${data.get("firstName")} ${data.get("lastName")}`
@@ -31,6 +39,8 @@ export default function ContactSection() {
     );
     window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
     setSubmitted(true);
+    // Force a fresh challenge before another enquiry can be sent
+    setCaptchaResetKey((k) => k + 1);
   }
 
   return (
@@ -112,9 +122,17 @@ export default function ContactSection() {
               </span>
             </label>
 
+            <Turnstile
+              onToken={setCaptchaToken}
+              onUnavailable={() => setCaptchaUnavailable(true)}
+              resetKey={captchaResetKey}
+              className="mt-6 empty:hidden"
+            />
+
             <button
               type="submit"
-              className="mt-8 rounded-full bg-goal-red px-[25px] py-[20px] text-[18px] leading-[1.2] text-white transition-all hover:font-bold hover:opacity-90"
+              disabled={!captchaCleared}
+              className="mt-8 rounded-full bg-goal-red px-[25px] py-[20px] text-[18px] leading-[1.2] text-white transition-all hover:font-bold hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:font-normal"
             >
               Submit
             </button>
