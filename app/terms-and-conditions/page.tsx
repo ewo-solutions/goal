@@ -19,14 +19,14 @@ export default function TermsAndConditionsPage() {
       />
 
       <LegalContent
-        updated="August 7, 2026"
+        updated="August 2026 (Version 02)"
         intro={[
           "Gulf of America Logistics, LLC — Terms and Conditions for Freight Forwarding",
           "These Standard Trading Terms and Conditions govern all quotations, bookings, transportation, freight forwarding, warehousing, specialized trucking, project logistics, engineering support, customs-related services, and other logistics services performed by Gulf of America Logistics LLC (“GoAL”). By requesting or accepting any Services, the Customer agrees to be bound by these Terms unless otherwise agreed in writing.",
         ]}
         sections={[
           {
-            heading: "I. Applicability",
+            heading: "1. Applicability",
             paragraphs: [
               "These Standard Trading Terms and Conditions (“Terms”) apply to all services performed by GoAL, including its parent companies, subsidiaries, affiliates, successors, and assigns, unless otherwise expressly agreed in writing.",
               "For purposes of these Terms, Services include, but are not limited to:",
@@ -37,9 +37,9 @@ export default function TermsAndConditionsPage() {
               "Specialized trucking, heavy haul transportation, oversize and overweight transportation, self-propelled modular transporter (SPMT) operations, multi-axle trailer operations, and project transportation services;",
               "Warehousing, storage, consolidation, deconsolidation, handling, packing, crating, securing, distribution, inventory management, staging, and site logistics;",
               "Customs brokerage support, customs documentation, regulatory compliance assistance, and fiscal services where permitted by law;",
-              "Cargo insurance placement when specifically requested by the Customer;",
               "Engineering support, transport engineering, route surveys, lift planning, heavy haul engineering, project cargo planning, logistics consulting, and related advisory services;",
-              "Collection or procurement of freight charges, shipping documents, customs documentation, and related commercial services.",
+              "Collection or procurement of freight charges, shipping documents, customs documentation, and related commercial services;",
+              "The Customer shall arrange and maintain appropriate cargo insurance or stock throughput insurance for its cargo at the Customer’s own expense.",
             ],
             after: [
               "These Terms govern every quotation, proposal, booking, shipment, purchase order, agreement, and Service performed by GoAL.",
@@ -49,7 +49,7 @@ export default function TermsAndConditionsPage() {
             ],
           },
           {
-            heading: "II. Conclusion of Contract",
+            heading: "2. Conclusion of Contract",
             paragraphs: [
               "Unless otherwise agreed in writing, every quotation, proposal, booking, and Service provided by GoAL is subject exclusively to these Terms.",
               "Quotations are based upon the information supplied by the Customer and remain valid for thirty (30) days unless otherwise stated in writing.",
@@ -68,28 +68,44 @@ export default function TermsAndConditionsPage() {
               "Delivery schedules;",
               "Project-specific engineering or handling requirements.",
             ],
-            after: [
-              "For specialized trucking, heavy haul, oversize, overweight, or project cargo transportation, the Customer shall additionally provide certified cargo dimensions and weights; engineering drawings where required; lift points; structural support information; loading and unloading requirements; site access information; road access restrictions; crane requirements; and any special transportation or handling instructions.",
-              "GoAL may rely entirely upon the accuracy of information supplied by the Customer.",
-              "Any change to cargo dimensions, weight, routing, loading requirements, project scope, schedule, engineering assumptions, or handling requirements may invalidate any quotation and entitle GoAL to revise its pricing and delivery schedule.",
-              "Verbal instructions shall not become binding until confirmed in writing by the Customer.",
-              "Acceptance of any booking remains subject to equipment availability, carrier acceptance, operational feasibility, permit approval where applicable, and governmental authorization.",
+            groups: [
+              {
+                paragraphs: [
+                  "For specialized trucking, heavy haul, oversize, overweight, or project cargo transportation, the Customer shall additionally provide:",
+                ],
+                list: [
+                  "Certified cargo dimensions and weights;",
+                  "Engineering drawings where required;",
+                  "Lift points;",
+                  "Structural support information;",
+                  "Loading and unloading requirements;",
+                  "Site access information;",
+                  "Road access restrictions;",
+                  "Crane requirements;",
+                  "Any special transportation or handling instructions.",
+                ],
+                after: [
+                  "GoAL may rely entirely upon the accuracy of information supplied by the Customer.",
+                  "Any change to cargo dimensions, weight, routing, loading requirements, project scope, schedule, engineering assumptions, or handling requirements may invalidate any quotation and entitle GoAL to revise its pricing and delivery schedule.",
+                  "Verbal instructions shall not become binding until confirmed in writing by the Customer. Acceptance of any booking remains subject to equipment availability, carrier acceptance, operational feasibility, permit approval where applicable, and governmental authorization.",
+                ],
+              },
             ],
           },
           {
-            heading: "III. Delivery Hindrances and Force Majeure",
+            heading: "3. Delivery Hindrances and Force Majeure",
             paragraphs: [
               "Should GoAL’s performance become impossible, delayed, restricted, or commercially impracticable due to circumstances beyond its reasonable control, GoAL may suspend, delay, modify, reroute, or terminate the affected Services without liability.",
               "Such circumstances include, but are not limited to: acts of God; natural disasters; floods; hurricanes; earthquakes; fires; severe weather; war; terrorism; civil unrest; labor disputes; government actions; customs delays; embargoes; trade sanctions; port congestion; carrier disruptions; equipment shortages; utility conflicts; bridge restrictions; road closures; seasonal road bans; permit delays; police escort availability; regulatory approvals; infrastructure limitations; cyber incidents; telecommunications failures; pandemics; epidemics; or any other event beyond the reasonable control of GoAL.",
               "Where reasonably practicable, GoAL shall notify the Customer of any material delay or operational restriction.",
-              "If continued transportation becomes impracticable, GoAL may store the cargo, return the cargo, deliver it to an alternative location, or otherwise protect the Customer's interests as GoAL reasonably determines.",
+              "If continued transportation becomes impracticable, GoAL may store the cargo, return the cargo, deliver it to an alternative location, or otherwise protect the Customer’s interests as GoAL reasonably determines.",
               "Delivery shall be deemed complete once the cargo has been made available at a safe and reasonable location.",
               "The Customer shall remain responsible for all transportation charges, storage charges, demurrage, detention, waiting time, accessorial charges, permit costs, third-party costs, and any additional expenses incurred as a result of such circumstances.",
               "GoAL shall not be liable for any loss, damage, delay, increased costs, or consequential losses arising directly or indirectly from any circumstance described in this Section.",
             ],
           },
           {
-            heading: "IV. Liability",
+            heading: "4. Liability",
             paragraphs: [
               "GoAL performs the Services either as a freight forwarder, logistics provider, transportation intermediary, warehouse operator, customs service provider, project logistics provider, or, where expressly agreed in writing, as a carrier.",
               "Unless GoAL expressly agrees in writing to act as the carrier, GoAL performs the Services solely as an agent for the Customer and shall exercise reasonable care in selecting, instructing, and supervising carriers, subcontractors, warehouse operators, and other service providers engaged in the performance of the Services.",
@@ -104,21 +120,21 @@ export default function TermsAndConditionsPage() {
               "inaccurate cargo information provided by the Customer;",
               "delays arising from governmental authorities, permitting agencies, carriers, utilities, or infrastructure owners;",
               "engineering assumptions supplied by others;",
-              "site conditions beyond GoAL's reasonable control.",
+              "site conditions beyond GoAL’s reasonable control.",
             ],
             after: [
               "Where engineering, route surveys, transport planning, lift planning, logistics consulting, or other advisory services are provided, such Services are based upon information supplied by the Customer and conditions existing at the time of planning. GoAL shall not be liable for changes in site conditions, infrastructure, governmental requirements, weather conditions, or other circumstances occurring after such Services have been completed.",
-              "All defenses, exclusions, exemptions, and limitations of liability contained in these Terms shall apply equally to GoAL's officers, directors, employees, agents, affiliates, subcontractors, independent contractors, carriers, warehouse operators, consultants, and every other person or entity engaged by GoAL in connection with the Services.",
+              "All defenses, exclusions, exemptions, and limitations of liability contained in these Terms shall apply equally to GoAL’s officers, directors, employees, agents, affiliates, subcontractors, independent contractors, carriers, warehouse operators, consultants, and every other person or entity engaged by GoAL in connection with the Services.",
               "The aggregate liability of GoAL and all such persons or entities shall not exceed the maximum liability otherwise applicable to GoAL under these Terms.",
             ],
           },
           {
-            heading: "V. Exclusions, Assessment, and Monetary Limits of Liability",
+            heading: "5. Exclusions, Assessment, and Monetary Limits of Liability",
             paragraphs: [
               "Except to the extent prohibited by applicable law, GoAL shall not be liable for:",
             ],
             list: [
-              "Loss or damage occurring while the cargo is not in GoAL's actual care, custody, or control;",
+              "Loss or damage occurring while the cargo is not in GoAL’s actual care, custody, or control;",
               "Loss resulting from delays unless expressly agreed otherwise in writing;",
               "Consequential, indirect, incidental, special, exemplary, or punitive damages;",
               "Loss of profit; loss of production; business interruption; loss of revenue;",
@@ -133,30 +149,30 @@ export default function TermsAndConditionsPage() {
               "Permit restrictions; utility conflicts; police escort availability; bridge restrictions;",
               "Route modifications required by governmental authorities; seasonal road bans; infrastructure limitations;",
               "Equipment shortages; labor disputes;",
-              "Force majeure events described in Section III;",
-              "Cyber incidents beyond GoAL's reasonable control.",
+              "Force majeure events described in Section 3;",
+              "Cyber incidents beyond GoAL’s reasonable control.",
             ],
             after: [
               "The value of the cargo shall be determined by the commercial invoice or, if unavailable, the prevailing market value of the cargo at the place and time GoAL accepted the cargo for transportation.",
-              "Unless a higher value has been expressly declared in writing by the Customer and accepted in writing by GoAL prior to commencement of the Services, and any additional charges have been paid, GoAL's liability for physical loss of or damage to cargo shall not exceed two (2) Special Drawing Rights (SDR) per kilogram of the gross weight of the cargo lost or damaged.",
-              "Where liability arises solely from delay, GoAL's liability shall not exceed the total compensation payable to GoAL for the specific Service giving rise to the claim.",
-              "Nothing contained in these Terms shall increase GoAL's liability beyond the limits established by applicable United States federal or state law or any applicable international convention governing the transportation of goods.",
+              "Unless a higher value has been expressly declared in writing by the Customer and accepted in writing by GoAL prior to commencement of the Services, and any additional charges have been paid, GoAL’s liability for physical loss of or damage to cargo shall not exceed two (2) Special Drawing Rights (SDR) per kilogram of the gross weight of the cargo lost or damaged.",
+              "Where liability arises solely from delay, GoAL’s liability shall not exceed the total compensation payable to GoAL for the specific Service giving rise to the claim.",
+              "Nothing contained in these Terms shall increase GoAL’s liability beyond the limits established by applicable United States federal or state law or any applicable international convention governing the transportation of goods.",
             ],
           },
           {
-            heading: "VI. Insurance",
+            heading: "6. Insurance",
             paragraphs: [
-              "GoAL does not provide cargo insurance unless specifically instructed to do so in writing by the Customer before commencement of the Services.",
-              "Upon receiving written instructions, GoAL may arrange cargo insurance through insurers of its choosing, subject to the terms, exclusions, deductibles, warranties, and conditions contained in the applicable insurance policy.",
-              "Unless otherwise agreed in writing, GoAL may insure cargo under an existing open cargo policy or another suitable insurance arrangement and shall not be required to obtain a separate insurance policy for each shipment.",
-              "GoAL makes no representation or warranty regarding the scope, adequacy, or availability of insurance coverage arranged on behalf of the Customer. The Customer is responsible for reviewing the terms and limitations of any insurance coverage obtained.",
-              "Unless specifically instructed otherwise in writing, cargo insurance shall not include consequential loss, delay, loss of market, liquidated damages, loss of production, business interruption, or any other indirect losses.",
-              "GoAL shall maintain commercial general liability insurance and any other insurance coverage required by applicable law for the Services it performs. Evidence of such insurance may be provided upon written request, subject to the confidentiality requirements of GoAL's insurers and insurance providers.",
-              "The Customer acknowledges that the liability limitations contained in these Terms are separate from, and are not replaced by, any insurance obtained for the cargo.",
+              "The Customer is solely responsible for arranging and maintaining appropriate cargo insurance or stock throughput insurance for its cargo, at the Customer’s own expense, in amounts and on terms appropriate to the value and nature of the cargo, the transportation risks, and the Customer’s insurance requirements.",
+              "GoAL does not provide cargo insurance, shipper’s interest insurance, or open cargo insurance as part of its standard Services and shall have no obligation to arrange or obtain such insurance on behalf of the Customer.",
+              "The Customer acknowledges that GoAL’s liability for loss of or damage to cargo is subject to the exclusions, defenses, limitations, and monetary limits set forth in these Terms, regardless of whether the Customer maintains cargo insurance.",
+              "The Customer is responsible for determining the adequacy of its insurance coverage and for ensuring that such coverage remains in effect for the duration of the transportation, storage, handling, and other Services provided by GoAL, as applicable.",
+              "GoAL maintains insurance coverage applicable to its business operations as required by applicable law and as determined appropriate by GoAL and its insurance providers. Any insurance maintained by GoAL does not constitute cargo insurance, shipper’s interest insurance, or open cargo insurance for the benefit of the Customer. The existence or availability of any insurance maintained by GoAL shall not increase, replace, or otherwise modify GoAL’s liability or the limitations of liability contained in these Terms.",
+              "Evidence of GoAL’s insurance coverage may be provided upon written request, subject to the confidentiality requirements of GoAL’s insurers and insurance providers.",
+              "The Customer acknowledges that any insurance maintained by the Customer is separate from GoAL’s liability and does not increase, replace, or otherwise modify GoAL’s liability or the limitations of liability contained in these Terms.",
             ],
           },
           {
-            heading: "VII. Claims and Notice of Loss",
+            heading: "7. Claims and Notice of Loss",
             paragraphs: [
               "The Customer or consignee shall inspect the cargo immediately upon delivery and shall notify GoAL in writing of any apparent loss, damage, shortage, or irregularity before or at the time of delivery.",
               "Where any loss or damage is not reasonably apparent at the time of delivery, written notice shall be provided to GoAL within seven (7) calendar days following delivery.",
@@ -179,66 +195,78 @@ export default function TermsAndConditionsPage() {
             ],
           },
           {
-            heading: "VIII. Payment, Charges, and General Lien",
+            heading: "8. Payment, Charges, and General Lien",
             paragraphs: [
               "Unless otherwise agreed in writing, all invoices issued by GoAL shall be payable in accordance with the payment terms stated on the applicable quotation or invoice.",
               "Payment shall be made without deduction, withholding, counterclaim, set-off, or offset, except where expressly required by applicable law or where the claim has been finally determined by a court of competent jurisdiction.",
               "Any invoice not paid when due may accrue interest at the maximum rate permitted by applicable law until paid in full.",
-              "The Customer shall reimburse GoAL for all reasonable costs incurred in collecting overdue amounts, including collection agency fees, court costs, and reasonable attorneys' fees where permitted by law.",
+              "The Customer shall reimburse GoAL for all reasonable costs incurred in collecting overdue amounts, including collection agency fees, court costs, and reasonable attorneys’ fees where permitted by law.",
               "GoAL reserves the right to suspend performance of any Services where amounts owing by the Customer remain outstanding.",
               "The Customer shall remain responsible for all freight charges, transportation charges, duties, taxes, customs charges, storage charges, demurrage, detention, terminal handling charges, port charges, inspection fees, governmental assessments, and any other charges incurred in connection with the Services.",
             ],
+            groups: [
+              {
+                subheading: "Specialized Transportation Charges",
+                paragraphs: [
+                  "For specialized trucking, heavy haul, oversize, overweight, or project cargo transportation:",
+                ],
+                list: [
+                  "Rates are based upon the cargo description, dimensions, weights, routing, and handling requirements provided by the Customer.",
+                  "Changes to cargo dimensions, weights, routing, engineering assumptions, loading requirements, or project scope may result in revised pricing.",
+                  "Quotations remain valid for thirty (30) days unless otherwise stated in writing.",
+                  "Rates are based upon normal Monday through Friday operating hours unless otherwise agreed.",
+                  "Rates remain subject to equipment availability, carrier scheduling, permit approval, and governmental authorization.",
+                  "Standard quotations include up to two (2) hours each for loading and unloading unless otherwise stated.",
+                  "Loading and unloading shall be performed by others unless specifically included in the quotation.",
+                  "Tarping, direct discharge, detention, layover, storage, attempted pickups or deliveries, waiting time, and other accessorial services shall be charged separately unless specifically included in the quotation.",
+                  "Fuel surcharges, carbon taxes, tolls, duties, governmental fees, and applicable federal, state, provincial, or local taxes may be adjusted without notice where permitted by law.",
+                ],
+              },
+              {
+                subheading: "Third-Party Costs",
+                paragraphs: [
+                  "Unless expressly included in the quotation, the Customer shall reimburse GoAL for all third-party costs incurred in performing the Services. Such costs include, but are not limited to:",
+                ],
+                list: [
+                  "Oversize and overweight permits; route surveys; engineering studies; bridge analyses;",
+                  "Police escorts; civilian escorts; pilot vehicles; traffic control services;",
+                  "Utility companies; bucket trucks; road modifications; fence removals; bridge shoring;",
+                  "Crane services; site inspections; and any governmental or regulatory charges.",
+                ],
+                after: [
+                  "Unless otherwise stated in the quotation, these costs shall be invoiced at cost plus fifteen percent (15%).",
+                ],
+              },
+              {
+                subheading: "Route Conditions",
+                paragraphs: [
+                  "Transportation quotations are based upon maintained paved public roads unless otherwise stated.",
+                  "Transportation involving gravel roads, private roads, construction roads, unimproved roads, roads requiring chains, seasonal road bans, restricted access roads, or similar conditions may result in additional charges.",
+                  "Transportation remains subject to permit approval, route availability, bridge restrictions, utility clearances, governmental requirements, and other operational constraints beyond GoAL’s reasonable control.",
+                ],
+              },
+              {
+                subheading: "Equipment Configuration",
+                paragraphs: ["Unless otherwise agreed in writing:"],
+                list: [
+                  "Cargo shall be suitable for transportation.",
+                  "Cargo shall be adequately prepared for transport.",
+                  "Trailer configuration, cargo orientation, blocking, bracing, and securement shall be determined by GoAL or its subcontractors.",
+                  "The Customer may be required to assist with trailer assembly or disassembly where operationally necessary.",
+                  "The Customer shall provide safe loading and unloading facilities together with all required site access.",
+                ],
+              },
+              {
+                subheading: "General Lien",
+                paragraphs: [
+                  "To the fullest extent permitted by applicable law, GoAL shall have a continuing general lien upon all cargo, documents, and other property coming into its possession, custody, or control for all sums owing by the Customer arising from any Services provided by GoAL.",
+                  "GoAL may enforce its lien by any lawful means, including storage, retention, or sale of the cargo following reasonable notice where required by law.",
+                ],
+              },
+            ],
           },
           {
-            heading: "IX. Specialized Transportation Charges",
-            paragraphs: [
-              "For specialized trucking, heavy haul, oversize, overweight, or project cargo transportation:",
-            ],
-            list: [
-              "Rates are based upon the cargo description, dimensions, weights, routing, and handling requirements provided by the Customer.",
-              "Changes to cargo dimensions, weights, routing, engineering assumptions, loading requirements, or project scope may result in revised pricing.",
-              "Quotations remain valid for thirty (30) days unless otherwise stated in writing.",
-              "Rates are based upon normal Monday through Friday operating hours unless otherwise agreed.",
-              "Rates remain subject to equipment availability, carrier scheduling, permit approval, and governmental authorization.",
-              "Standard quotations include up to two (2) hours each for loading and unloading unless otherwise stated.",
-              "Loading and unloading shall be performed by others unless specifically included in the quotation.",
-              "Tarping, direct discharge, detention, layover, storage, attempted pickups or deliveries, waiting time, and other accessorial services shall be charged separately unless specifically included in the quotation.",
-              "Fuel surcharges, carbon taxes, tolls, duties, governmental fees, and applicable federal, state, provincial, or local taxes may be adjusted without notice where permitted by law.",
-            ],
-          },
-          {
-            heading: "X. Third-Party Costs",
-            paragraphs: [
-              "Unless expressly included in the quotation, the Customer shall reimburse GoAL for all third-party costs incurred in performing the Services. Such costs include, but are not limited to:",
-            ],
-            list: [
-              "Oversize and overweight permits; route surveys; engineering studies; bridge analyses;",
-              "Police escorts; civilian escorts; pilot vehicles; traffic control services;",
-              "Utility companies; bucket trucks; road modifications; fence removals; bridge shoring;",
-              "Crane services; site inspections; and any governmental or regulatory charges.",
-            ],
-            after: [
-              "Unless otherwise stated in the quotation, these costs shall be invoiced at cost plus fifteen percent (15%).",
-            ],
-          },
-          {
-            heading: "XI. Route Conditions and Equipment Configuration",
-            paragraphs: [
-              "Transportation quotations are based upon maintained paved public roads unless otherwise stated.",
-              "Transportation involving gravel roads, private roads, construction roads, unimproved roads, roads requiring chains, seasonal road bans, restricted access roads, or similar conditions may result in additional charges.",
-              "Transportation remains subject to permit approval, route availability, bridge restrictions, utility clearances, governmental requirements, and other operational constraints beyond GoAL's reasonable control.",
-              "Unless otherwise agreed in writing: cargo shall be suitable for transportation; cargo shall be adequately prepared for transport; trailer configuration, cargo orientation, blocking, bracing, and securement shall be determined by GoAL or its subcontractors; the Customer may be required to assist with trailer assembly or disassembly where operationally necessary; and the Customer shall provide safe loading and unloading facilities together with all required site access.",
-            ],
-          },
-          {
-            heading: "XII. General Lien",
-            paragraphs: [
-              "To the fullest extent permitted by applicable law, GoAL shall have a continuing general lien upon all cargo, documents, and other property coming into its possession, custody, or control for all sums owing by the Customer arising from any Services provided by GoAL.",
-              "GoAL may enforce its lien by any lawful means, including storage, retention, or sale of the cargo following reasonable notice where required by law.",
-            ],
-          },
-          {
-            heading: "XIII. Claims in Contract and Tort",
+            heading: "9. Claims in Contract and Tort",
             paragraphs: [
               "These Terms shall apply to every claim against GoAL arising from or relating to the Services, whether such claim is based upon contract, tort, negligence, bailment, statutory duty, strict liability, indemnity, or any other legal theory.",
               "The exclusions, defenses, exemptions, and limitations of liability contained in these Terms shall apply regardless of the legal basis upon which any claim is asserted.",
@@ -246,41 +274,59 @@ export default function TermsAndConditionsPage() {
             ],
           },
           {
-            heading: "XIV. Time Bar",
+            heading: "10. Time Bar",
             paragraphs: [
               "Unless a shorter limitation period is required by applicable law or an applicable international convention, GoAL shall be discharged from all liability unless legal proceedings are commenced within one (1) year following the date of delivery of the cargo or, where delivery did not occur, the date on which delivery should reasonably have occurred.",
-              "Failure to provide timely written notice under Section VII or to commence legal proceedings within the applicable limitation period shall permanently bar the claim.",
+              "Failure to provide timely written notice under Section 7 or to commence legal proceedings within the applicable limitation period shall permanently bar the claim.",
               "Nothing contained in this Section shall limit any rights that cannot legally be excluded under applicable law or any applicable international convention.",
             ],
           },
           {
-            heading: "XV. Electronic Communications",
+            heading: "11. Electronic Communications",
             paragraphs: [
               "The Customer acknowledges and agrees that GoAL may communicate, transact business, transmit quotations, shipping instructions, booking confirmations, invoices, transportation documents, customs documentation, and other communications electronically.",
               "GoAL may rely upon any communication, instruction, approval, authorization, or amendment that reasonably appears to have been transmitted by the Customer or an authorized representative of the Customer, including communications received by email or other agreed electronic means.",
-              "GoAL shall not be liable for losses resulting from unauthorized access to electronic communications, email interception, transmission errors, delayed delivery, corrupted files, malware, phishing, spoofing, fraudulent instructions, or other cyber-related events beyond GoAL's reasonable control, provided GoAL has exercised reasonable care in relying upon such communications.",
+              "GoAL shall not be liable for losses resulting from unauthorized access to electronic communications, email interception, transmission errors, delayed delivery, corrupted files, malware, phishing, spoofing, fraudulent instructions, or other cyber-related events beyond GoAL’s reasonable control, provided GoAL has exercised reasonable care in relying upon such communications.",
               "The Customer is responsible for maintaining appropriate security over its electronic communications and promptly notifying GoAL of any suspected unauthorized use or compromise of its communication systems.",
             ],
           },
           {
-            heading: "XVI. Cybersecurity",
+            heading: "12. Cybersecurity",
             paragraphs: [
               "GoAL maintains reasonable administrative, technical, and organizational safeguards designed to protect its information systems and electronic communications.",
               "Notwithstanding the foregoing, no electronic system or communication network can be guaranteed to be completely secure.",
-              "GoAL shall not be liable for any loss, delay, corruption of data, unauthorized access, ransomware, malware, denial-of-service attacks, phishing attacks, cyber extortion, or other cybersecurity incidents unless such loss results directly from GoAL's gross negligence or willful misconduct.",
+              "GoAL shall not be liable for any loss, delay, corruption of data, unauthorized access, ransomware, malware, denial-of-service attacks, phishing attacks, cyber extortion, or other cybersecurity incidents unless such loss results directly from GoAL’s gross negligence or willful misconduct.",
               "Where a cybersecurity event affects the performance of the Services, GoAL may suspend, delay, reroute, or modify the affected Services until normal operations can reasonably resume.",
             ],
           },
           {
-            heading: "XVII. Confidentiality",
+            heading: "13. Confidentiality",
             paragraphs: [
               "Each party shall treat as confidential all non-public commercial, financial, operational, engineering, technical, pricing, and proprietary information received from the other party in connection with the Services.",
-              "Neither party shall disclose such confidential information to any third party except where required to perform the Services; where disclosure is required by applicable law or governmental authority; where disclosure is made to legal, financial, insurance, or professional advisers bound by confidentiality obligations; or with the prior written consent of the other party.",
-              "The confidentiality obligations contained in this Section shall survive completion of the Services for a period of five (5) years, except for information that becomes publicly available through no fault of the receiving party; was lawfully known prior to disclosure; is independently developed; or is lawfully obtained from another source.",
+              "Neither party shall disclose such confidential information to any third party except:",
+            ],
+            list: [
+              "where required to perform the Services;",
+              "where disclosure is required by applicable law or governmental authority;",
+              "where disclosure is made to legal, financial, insurance, or professional advisers bound by confidentiality obligations; or",
+              "with the prior written consent of the other party.",
+            ],
+            groups: [
+              {
+                paragraphs: [
+                  "The confidentiality obligations contained in this Section shall survive completion of the Services for a period of five (5) years, except for information that:",
+                ],
+                list: [
+                  "becomes publicly available through no fault of the receiving party;",
+                  "was lawfully known prior to disclosure;",
+                  "is independently developed; or",
+                  "is lawfully obtained from another source.",
+                ],
+              },
             ],
           },
           {
-            heading: "XVIII. Export Controls, Sanctions, and Regulatory Compliance",
+            heading: "14. Export Controls, Sanctions, and Regulatory Compliance",
             paragraphs: [
               "The Customer represents and warrants that all cargo, shipments, documentation, transactions, and parties associated with the Services comply with all applicable laws and regulations, including those relating to customs, imports, exports, trade controls, economic sanctions, and anti-boycott requirements.",
               "The Customer shall provide all information and documentation necessary for GoAL to comply with applicable legal and regulatory requirements.",
@@ -289,14 +335,14 @@ export default function TermsAndConditionsPage() {
             ],
           },
           {
-            heading: "XIX. Severability",
+            heading: "15. Severability",
             paragraphs: [
               "If any provision of these Terms is determined by a court of competent jurisdiction to be invalid, illegal, or unenforceable, the remaining provisions shall remain in full force and effect.",
               "Any invalid or unenforceable provision shall be interpreted, modified, or replaced to the minimum extent necessary to make it enforceable while preserving the original commercial intent of the parties.",
             ],
           },
           {
-            heading: "XX. Governing Law and Jurisdiction",
+            heading: "16. Governing Law and Jurisdiction",
             paragraphs: [
               "These Terms, and any dispute, claim, or controversy arising out of or relating to the Services provided by GoAL, shall be governed by and construed in accordance with the laws of the State of Louisiana, without regard to its conflict of law principles.",
               "The parties irrevocably agree that any legal action or proceeding arising out of or relating to these Terms or the Services shall be brought exclusively in the state or federal courts located in the State of Louisiana, and each party irrevocably submits to the exclusive jurisdiction of such courts.",
@@ -304,18 +350,18 @@ export default function TermsAndConditionsPage() {
             ],
           },
           {
-            heading: "XXI. Indemnification",
+            heading: "17. Indemnification",
             paragraphs: [
-              "The Customer shall indemnify, defend, and hold harmless GoAL, its parent companies, subsidiaries, affiliates, officers, directors, employees, agents, subcontractors, consultants, carriers, warehouse operators, and representatives from and against all claims, liabilities, damages, losses, fines, penalties, costs, expenses, and reasonable attorneys' fees arising out of or relating to:",
+              "The Customer shall indemnify, defend, and hold harmless GoAL, its parent companies, subsidiaries, affiliates, officers, directors, employees, agents, subcontractors, consultants, carriers, warehouse operators, and representatives from and against all claims, liabilities, damages, losses, fines, penalties, costs, expenses, and reasonable attorneys’ fees arising out of or relating to:",
             ],
             list: [
               "inaccurate, incomplete, or misleading information supplied by the Customer;",
               "incorrect cargo descriptions, classifications, dimensions, weights, or declared values;",
               "failure to properly declare dangerous goods or regulated cargo;",
               "violations of applicable customs, import, export, transportation, or regulatory requirements attributable to the Customer;",
-              "defective packaging, loading, blocking, bracing, or securement performed by the Customer or third parties acting on the Customer's behalf;",
+              "defective packaging, loading, blocking, bracing, or securement performed by the Customer or third parties acting on the Customer’s behalf;",
               "personal injury, property damage, environmental damage, or governmental penalties arising from the nature or condition of the cargo;",
-              "the Customer's negligence, gross negligence, willful misconduct, or breach of these Terms.",
+              "the Customer’s negligence, gross negligence, willful misconduct, or breach of these Terms.",
             ],
             after: [
               "The Customer shall further indemnify GoAL against all additional costs arising from permit revisions, route modifications, utility relocations, engineering changes, police escorts, bridge restrictions, governmental requirements, or other operational changes resulting from inaccurate or incomplete shipment information supplied by the Customer.",
