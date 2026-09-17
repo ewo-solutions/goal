@@ -12,11 +12,35 @@ export const metadata = pageMetadata({
   path: "/talk-to-us",
 });
 
-const branchOffices = [
-  { city: "Baton Rouge", detail: "TBA" },
-  { city: "Lafayette", detail: "TBA" },
-  { city: "Rayville", detail: "TBA" },
+const offices = [
+  {
+    name: "Corporate Headquarters",
+    address: ["3800 Viking Drive", "Bossier City", "Louisiana 71111", "United States of America"],
+    phone: "+1 225 277 4625",
+  },
+  {
+    name: "International Office",
+    address: [
+      "7906 N Sam Houston Parkway W",
+      "Suite 310",
+      "Houston, Texas, 77064",
+      "United States of America",
+    ],
+    phone: "+1 281 870 4853",
+  },
+  {
+    name: "Specialized Trucking & Heavy Haul",
+    address: [
+      "One American Place",
+      "301 N Main Street, STE 1650",
+      "Baton Rouge, LA 70801",
+      "United States of America",
+    ],
+    phone: "+1 225 277 4625",
+  },
 ];
+
+const siteLocations = ["Alexandria, Louisiana", "Spartanburg, South Carolina", "Rayville, Louisiana"];
 
 export default function TalkToUsPage() {
   return (
@@ -49,41 +73,41 @@ export default function TalkToUsPage() {
             your project requirements.
           </p>
 
-          <div className="mx-auto mt-16 grid max-w-[1134px] gap-12 text-left sm:grid-cols-2" data-reveal-group>
-            <div className="text-[16px] leading-[25px]">
-              <h3 className="font-bold">Corporate Headquarters</h3>
-              <p className="mt-2 font-light">
-                3800 Viking Drive
-                <br />
-                Bossier City
-                <br />
-                LA 71111
-                <br />
-                United States of America
-              </p>
-              <p className="mt-4 font-light">
-                <span className="font-bold">T:</span>{" "}
-                <a href={`tel:${site.phone.replace(/[^+\d]/g, "")}`} className="hover:underline">
-                  +1 225 277 4625
-                </a>
-                <br />
-                <span className="font-bold">E:</span>{" "}
-                <a href={`mailto:${site.email}`} className="underline">
-                  {site.email}
-                </a>
-              </p>
-            </div>
-            <div className="text-[16px] leading-[25px]">
-              <h3 className="font-bold">Branch Offices</h3>
-              <div className="mt-2 grid grid-cols-2 gap-6 sm:grid-cols-3">
-                {branchOffices.map((office) => (
-                  <div key={office.city} className="font-light">
-                    {office.city}
-                    <br />
-                    {office.detail}
-                  </div>
-                ))}
+          <div className="mx-auto mt-16 grid max-w-[1428px] gap-12 text-left sm:grid-cols-2 lg:grid-cols-3" data-reveal-group>
+            {offices.map((office) => (
+              <div key={office.name} className="text-[16px] leading-[25px]">
+                <h3 className="font-bold">{office.name}</h3>
+                <p className="mt-2 font-light">
+                  {office.address.map((line, i) => (
+                    <span key={i}>
+                      {line}
+                      {i < office.address.length - 1 && <br />}
+                    </span>
+                  ))}
+                </p>
+                <p className="mt-4 font-light">
+                  <span className="font-bold">T:</span>{" "}
+                  <a href={`tel:${office.phone.replace(/[^+\d]/g, "")}`} className="hover:underline">
+                    {office.phone}
+                  </a>
+                  <br />
+                  <span className="font-bold">E:</span>{" "}
+                  <a href={`mailto:${site.email}`} className="underline">
+                    {site.email}
+                  </a>
+                </p>
               </div>
+            ))}
+          </div>
+
+          <div className="mx-auto mt-14 max-w-[1428px] text-left" data-reveal>
+            <h3 className="text-[16px] font-bold leading-[25px]">Site Locations</h3>
+            <div className="mt-4 flex flex-wrap gap-x-12 gap-y-3">
+              {siteLocations.map((location) => (
+                <span key={location} className="text-[16px] font-light leading-[25px]">
+                  {location}
+                </span>
+              ))}
             </div>
           </div>
         </div>

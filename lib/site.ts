@@ -7,7 +7,7 @@ export const siteUrl = (
 export const site = {
   name: "Gulf of America Logistics",
   shortName: "GoAL",
-  phone: "+1 225-277-4625",
+  phone: "+1 225 277 4625",
   email: "info@goalogistics.com",
   address: "3800 Viking Dr. Bossier City, LA, 71111, USA",
   social: {

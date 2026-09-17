@@ -34,7 +34,7 @@ const team = [
   },
   {
     name: "Chuck Paddock",
-    role: "Member",
+    role: "Managing Member",
     image: "/images/team-chuck-paddock.png",
     linkedin: "https://www.linkedin.com/in/charles-paddock-b893b025/",
   },

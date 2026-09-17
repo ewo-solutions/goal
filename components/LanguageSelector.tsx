@@ -3,7 +3,15 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
-const languages = [{ code: "en", label: "English", flag: "/icons/flag-us.png" }];
+const languages = [
+  { code: "en", label: "English", flag: "/icons/flag-us.png" },
+  { code: "es", label: "Spanish", flag: "/icons/flag-es.png" },
+  { code: "zh", label: "Mandarin Chinese", flag: "/icons/flag-cn.png" },
+  { code: "de", label: "German", flag: "/icons/flag-de.png" },
+  { code: "fr", label: "French", flag: "/icons/flag-fr.png" },
+  { code: "it", label: "Italian", flag: "/icons/flag-it.png" },
+  { code: "ja", label: "Japanese", flag: "/icons/flag-jp.png" },
+];
 
 export default function LanguageSelector() {
   const [open, setOpen] = useState(false);
