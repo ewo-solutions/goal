@@ -241,3 +241,26 @@ body {
 .fx .fx-lift.rv-done {
   transition: transform 0.45s var(--ease-out-soft), box-shadow 0.45s var(--ease-out-soft);
 }
+
+/* --- Google Translate widget cleanup ---
+ * The widget's own UI is hidden (LanguageSelector drives it instead), but it
+ * still injects a top banner iframe + a `top: 40px` offset on <body>, and
+ * wraps translated words in a highlight span, when active. Neutralise all of
+ * it so the page layout and look are unaffected once a language is chosen. */
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+body {
+  top: 0 !important;
+  position: static !important;
+}
+.goog-tooltip,
+.goog-tooltip:hover,
+#goog-gt-tt,
+.goog-te-balloon-frame {
+  display: none !important;
+}
+.goog-text-highlight {
+  background: none !important;
+  box-shadow: none !important;
+}

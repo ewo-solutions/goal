@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Poppins } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -103,6 +104,27 @@ export default function RootLayout({
         />
       </head>
       <body className={`${poppins.variable} antialiased`}>
+        {/* Google's (legacy) "Website Translator" widget. It renders its own
+         * dropdown into this hidden host div; our own footer LanguageSelector
+         * drives it programmatically instead (see components/LanguageSelector.tsx)
+         * by writing the `googtrans` cookie it reads on load. This is machine
+         * translation of the live DOM, not real per-language content — see
+         * TRANSLATION.md for scope, limitations, and the pages it's excluded
+         * from (translate="no" / .notranslate). */}
+        <div
+          id="google_translate_element"
+          className="notranslate"
+          translate="no"
+          style={{ position: "fixed", top: -1000, left: -1000, height: 0, overflow: "hidden" }}
+          aria-hidden
+        />
+        <Script id="google-translate-init" strategy="afterInteractive">
+          {`function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'es,zh-CN,de,fr,it,ja',autoDisplay:false},'google_translate_element');}`}
+        </Script>
+        <Script
+          src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+          strategy="afterInteractive"
+        />
         <Preloader />
         <CurtainTransition />
         <ScrollFx />
