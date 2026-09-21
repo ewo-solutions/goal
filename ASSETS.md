@@ -206,22 +206,24 @@ Those numbers are the measured tallest card across all six service pages at
 each breakpoint; **if the card copy is edited, re-measure and update them**,
 otherwise the blocks stop matching.
 
-## Aircraft photos (replaced 2026-09-17)
-The three aircraft photos the client flagged as "Russian flagged" (Volga-Dnepr
-An-124 livery, visible tricolor tail) were replaced with U.S. Air Force public
-domain photos from DVIDS (Defense Visual Information Distribution Service —
-U.S. government works, no license required, credit given here per DVIDS'
-posted terms). Each is cropped from the original at
-`d1ldvf68ux039x.cloudfront.net/thumbs/photos/…`:
+## Aircraft photos (replaced 2026-09-17, swapped again 2026-09-21)
+The three aircraft photos the client originally flagged as "Russian flagged"
+(Volga-Dnepr An-124 livery, visible tricolor tail) were first replaced with
+U.S. Air Force public domain photos from DVIDS. The client then asked for
+those swapped too — "more related to air force than logistics freight
+forwarding" — and supplied three Envato Elements stock photos instead
+(commercial freight ramp/ULD handling, no military branding). Each is cropped
+from the client-supplied source (`images/1.jpg`, `2.jpg`, `3.jpg` as sent,
+2000×1333 each):
 
-| Local path | Source | Credit |
+| Local path | Source | Crop |
 |---|---|---|
-| public/images/service-air.png | dvidshub.net/image/8336064 (portrait crop — tail, U.S. flag, ramp, truck) | Tech. Sgt. Kregg York, USAFCENT, C-130J Super Hercules, Apr 11 2024 |
-| public/images/feature-multimodal.png | dvidshub.net/image/7751582 (square crop) | Alaska Air National Guard, C-17 Globemaster III cargo loading |
-| public/images/what-we-do-hero.png | dvidshub.net/image/429909 (wide crop — nose, wingspan, "AIR FORCE RESERVE COMMAND") | MSgt Perry Aston, C-5 Galaxy, Joint Base Andrews, Apr 2 2011 |
+| public/images/service-air.png | Envato — cargo lift loader raising a netted ULD to an open freighter door, sunset | portrait, 1043×1333, centred on the loader/landing-gear |
+| public/images/feature-multimodal.png | Envato — gloved hand securing cargo netting on a K-loader, wingtip behind | square, 500×500 |
+| public/images/what-we-do-hero.png | Envato — netted ULD on a K-loader beside the engine/wing, overcast sky | wide, 2000×671 |
 
 None of these are Figma exports — they replace Figma nodes `18:239`,
-`2187:5913`, and `2187:690` respectively with client-appropriate substitutes.
-If further aircraft imagery is needed, prefer DVIDS (search dvidshub.net) over
-generic stock photography — it's pre-cleared for commercial use and avoids
-foreign-carrier liveries entirely.
+`2187:5913`, and `2187:690` respectively with client-supplied substitutes.
+The client holds the Envato Elements license for these; if replacing them
+again, get the images (or an Elements license) from GoAL/the agency rather
+than sourcing new stock independently.
