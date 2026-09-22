@@ -40,8 +40,6 @@ const offices = [
   },
 ];
 
-const siteLocations = ["Alexandria, Louisiana", "Spartanburg, South Carolina", "Rayville, Louisiana"];
-
 export default function TalkToUsPage() {
   return (
     <>
@@ -98,17 +96,6 @@ export default function TalkToUsPage() {
                 </p>
               </div>
             ))}
-          </div>
-
-          <div className="mx-auto mt-14 max-w-[1428px] text-left" data-reveal>
-            <h3 className="text-[16px] font-bold leading-[25px]">Site Locations</h3>
-            <div className="mt-4 flex flex-wrap gap-x-12 gap-y-3">
-              {siteLocations.map((location) => (
-                <span key={location} className="text-[16px] font-light leading-[25px]">
-                  {location}
-                </span>
-              ))}
-            </div>
           </div>
         </div>
       </section>

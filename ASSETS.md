@@ -136,8 +136,14 @@ fixed 2026-08-04.
 | public/icons/ih-freight.svg | 2187:5514 (image 72 [Vectorized]) |
 | public/icons/ih-reporting.svg | 2187:5506 (Group 230) |
 
-## Copy marked TBA in the design (needs client input)
-- Talk To Us: branch office details for Baton Rouge / Lafayette / Rayville are "TBA".
+## Talk To Us — office/site copy history
+The original design's "Baton Rouge / Lafayette / Rayville, all TBA" branch
+office placeholder was replaced 2026-09-17 with real Corporate Headquarters /
+International Office / Specialized Trucking & Heavy Haul details, plus a
+"Site Locations" line (Alexandria, LA; Spartanburg, SC; Rayville, LA). GoAL
+asked 2026-09-22 to remove the Site Locations line for now — it's out of the
+page entirely (not just hidden), so re-add it from git history if it comes
+back.
 
 ## Service page copy source
 All service page body/heading text in `lib/servicePages.ts` was replaced on
