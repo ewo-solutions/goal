@@ -20,6 +20,32 @@ function dsk_mod( $key ) {
 	return get_theme_mod( $key, isset( $defaults[ $key ] ) ? $defaults[ $key ] : '' );
 }
 
+/**
+ * Header/panel navigation used until a Primary Menu is assigned under
+ * Appearance → Menus. Assigning one replaces this entirely.
+ *
+ * @param string $class CSS class for the <ul>.
+ */
+function dsk_header_nav_fallback( $class ) {
+	$items = array(
+		array( 'label' => __( 'Home', 'dsk-home' ), 'url' => home_url( '/' ) ),
+		array( 'label' => __( 'About', 'dsk-home' ), 'url' => '#about' ),
+		array( 'label' => __( 'Chase Health Group', 'dsk-home' ), 'url' => '#' ),
+		array( 'label' => __( 'Podcasts', 'dsk-home' ), 'url' => '#interviews' ),
+		array( 'label' => __( 'Contact Me', 'dsk-home' ), 'url' => '#enquiry' ),
+	);
+
+	echo '<ul class="' . esc_attr( $class ) . '">';
+	foreach ( $items as $item ) {
+		printf(
+			'<li><a href="%s">%s</a></li>',
+			esc_url( $item['url'] ),
+			esc_html( $item['label'] )
+		);
+	}
+	echo '</ul>';
+}
+
 function dsk_social_icon( $name ) {
 	$icons = array(
 		'instagram' => '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 2 .25 2.4.42.6.24 1 .53 1.5 1s.76.9 1 1.5c.17.4.36 1.2.42 2.4.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.06 1.2-.25 2-.42 2.4-.24.6-.53 1-1 1.5s-.9.76-1.5 1c-.4.17-1.2.36-2.4.42-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.06-2-.25-2.4-.42-.6-.24-1-.53-1.5-1s-.76-.9-1-1.5c-.17-.4-.36-1.2-.42-2.4C2.21 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.06-1.2.25-2 .42-2.4.24-.6.53-1 1-1.5s.9-.76 1.5-1c.4-.17 1.2-.36 2.4-.42C8.4 2.21 8.8 2.2 12 2.2zm0 1.8c-3.14 0-3.5 0-4.75.07-1 .04-1.55.21-1.9.35-.48.19-.82.41-1.18.77-.36.36-.58.7-.77 1.18-.14.35-.31.9-.35 1.9C3 9.5 3 9.86 3 13s0 3.5.07 4.75c.04 1 .21 1.55.35 1.9.19.48.41.82.77 1.18.36.36.7.58 1.18.77.35.14.9.31 1.9.35C8.5 22 8.86 22 12 22s3.5 0 4.75-.07c1-.04 1.55-.21 1.9-.35.48-.19.82-.41 1.18-.77.36-.36.58-.7.77-1.18.14-.35.31-.9.35-1.9.07-1.25.07-1.61.07-4.75s0-3.5-.07-4.75c-.04-1-.21-1.55-.35-1.9-.19-.48-.41-.82-.77-1.18a3.26 3.26 0 0 0-1.18-.77c-.35-.14-.9-.31-1.9-.35C15.5 4 15.14 4 12 4zm0 3.6a5.4 5.4 0 1 1 0 10.8 5.4 5.4 0 0 1 0-10.8zm0 1.8a3.6 3.6 0 1 0 0 7.2 3.6 3.6 0 0 0 0-7.2zm5.6-2a1.26 1.26 0 1 1-2.52 0 1.26 1.26 0 0 1 2.52 0z"/></svg>',

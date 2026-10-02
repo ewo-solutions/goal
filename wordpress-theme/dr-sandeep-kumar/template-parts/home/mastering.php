@@ -15,7 +15,7 @@ $m = dsk_home()['mastering'];
 		<div class="mastering__body reveal">
 			<img class="mastering__wordmark" src="<?php echo esc_url( $m['wordmark'] ); ?>" alt="<?php echo esc_attr( $m['title'] ); ?>" />
 			<?php foreach ( $m['body'] as $para ) : ?>
-				<p class="copy copy--light copy--sm"><?php echo wp_kses_post( $para ); ?></p>
+				<div class="copy copy--light copy--sm"><?php echo wp_kses_post( $para ); ?></div>
 			<?php endforeach; ?>
 			<a class="btn-arrow btn-arrow--light" href="<?php echo esc_url( $m['cta']['url'] ); ?>">
 				<?php echo esc_html( $m['cta']['label'] ); ?>

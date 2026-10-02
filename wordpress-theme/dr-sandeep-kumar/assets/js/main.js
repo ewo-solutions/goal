@@ -6,8 +6,14 @@
 	var primaryNav = document.getElementById( 'primary-nav' );
 	var backToTop = document.getElementById( 'back-to-top' );
 
-	/* --- Sticky header background on scroll --- */
+	/* --- Sticky header background on scroll ---
+	 * The header is transparent over the dark opening panel. Once the page
+	 * scrolls past it the white tabs would land on the light sections, so the
+	 * bar takes a navy background of its own. */
 	function onScroll() {
+		if ( header ) {
+			header.classList.toggle( 'is-stuck', window.scrollY > 40 );
+		}
 		if ( backToTop ) {
 			backToTop.classList.toggle( 'is-visible', window.scrollY > 600 );
 		}

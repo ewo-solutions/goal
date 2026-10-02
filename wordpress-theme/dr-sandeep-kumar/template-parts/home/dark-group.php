@@ -1,7 +1,9 @@
 <?php
 /**
- * Dark gradient group (reference .common-bg1) — partner strip + about.
- * The services tiles sit directly beneath, outside this gradient.
+ * Dark gradient group (reference .common-bg1) — the about panel.
+ *
+ * The partner logo strip sits below it on a white band (client request), and
+ * the services tiles follow directly after, outside the gradient.
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -15,21 +17,7 @@ $services = $c['services'];
 ?>
 <div class="dark-group" style="--texture:url(<?php echo esc_url( $c['texture'] ); ?>)">
 
-	<section class="partners">
-		<div class="shell">
-			<div class="partners__track reveal">
-				<?php foreach ( $partners as $i => $logo ) : ?>
-					<a class="partners__item" href="<?php echo esc_url( $logo['url'] ); ?>"
-					   target="_blank" rel="noopener noreferrer"
-					   style="--reveal-delay:<?php echo (int) ( $i * 60 ); ?>ms">
-						<img src="<?php echo esc_url( $logo['image'] ); ?>" alt="<?php echo esc_attr( $logo['name'] ); ?>" loading="lazy" />
-					</a>
-				<?php endforeach; ?>
-			</div>
-		</div>
-	</section>
-
-	<section class="about">
+	<section class="about" id="about">
 		<div class="shell about__grid">
 			<div class="about__media reveal">
 				<img src="<?php echo esc_url( $about['image'] ); ?>" alt="<?php bloginfo( 'name' ); ?>" loading="lazy" />
@@ -43,8 +31,8 @@ $services = $c['services'];
 
 			<div class="about__body reveal" style="--reveal-delay:140ms">
 				<img class="sig about__sig" src="<?php echo esc_url( $c['signature_light'] ); ?>" alt="<?php echo esc_attr( $c['signature_alt'] ); ?>" />
-				<p class="copy copy--light"><?php echo wp_kses_post( $about['lead'] ); ?></p>
-				<p class="copy copy--light"><?php echo wp_kses_post( $about['body'] ); ?></p>
+				<div class="copy copy--light"><?php echo wp_kses_post( $about['lead'] ); ?></div>
+				<div class="copy copy--light"><?php echo wp_kses_post( $about['body'] ); ?></div>
 
 				<div class="about__creds">
 					<?php foreach ( $about['badges'] as $badge ) : ?>
@@ -57,6 +45,20 @@ $services = $c['services'];
 	</section>
 
 </div>
+
+<section class="partners">
+	<div class="shell">
+		<div class="partners__track reveal">
+			<?php foreach ( $partners as $i => $logo ) : ?>
+				<a class="partners__item" href="<?php echo esc_url( $logo['url'] ); ?>"
+				   target="_blank" rel="noopener noreferrer"
+				   style="--reveal-delay:<?php echo (int) ( $i * 60 ); ?>ms">
+					<img src="<?php echo esc_url( $logo['image'] ); ?>" alt="<?php echo esc_attr( $logo['name'] ); ?>" loading="lazy" />
+				</a>
+			<?php endforeach; ?>
+		</div>
+	</div>
+</section>
 
 <section class="services">
 	<?php foreach ( $services as $tile ) : ?>

@@ -78,6 +78,18 @@
 	line-height: 1.6;
 }
 
+/* --- Toggle --- */
+
+.dsk-toggle {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.dsk-toggle span {
+	font-weight: 500;
+}
+
 /* --- Image picker --- */
 
 .dsk-img {

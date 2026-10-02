@@ -34,7 +34,7 @@ $network = $c['network'];
 				<h2 class="h-xl story__title"><?php echo esc_html( $story['title'] ); ?></h2>
 				<p class="script script--navy story__sig"><?php echo esc_html( $story['strapline'] ); ?></p>
 				<?php foreach ( $story['body'] as $para ) : ?>
-					<p class="copy copy--sm"><?php echo wp_kses_post( $para ); ?></p>
+					<div class="copy copy--sm"><?php echo wp_kses_post( $para ); ?></div>
 				<?php endforeach; ?>
 				<a class="btn-arrow" href="<?php echo esc_url( $story['cta']['url'] ); ?>">
 					<?php echo esc_html( $story['cta']['label'] ); ?>
@@ -75,7 +75,7 @@ $network = $c['network'];
 			<div class="network__body reveal" style="--reveal-delay:140ms">
 				<h2 class="h-xl"><?php echo esc_html( $network['title'] ); ?></h2>
 				<?php foreach ( $network['body'] as $para ) : ?>
-					<p class="copy copy--sm"><?php echo wp_kses_post( $para ); ?></p>
+					<div class="copy copy--sm"><?php echo wp_kses_post( $para ); ?></div>
 				<?php endforeach; ?>
 				<a class="btn-arrow" href="<?php echo esc_url( $network['cta']['url'] ); ?>">
 					<?php echo esc_html( $network['cta']['label'] ); ?>

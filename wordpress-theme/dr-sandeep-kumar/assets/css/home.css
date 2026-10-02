@@ -47,13 +47,28 @@
 .script { font-family: var(--script); font-weight: 400; color: #fff; line-height: 1; }
 .script--navy { color: var(--navy); }
 
-.copy { font-size: 15px; font-weight: 500; color: var(--navy);
+.copy { font-size: 17px; font-weight: 500; color: var(--navy);
 	line-height: 1.73; margin: 0 0 26px; }
 .copy--light { color: #fff; line-height: 1.8; }
-.copy--sm { font-size: 14px; line-height: 1.85; }
+.copy--sm { font-size: 15px; line-height: 1.85; }
 .copy:last-child { margin-bottom: 0; }
 
-.caption { font-size: 14px; font-weight: 400; color: var(--grey);
+/* Copy blocks are <div>s, so pasted headings, lists and paragraphs from the
+   Home Page editor nest legally and inherit the size set above. */
+.copy > :first-child { margin-top: 0; }
+.copy > :last-child { margin-bottom: 0; }
+.copy p { margin: 0 0 1em; font-size: inherit; line-height: inherit; }
+.copy ul, .copy ol { margin: 0 0 1em; padding-left: 1.25em; }
+.copy li { margin: 0 0 .45em; }
+.copy h2, .copy h3, .copy h4 {
+	font-weight: 700; line-height: 1.3; margin: 0 0 .5em; color: inherit;
+}
+.copy h2 { font-size: 30px; }
+.copy h3 { font-size: 23px; }
+.copy h4 { font-size: 19px; }
+.copy--light h2, .copy--light h3, .copy--light h4 { color: #fff; }
+
+.caption { font-size: 15px; font-weight: 400; color: var(--grey);
 	letter-spacing: 0.37px; line-height: 1.57; margin: 0; }
 
 /* --------------------------------------------------------------------------
@@ -94,13 +109,22 @@
 .hero__media { position: absolute; inset: 0; }
 .hero__media img, .hero__media video { width: 100%; height: 100%; object-fit: cover; }
 
+/* Anchor targets for the header tabs — keeps the fixed bar from covering the
+   top of the section it jumps to. */
+#about, #interviews, #enquiry { scroll-margin-top: 86px; }
+
 /* --------------------------------------------------------------------------
-   Dark gradient group (reference .common-bg1) — partners + about
+   Dark gradient group (reference .common-bg1) — the about panel
    -------------------------------------------------------------------------- */
 .dark-group {
 	position: relative; overflow: hidden;
 	background-image: linear-gradient(to right top,#191919,#1c1b28,#1c1e39,#16214a,#00255c);
 }
+
+/* With the hero switched off the gradient is the first thing on the page, so
+   it has to carry the clearance the fixed header would otherwise cover. */
+.home-page--no-hero > .dark-group:first-child { padding-top: 44px; }
+
 /* Diagonal line texture down the left edge — the reference's own PNG,
    set as a background on .dark-group via an inline style. */
 .dark-group::before {
@@ -110,14 +134,14 @@
 }
 .dark-group > * { position: relative; z-index: 1; }
 
-/* Partner strip — 142px tall */
-.partners { padding: 40px 0 22px; }
+/* Partner strip — a white band below the about panel */
+.partners { background: #fff; padding: 44px 0 40px; }
 .partners__track {
 	display: flex; align-items: center; justify-content: space-between;
 	gap: 30px; flex-wrap: nowrap;
 }
-.partners__item { flex: 0 1 auto; opacity: .9; transition: opacity .25s; }
-.partners__item:hover { opacity: 1; }
+.partners__item { flex: 0 1 auto; opacity: 1; transition: opacity .25s; }
+.partners__item:hover { opacity: .72; }
 .partners__item img { max-height: 58px; width: auto; }
 
 /* About — portrait bleeds to the section's bottom edge */
@@ -231,7 +255,7 @@
 }
 .global > * { position: relative; z-index: 1; }
 .global__icon { width: 58px; margin: 0 auto 18px; }
-.global .copy { color: #fff; font-size: 14px; margin-bottom: 26px; }
+.global .copy { color: #fff; font-size: 16px; margin-bottom: 26px; }
 .global__list { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px 46px; }
 .global__list li { font-size: 26px; font-weight: 700; color: #fff; letter-spacing: .5px; }
 
@@ -283,7 +307,7 @@
 	background-position: center 32%; background-size: 100% auto; }
 .series { text-align: center; padding: 74px 0 40px; }
 .series__sig { width: 190px; margin: 0 auto 12px; }
-.series .copy { max-width: 720px; margin: 0 auto 26px; font-size: 14px; }
+.series .copy { max-width: 720px; margin: 0 auto 26px; font-size: 16px; }
 
 .charity { padding: 30px 0 0; }
 .charity__grid { display: flex; align-items: center; gap: 3%; }
@@ -381,6 +405,11 @@
 	.about__insta { position: static; flex-direction: row; align-items: center; margin-top: 14px; }
 	.interviews__nav { display: none; }
 	.story__media { margin-top: 0; }
+	/* The collapsed header (logo + pill) is taller than the desktop bar. */
+	.home-page--no-hero > .dark-group:first-child { padding-top: 58px; }
+	/* Five logos will not fit on one line at this width. */
+	.partners__track { flex-wrap: wrap; justify-content: center; gap: 26px 34px; }
+	.partners { padding: 34px 0 30px; }
 }
 
 @media (max-width: 640px) {

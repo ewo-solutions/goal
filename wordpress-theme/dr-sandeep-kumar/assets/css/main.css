@@ -131,18 +131,66 @@ button {
 }
 
 /* ==========================================================================
-   Header — navy pill menu toggle left, contact + socials right
+   Header — logo left, inline tabs, contact + socials right
    ========================================================================== */
 .site-header {
-	position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-	display: flex; align-items: center; justify-content: space-between;
-	padding: 22px 34px;
+	position: fixed; top: 0; left: 0; right: 0; z-index: 102;
+	padding: 18px 34px;
 	pointer-events: none;
+	transition: background-color .3s ease-out, box-shadow .3s ease-out, padding .3s ease-out;
 }
 .site-header > * { pointer-events: auto; }
 
+.site-header__inner {
+	display: flex; align-items: center; gap: 30px;
+	max-width: 1540px; margin: 0 auto;
+}
+
+/* Once the page scrolls the header leaves the dark panel behind, so it takes
+   a navy background of its own — otherwise the white tabs land on the light
+   sections further down and vanish. */
+.site-header.is-stuck {
+	background-color: rgba(0, 37, 92, .96);
+	box-shadow: 0 2px 18px rgba(0, 10, 28, .28);
+	padding-top: 10px; padding-bottom: 10px;
+}
+
+/* Logo slot. Space is reserved whether or not a logo image is set, so the
+   top-left corner always reads as the brand. */
+.site-brand { flex: 0 0 auto; display: flex; align-items: center; min-width: 150px; }
+.site-brand img,
+.site-brand .custom-logo { display: block; width: auto; max-height: 54px; }
+.site-header.is-stuck .site-brand img { max-height: 42px; }
+.site-brand__text {
+	color: #fff; font-size: 19px; font-weight: 700; letter-spacing: .3px;
+	line-height: 1.2; text-decoration: none;
+}
+.site-brand__text:hover { opacity: .8; }
+
+/* Tabs */
+.site-nav { flex: 1 1 auto; }
+.site-nav__list {
+	display: flex; align-items: center; justify-content: center;
+	gap: 30px; margin: 0; padding: 0; list-style: none;
+}
+.site-nav__list li { margin: 0; }
+.site-nav__list a {
+	display: block; padding: 6px 0;
+	color: #fff; font-size: 14px; font-weight: 600; letter-spacing: .4px;
+	text-decoration: none; position: relative;
+}
+.site-nav__list a::after {
+	content: ""; position: absolute; left: 0; right: 0; bottom: 0;
+	height: 2px; background: currentColor;
+	transform: scaleX(0); transform-origin: left;
+	transition: transform .25s ease-out;
+}
+.site-nav__list a:hover::after,
+.site-nav__list .current-menu-item > a::after { transform: scaleX(1); }
+
 .menu-pill {
-	display: inline-flex; align-items: center; gap: 12px;
+	display: none; /* small screens only — see the breakpoint below */
+	align-items: center; gap: 12px;
 	background: var(--navy, #00255c); color: #fff;
 	border: none; border-radius: 999px; padding: 12px 22px;
 	font-size: 14px; font-weight: 700; letter-spacing: .38px;
@@ -159,15 +207,27 @@ button {
 .menu-pill[aria-expanded="true"] .menu-pill__bars span:nth-child(2) { opacity: 0; }
 .menu-pill[aria-expanded="true"] .menu-pill__bars span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
-.site-header__right { display: flex; align-items: center; gap: 22px; }
-.site-header__contact { color: #fff; font-size: 14px; font-weight: 700; letter-spacing: .38px; }
-.site-header__contact:hover { opacity: .75; }
+.site-header__right { flex: 0 0 auto; display: flex; align-items: center; gap: 22px; }
 .site-header__social { display: inline-flex; align-items: center; gap: 14px; }
+
+/* Tabs collapse into the pill; the panel carries the same links. */
+@media screen and (max-width: 980px) {
+	.site-header { padding: 14px 20px; }
+	.site-nav { display: none; }
+	.site-header__inner { gap: 16px; justify-content: space-between; }
+	.site-brand { min-width: 0; }
+	.site-brand__text { font-size: 16px; }
+	.menu-pill { display: inline-flex; }
+}
+@media screen and (max-width: 560px) {
+	.site-header__social { display: none; }
+}
 .dsk-social-link { color: #fff; opacity: .9; transition: opacity .2s; }
 .dsk-social-link:hover { opacity: 1; }
 .dsk-social-link svg { width: 18px; height: 18px; }
 
-/* Slide-in nav panel */
+/* Slide-in nav panel. It sits below .site-header (z-index 102) so the pill
+   stays tappable to close it — the panel's top padding clears the bar. */
 .nav-panel {
 	position: fixed; top: 0; left: 0; bottom: 0; z-index: 101;
 	width: min(380px, 86vw); background: var(--navy-deep, #032b6a);

@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $iv = dsk_home()['interviews'];
 ?>
-<section class="interviews">
+<section class="interviews" id="interviews">
 	<div class="shell">
 		<h2 class="h-xl reveal"><?php echo esc_html( $iv['title'] ); ?></h2>
 

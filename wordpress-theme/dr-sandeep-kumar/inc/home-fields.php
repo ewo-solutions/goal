@@ -13,6 +13,7 @@
  * Types:
  *   text        single line
  *   textarea    paragraph, limited HTML allowed (wp_kses_post)
+ *   toggle      on/off switch
  *   url         link or file URL
  *   image       Media Library picker, stores the URL
  *   list_text   one paragraph/item per line
@@ -46,8 +47,9 @@ function dsk_home_fields() {
 
 		'hero' => array(
 			'label'  => __( 'Hero', 'dsk-home' ),
-			'desc'   => __( 'The full-screen opening panel. Leave the video empty to show the still image.', 'dsk-home' ),
+			'desc'   => __( 'The full-screen opening panel. Switch it off to start the page at the introduction instead. Leave the video empty to show the still image.', 'dsk-home' ),
 			'fields' => array(
+				'hero.show'  => array( 'label' => __( 'Show the hero panel', 'dsk-home' ), 'type' => 'toggle' ),
 				'hero.image' => array( 'label' => __( 'Background image', 'dsk-home' ), 'type' => 'image' ),
 				'hero.video' => array( 'label' => __( 'Background video (MP4 URL)', 'dsk-home' ), 'type' => 'url' ),
 			),

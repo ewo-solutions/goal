@@ -47,6 +47,9 @@ function dsk_home_defaults() {
 		'signature_alt'   => 'Dr Sandeep Kumar',
 
 		'hero' => array(
+			// The opening panel is off by default; switch it on under
+			// Home Page → Hero.
+			'show'       => false,
 			// Vimeo embed on the original. Point this at an MP4 to play it
 			// inline; otherwise the still below is used.
 			'video'      => '',

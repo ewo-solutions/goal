@@ -149,6 +149,9 @@ function dsk_home_sanitize_field( $value, $def ) {
 		case 'textarea':
 			return wp_kses_post( trim( (string) $value ) );
 
+		case 'toggle':
+			return (bool) $value && '0' !== (string) $value;
+
 		case 'url':
 		case 'image':
 			$url = trim( (string) $value );
@@ -315,6 +318,20 @@ function dsk_home_render_control( $name, $id, $def, $value ) {
 				esc_attr( $id ),
 				esc_attr( $name ),
 				esc_textarea( dsk_home_display( $value ) )
+			);
+			break;
+
+		case 'toggle':
+			// The hidden 0 makes an unchecked box post a value — without it
+			// the field would be absent and the stored value left untouched.
+			printf(
+				'<input type="hidden" name="%s" value="0" />'
+				. '<label class="dsk-toggle"><input type="checkbox" id="%s" name="%s" value="1" %s /> <span>%s</span></label>',
+				esc_attr( $name ),
+				esc_attr( $id ),
+				esc_attr( $name ),
+				checked( (bool) $value, true, false ),
+				esc_html__( 'Shown on the page', 'dsk-home' )
 			);
 			break;
 
