@@ -84,8 +84,8 @@ function dsk_home_admin_assets( $hook ) {
 	}
 
 	wp_enqueue_media();
-	wp_enqueue_style( 'dsk-home-admin', DSK_THEME_URI . '/assets/css/admin-home.css', array(), DSK_THEME_VERSION );
-	wp_enqueue_script( 'dsk-home-admin', DSK_THEME_URI . '/assets/js/admin-home.js', array( 'jquery' ), DSK_THEME_VERSION, true );
+	wp_enqueue_style( 'dsk-home-admin', DSK_THEME_URI . '/assets/css/admin-home.css', array(), dsk_asset_ver( 'assets/css/admin-home.css' ) );
+	wp_enqueue_script( 'dsk-home-admin', DSK_THEME_URI . '/assets/js/admin-home.js', array( 'jquery' ), dsk_asset_ver( 'assets/js/admin-home.js' ), true );
 	wp_localize_script( 'dsk-home-admin', 'dskHomeAdmin', array(
 		'chooseTitle'  => __( 'Choose an image', 'dsk-home' ),
 		'chooseButton' => __( 'Use this image', 'dsk-home' ),

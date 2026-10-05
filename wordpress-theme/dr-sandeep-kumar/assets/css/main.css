@@ -131,26 +131,24 @@ button {
 }
 
 /* ==========================================================================
-   Header — logo left, inline tabs, contact + socials right
+   Header — a solid navy bar across the top: logo left, tabs, socials right.
+   It sits in the flow (sticky, not fixed), so it takes up its own space
+   instead of floating over the panel beneath it.
    ========================================================================== */
 .site-header {
-	position: fixed; top: 0; left: 0; right: 0; z-index: 102;
-	padding: 18px 34px;
-	pointer-events: none;
-	transition: background-color .3s ease-out, box-shadow .3s ease-out, padding .3s ease-out;
+	position: sticky; top: 0; z-index: 102;
+	background-color: var(--navy, #00255c);
+	padding: 14px 34px;
+	transition: box-shadow .3s ease-out, padding .3s ease-out;
 }
-.site-header > * { pointer-events: auto; }
 
 .site-header__inner {
 	display: flex; align-items: center; gap: 30px;
 	max-width: 1540px; margin: 0 auto;
 }
 
-/* Once the page scrolls the header leaves the dark panel behind, so it takes
-   a navy background of its own — otherwise the white tabs land on the light
-   sections further down and vanish. */
+/* Lifts off the page once you scroll past the top. */
 .site-header.is-stuck {
-	background-color: rgba(0, 37, 92, .96);
 	box-shadow: 0 2px 18px rgba(0, 10, 28, .28);
 	padding-top: 10px; padding-bottom: 10px;
 }

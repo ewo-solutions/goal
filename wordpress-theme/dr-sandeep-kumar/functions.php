@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'DSK_THEME_VERSION', '1.0.0' );
+define( 'DSK_THEME_VERSION', '1.1.0' );
 define( 'DSK_THEME_DIR', get_template_directory() );
 define( 'DSK_THEME_URI', get_template_directory_uri() );
 
@@ -35,6 +35,25 @@ add_action( 'after_setup_theme', 'dsk_setup' );
 /**
  * Styles and scripts.
  */
+
+/**
+ * Cache-busting version for a theme asset: the file's own modification time,
+ * so editing a stylesheet changes its URL and browsers fetch it.
+ *
+ * These files go out with a one-year Cache-Control, so a fixed version string
+ * means an edit never reaches anyone who has already visited — which is
+ * exactly what happened with the October header and type changes.
+ *
+ * @param string $rel Path relative to the theme root, e.g. assets/css/main.css.
+ * @return string
+ */
+function dsk_asset_ver( $rel ) {
+	$path = DSK_THEME_DIR . '/' . ltrim( $rel, '/' );
+	$time = file_exists( $path ) ? filemtime( $path ) : 0;
+
+	return $time ? DSK_THEME_VERSION . '.' . $time : DSK_THEME_VERSION;
+}
+
 function dsk_assets() {
 	wp_enqueue_style(
 		'dsk-google-fonts',
@@ -43,7 +62,7 @@ function dsk_assets() {
 		null
 	);
 
-	wp_enqueue_style( 'dsk-main', DSK_THEME_URI . '/assets/css/main.css', array(), DSK_THEME_VERSION );
+	wp_enqueue_style( 'dsk-main', DSK_THEME_URI . '/assets/css/main.css', array(), dsk_asset_ver( 'assets/css/main.css' ) );
 
 	/* Home page styling. Only loaded on the front page — every other page
 	 * runs through page.php and is styled by its own content/builder. */
@@ -52,11 +71,11 @@ function dsk_assets() {
 			'dsk-home',
 			DSK_THEME_URI . '/assets/css/home.css',
 			array( 'dsk-main' ),
-			DSK_THEME_VERSION
+			dsk_asset_ver( 'assets/css/home.css' )
 		);
 	}
 
-	wp_enqueue_script( 'dsk-main', DSK_THEME_URI . '/assets/js/main.js', array(), DSK_THEME_VERSION, true );
+	wp_enqueue_script( 'dsk-main', DSK_THEME_URI . '/assets/js/main.js', array(), dsk_asset_ver( 'assets/js/main.js' ), true );
 }
 
 /**
